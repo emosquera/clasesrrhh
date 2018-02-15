@@ -7,5 +7,5 @@ import java.io.Serializable;
 public interface Labeled extends Serializable{
 
     @Transient
-    String asText();
+    String getAsText();
 }

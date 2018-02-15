@@ -45,10 +45,9 @@ public class PhoneLineType extends EntityBase <Long> {
 		this.propertyBundleName = propertyBundleName;
 	}
 
-
 	@Override
 	@Transient
-	public String asText() {
+	public String getAsText() {
 		final StringBuffer sb = new StringBuffer();
 		sb.append(type);
 		return sb.toString();
