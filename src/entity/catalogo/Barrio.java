@@ -15,25 +15,25 @@ import javax.persistence.*;
 @Table(name="BARRIO")
 public class Barrio extends EntityBase<Long>{
     /**
-     * Código de registro del barrio
+     * codigo de registro del Barrio
      *
      * @see #getCodigo()
      */
     private String codigo;
     /**
-     * Abreviatura para identificar al barrio
+     * abreviatura para identificar al Barrio
      *
      * @see #getAbreviatura()
      */
     private String abreviatura;
     /**
-     * Nombre del barrio
+     * nombre del Barrio
      *
      * @see #getNombre()
      */
     private String nombre;
     /**
-     * Departamento Territorial al cual pertenece el barrio
+     * departamentoTerritorial al cual pertenece el Barrio
      *
      * @see #getDepartamentoTerritorial()
      */
@@ -42,7 +42,7 @@ public class Barrio extends EntityBase<Long>{
     /**
      * Getter.
      *
-     * @return codigo: Codigo del Barrio.
+     * @return codigo: codigo identificador del Barrio.
      */
     @Column(name="CODIGO", nullable=false, length = 9)
     public String getCodigo() {
@@ -59,7 +59,7 @@ public class Barrio extends EntityBase<Long>{
     /**
      * Getter.
      *
-     * @return abreviatura: Abreviatura del Barrio.
+     * @return abreviatura: abreviatura del Barrio.
      */
     @Column(name="ABREVIATURA", nullable=false, length = 6)
     public String getAbreviatura() {
@@ -76,7 +76,7 @@ public class Barrio extends EntityBase<Long>{
     /**
      * Getter.
      *
-     * @return nombre: Nombre del Barrio.
+     * @return nombre: nombre del Barrio.
      */
     @Column(name="NOMBRE", nullable=false, length = 100)
     public String getNombre() {
@@ -93,7 +93,7 @@ public class Barrio extends EntityBase<Long>{
     /**
      * Getter.
      *
-     * @return departamentoTerritorial: Departamento Territorial al cual pertenece el Barrio.
+     * @return departamentoTerritorial: departamentoTerritorial al cual pertenece el Barrio.
      */
     @ManyToOne
     @Column(name="DEPARTAMENTO_TERRITORIAL", nullable=false)

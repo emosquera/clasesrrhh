@@ -12,16 +12,16 @@ import javax.persistence.*;
  * @version 1.0
  */
 @Entity
-@Table(name="ESPECIALIDAD_ACADEMICA")
-public class EspecialidadAcademica extends EntityBase<Long> {
+@Table(name="NIVEL_ACADEMICO")
+public class NivelAcademico extends EntityBase<Long> {
     /**
-     * codigo de registro de la EspecialidadAcademica
+     * codigo de registro del NivelAcademico
      *
      * @see #getCodigo()
      */
     private String codigo;
     /**
-     * nombre de registro de la EspecialidadAcademica
+     * nombre de registro del NivelAcademico
      *
      * @see #getCodigo()
      */
@@ -29,9 +29,8 @@ public class EspecialidadAcademica extends EntityBase<Long> {
     /**
      * Getter.
      *
-     * @return codigo: codigo de la EspecialidadAcademica.
+     * @return codigo: codigo del NivelAcademico.
      */
-    @Column(name="CODIGO", nullable = false, length = 9)
     public String getCodigo() {
         return codigo;
     }
@@ -46,9 +45,8 @@ public class EspecialidadAcademica extends EntityBase<Long> {
     /**
      * Getter.
      *
-     * @return nombre: nombre de la EspecialidadAcademica.
+     * @return nombre: nombre del NivelAcademico.
      */
-    @Column(name="NOMBRE", nullable = false, length = 100)
     public String getNombre() {
         return nombre;
     }
@@ -60,7 +58,7 @@ public class EspecialidadAcademica extends EntityBase<Long> {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -71,26 +69,26 @@ public class EspecialidadAcademica extends EntityBase<Long> {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof EspecialidadAcademica)) {
+        if (!(object instanceof NivelAcademico)) {
             return false;
         }
-        EspecialidadAcademica other = (EspecialidadAcademica) object;
+        NivelAcademico other = (NivelAcademico) object;
         return !((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)));
     }
 
     @Override
     public String toString() {
-        return "entity.catalogo.EspecialidadAcademica[ id=" + id + " ]";
+        return "entity.catalogo.NivelAcademico[ id=" + id + " ]";
     }
-
+    
     @Override
     public String getAsText() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     /**
-     * Constructor por defecto de la entidad EspecialidadAcademica
+     * Constructor por defecto de la entidad NivelAcademico
      */
-    public EspecialidadAcademica() {
+    public NivelAcademico() {
     }
     
 }

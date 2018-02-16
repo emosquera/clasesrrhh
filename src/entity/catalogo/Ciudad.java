@@ -5,9 +5,9 @@ import entity.base.EntityBase;
 import java.util.List;
 import javax.persistence.*;
 /**
- * Clase DepartamentoTerritorial
+ * Clase Ciudad
  *
- * Contiene la información relacionada al Departamento Territorial
+ * Contiene la información relacionada a la Ciudad
  *
  * @author Quarksoft-CIDESA
  * @version 1.0
@@ -15,56 +15,121 @@ import javax.persistence.*;
 @Entity
 @Table(name="CIUDAD")
 public class Ciudad  extends EntityBase<Long>{
-    
+    /**
+     * codigo de registro de la Ciudad
+     *
+     * @see #getCodigo()
+     */
     private String codigo;
+    /**
+     * abreviatura para identificar a la Ciudad
+     *
+     * @see #getAbreviatura()
+     */
     private String abreviatura;
+    /**
+     * nombre de la Ciudad
+     *
+     * @see #getNombre()
+     */
     private String nombre;
+    /**
+     * pais al cual pertenece la Ciudad
+     *
+     * @see #getPais()
+     */
     private Pais pais;
-    private List<DepartamentoTerritorial> departamentoTerritorials;
-    
-    
+    /**
+     * Lista de DepartamentoTerritorial que pertenecen a la Ciudad
+     *
+     * @see #getDepartamentosTerritoriales()
+     */
+    private List<DepartamentoTerritorial> departamentosTerritoriales;
+    /**
+     * Getter.
+     *
+     * @return codigo: codigo de la Ciudad.
+     */
     @Column(name="CODIGO", nullable = false, length = 9)
     public String getCodigo() {
         return codigo;
     }
-
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo codigo
+     *
+     * @param codigo
+     */
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
-    
+    /**
+     * Getter.
+     *
+     * @return abreviatura: abreviatura de la Ciudad.
+     */
     @Column(name="ABREVIATURA", nullable = false, length = 6)
     public String getAbreviatura() {
         return abreviatura;
     }
-
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo abreviatura
+     *
+     * @param abreviatura
+     */
     public void setAbreviatura(String abreviatura) {
         this.abreviatura = abreviatura;
     }
-
+    /**
+     * Getter.
+     *
+     * @return nombre: nombre de la Ciudad.
+     */
     @Column(name="NOMBRE", nullable = false, length = 100)
     public String getNombre() {
         return nombre;
     }
-
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo nombre
+     *
+     * @param nombre
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+    /**
+     * Getter.
+     *
+     * @return pais: Pais al cual pertenece la Ciudad.
+     */
     @ManyToOne
     @Column(name="PAIS", nullable = false)
     public Pais getPais() {
         return pais;
     }
-
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo pais
+     *
+     * @param pais
+     */
     public void setPais(Pais pais) {
         this.pais = pais;
     }
+    /**
+     * Getter.
+     *
+     * @return departamentoTerritorials: listado de DepartamentoTerritorial que pertenecen a la Ciudad
+     */
     @OneToMany(mappedBy = "CIUDAD")
-    public List<DepartamentoTerritorial> getDepartamentoTerritorials() {
-        return departamentoTerritorials;
+    public List<DepartamentoTerritorial> getDepartamentosTerritoriales() {
+        return departamentosTerritoriales;
     }
-
-    public void setDepartamentoTerritorials(List<DepartamentoTerritorial> departamentoTerritorials) {
-        this.departamentoTerritorials = departamentoTerritorials;
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo departamentoTerritorials
+     *
+     * @param departamentosTerritoriales
+     */
+    public void setDepartamentoTerritorials(List<DepartamentoTerritorial> departamentosTerritoriales) {
+        this.departamentosTerritoriales = departamentosTerritoriales;
     }
 
     @Override

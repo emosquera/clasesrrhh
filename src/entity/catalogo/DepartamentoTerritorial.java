@@ -16,32 +16,41 @@ import javax.persistence.*;
 @Table(name="DEPARTAMENTO_TERRITORIAL")
 public class DepartamentoTerritorial extends EntityBase<Long>{
    /**
-     * Código de registro del departamento territorial
+     * codigo de registro del DepartamentoTerritorial
      *
      * @see #getCodigo()
      */
     private String codigo;
     /**
-     * Abreviatura para identificar al departamento territorial
+     * abreviatura para identificar al DepartamentoTerritorial
      *
      * @see #getAbreviatura()
      */
     private String abreviatura;
     /**
-     * Nombre del departamento territorial
+     * nombre del DepartamentoTerritorial
      *
      * @see #getNombre()
      */
     private String nombre;
     /**
-     * Ciudad a la cual pertenece el departamento territorial
+     * ciudad a la cual pertenece el DepartamentoTerritorial
      *
      * @see #getCiudad()
      */
     private Ciudad ciudad;
+    /**
+     * Lista de Barrio que pertenecen al DepartamentoTerritorial
+     *
+     * @see #getBarrios()
+     */
     private List<Barrio> barrios;
-
-   @Column(name="CODIGO", nullable = false, length = 9)
+    /**
+     * Getter.
+     *
+     * @return codigo: codigo del DepartamentoTerritorial.
+     */
+    @Column(name="CODIGO", nullable = false, length = 9)
     public String getCodigo() {
         return codigo;
     }
@@ -53,6 +62,11 @@ public class DepartamentoTerritorial extends EntityBase<Long>{
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
+     /**
+     * Getter.
+     *
+     * @return abreviatura: abreviatura del DepartamentoTerritorial.
+     */
     @Column(name="ABREVIATURA", nullable = false, length = 6)
     public String getAbreviatura() {
         return abreviatura;
@@ -65,6 +79,11 @@ public class DepartamentoTerritorial extends EntityBase<Long>{
     public void setAbreviatura(String abreviatura) {
         this.abreviatura = abreviatura;
     }
+     /**
+     * Getter.
+     *
+     * @return nombre: nombre del DepartamentoTerritorial.
+     */
     @Column(name="NOMBRE", nullable = false, length = 100)
     public String getNombre() {
         return nombre;
@@ -77,7 +96,11 @@ public class DepartamentoTerritorial extends EntityBase<Long>{
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
+    /**
+     * Getter.
+     *
+     * @return ciudad: ciudad a la que pertenece el DepartamentoTerritorial
+     */
     @ManyToOne
     @Column(name="CIUDAD", nullable=false)
     public Ciudad getCiudad() {
@@ -91,6 +114,11 @@ public class DepartamentoTerritorial extends EntityBase<Long>{
     public void setCiudad(Ciudad ciudad) {
         this.ciudad = ciudad;
     }
+    /**
+     * Getter.
+     *
+     * @return barrios: listado de Barrio que pertenecen al DepartamentoTerritorial
+     */
     @OneToMany(mappedBy = "DEPARTAMENTO_TERRITORIAL")
     public List<Barrio> getBarrios() {
         return barrios;

@@ -4,24 +4,24 @@ package entity.catalogo;
 import entity.base.EntityBase;
 import javax.persistence.*;
 /**
- * Clase EspecialidadAcademica
+ * Clase OficioProfesion
  *
- * Contiene la información relacionada a la EspecialidadAcademica
+ * Contiene la información relacionada al OficioProfesion
  *
  * @author Quarksoft-CIDESA
  * @version 1.0
  */
 @Entity
-@Table(name="ESPECIALIDAD_ACADEMICA")
-public class EspecialidadAcademica extends EntityBase<Long> {
+@Table(name="OFICIO_PROFESION")
+public class OficioProfesion extends EntityBase<Long> {
     /**
-     * codigo de registro de la EspecialidadAcademica
+     * codigo de registro del OficioProfesion
      *
      * @see #getCodigo()
      */
     private String codigo;
     /**
-     * nombre de registro de la EspecialidadAcademica
+     * nombre de registro del OficioProfesion
      *
      * @see #getCodigo()
      */
@@ -29,9 +29,8 @@ public class EspecialidadAcademica extends EntityBase<Long> {
     /**
      * Getter.
      *
-     * @return codigo: codigo de la EspecialidadAcademica.
+     * @return codigo: codigo del OficioProfesion.
      */
-    @Column(name="CODIGO", nullable = false, length = 9)
     public String getCodigo() {
         return codigo;
     }
@@ -46,9 +45,8 @@ public class EspecialidadAcademica extends EntityBase<Long> {
     /**
      * Getter.
      *
-     * @return nombre: nombre de la EspecialidadAcademica.
+     * @return nombre: nombre del OficioProfesion.
      */
-    @Column(name="NOMBRE", nullable = false, length = 100)
     public String getNombre() {
         return nombre;
     }
@@ -60,7 +58,7 @@ public class EspecialidadAcademica extends EntityBase<Long> {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
+   
     @Override
     public int hashCode() {
         int hash = 0;
@@ -71,26 +69,27 @@ public class EspecialidadAcademica extends EntityBase<Long> {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof EspecialidadAcademica)) {
+        if (!(object instanceof OficioProfesion)) {
             return false;
         }
-        EspecialidadAcademica other = (EspecialidadAcademica) object;
+        OficioProfesion other = (OficioProfesion) object;
         return !((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)));
     }
 
     @Override
     public String toString() {
-        return "entity.catalogo.EspecialidadAcademica[ id=" + id + " ]";
+        return "entity.catalogo.OficioProfesion[ id=" + id + " ]";
     }
 
     @Override
     public String getAsText() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
     /**
-     * Constructor por defecto de la entidad EspecialidadAcademica
+     * Constructor por defecto de la entidad OficioProfesion
      */
-    public EspecialidadAcademica() {
+    public OficioProfesion() {
     }
     
 }
