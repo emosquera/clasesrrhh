@@ -4,7 +4,7 @@ package entity.catalogo;
 import entity.base.EntityBase;
 import javax.persistence.*;
 /**
- * Clase OficioProfesion
+ * Clase OficioProfesion extiende de {@link EntityBase}
  *
  * Contiene la información relacionada al OficioProfesion
  *

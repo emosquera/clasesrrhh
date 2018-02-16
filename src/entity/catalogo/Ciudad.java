@@ -5,7 +5,7 @@ import entity.base.EntityBase;
 import java.util.List;
 import javax.persistence.*;
 /**
- * Clase Ciudad
+ * Clase Ciudad extiende de {@link EntityBase}
  *
  * Contiene la información relacionada a la Ciudad
  *

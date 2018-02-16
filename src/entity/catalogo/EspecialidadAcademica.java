@@ -4,7 +4,7 @@ package entity.catalogo;
 import entity.base.EntityBase;
 import javax.persistence.*;
 /**
- * Clase EspecialidadAcademica
+ * Clase EspecialidadAcademica extiende de {@link EntityBase}
  *
  * Contiene la información relacionada a la EspecialidadAcademica
  *

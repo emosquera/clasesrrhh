@@ -5,7 +5,7 @@ import entity.base.EntityBase;
 import java.util.List;
 import javax.persistence.*;
 /**
- * Clase DepartamentoTerritorial extiende de {@link BaseBienEntity}
+ * Clase DepartamentoTerritorial extiende de {@link EntityBase}
  *
  * Contiene la información relacionada al Departamento Territorial
  *

@@ -4,47 +4,40 @@ package entity.catalogo;
 import entity.base.EntityBase;
 import javax.persistence.*;
 /**
- * Clase Barrio extiende de {@link EntityBase}
+ * Clase TipoCargo extiende de {@link EntityBase}
  *
- * Contiene la información relacionada al barrio
+ * Contiene la información relacionada al Tipo de Cargo
  *
  * @author Quarksoft-CIDESA
  * @version 1.0
  */
 @Entity
-@Table(name="BARRIO")
-public class Barrio extends EntityBase<Long>{
+@Table(name="TIPO_CARGO")
+public class TipoCargo extends EntityBase<Long> {
     /**
-     * codigo de registro del Barrio
+     * codigo de registro del TipoCargo
      *
      * @see #getCodigo()
      */
     private String codigo;
     /**
-     * abreviatura para identificar al Barrio
+     * abreviatura para identificar al TipoCargo
      *
      * @see #getAbreviatura()
      */
     private String abreviatura;
     /**
-     * nombre del Barrio
+     * nombre del TipoCargo
      *
      * @see #getNombre()
      */
     private String nombre;
     /**
-     * departamentoTerritorial al cual pertenece el Barrio
-     *
-     * @see #getDepartamentoTerritorial()
-     */
-    private DepartamentoTerritorial departamentoTerritorial;
-
-    /**
      * Getter.
      *
-     * @return codigo: codigo identificador del Barrio.
+     * @return codigo: codigo del TipoCargo.
      */
-    @Column(name="CODIGO", nullable=false, length = 9)
+    @Column(name="CODIGO", nullable = false, length = 9)
     public String getCodigo() {
         return codigo;
     }
@@ -59,9 +52,9 @@ public class Barrio extends EntityBase<Long>{
     /**
      * Getter.
      *
-     * @return abreviatura: abreviatura del Barrio.
+     * @return abreviatura: abreviatura del TipoCargo.
      */
-    @Column(name="ABREVIATURA", nullable=false, length = 6)
+    @Column(name="ABREVIATURA", nullable = false, length = 6)
     public String getAbreviatura() {
         return abreviatura;
     }
@@ -76,9 +69,9 @@ public class Barrio extends EntityBase<Long>{
     /**
      * Getter.
      *
-     * @return nombre: nombre del Barrio.
+     * @return nombre: nombre del TipoCargo.
      */
-    @Column(name="NOMBRE", nullable=false, length = 100)
+    @Column(name="NOMBRE", nullable = false, length = 100)
     public String getNombre() {
         return nombre;
     }
@@ -89,24 +82,6 @@ public class Barrio extends EntityBase<Long>{
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-    /**
-     * Getter.
-     *
-     * @return departamentoTerritorial: departamentoTerritorial al cual pertenece el Barrio.
-     */
-    @ManyToOne
-    @Column(name="DEPARTAMENTO_TERRITORIAL", nullable=false)
-    public DepartamentoTerritorial getDepartamentoTerritorial() {
-        return departamentoTerritorial;
-    }
-    /**
-     * Setter. Asigna lo que recibe por parámetro al atributo departamentoTerritorial
-     *
-     * @param departamentoTerritorial
-     */
-    public void setDepartamentoTerritorial(DepartamentoTerritorial departamentoTerritorial) {
-        this.departamentoTerritorial = departamentoTerritorial;
     }
 
     @Override
@@ -119,26 +94,24 @@ public class Barrio extends EntityBase<Long>{
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Barrio)) {
+        if (!(object instanceof TipoCargo)) {
             return false;
         }
-        Barrio other = (Barrio) object;
+        TipoCargo other = (TipoCargo) object;
         return !((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)));
     }
 
     @Override
     public String toString() {
-        return "entity.catalogo.Barrio[ id=" + id + " ]";
+        return "entity.catalogo.TipoCargo[ id=" + id + " ]";
     }
 
     @Override
     public String getAsText() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    /**
-     * Constructor por defecto de la entidad Barrio
-     */
-    public Barrio() {
+
+    public TipoCargo() {
     }
     
 }

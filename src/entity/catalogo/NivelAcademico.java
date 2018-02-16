@@ -4,9 +4,9 @@ package entity.catalogo;
 import entity.base.EntityBase;
 import javax.persistence.*;
 /**
- * Clase EspecialidadAcademica
+ * Clase NivelAcademico extiende de {@link EntityBase}
  *
- * Contiene la información relacionada a la EspecialidadAcademica
+ * Contiene la información relacionada al NivelAcademico
  *
  * @author Quarksoft-CIDESA
  * @version 1.0
