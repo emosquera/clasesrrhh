@@ -38,7 +38,6 @@ public class Barrio extends EntityBase<Long>{
      * @see #getDepartamentoTerritorial()
      */
     private DepartamentoTerritorial departamentoTerritorial;
-
     /**
      * Getter.
      *
