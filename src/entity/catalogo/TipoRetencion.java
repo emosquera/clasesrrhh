@@ -4,24 +4,24 @@ package entity.catalogo;
 import entity.base.EntityBase;
 import javax.persistence.*;
 /**
- * Clase TipoBaja extiende de {@link EntityBase}
+ * Clase TipoRetencion extiende de {@link EntityBase}
  *
- * Contiene la información relacionada al Tipo de Baja
+ * Contiene la información relacionada al Tipo de Retencion
  *
  * @author Quarksoft-CIDESA
  * @version 1.0
  */
 @Entity
-@Table(name="TIPO_BAJA")
-public class TipoBaja extends EntityBase<Long> {
+@Table(name="TIPO_RETENCION")
+public class TipoRetencion extends EntityBase<Long> {
     /**
-     * codigo de registro del TipoBaja
+     * codigo de registro del TipoRetencion
      *
      * @see #getCodigo()
      */
     private String codigo;
     /**
-     * descripcion del TipoBaja
+     * descripcion del TipoRetencion
      *
      * @see #getDescripcion()
      */
@@ -29,7 +29,7 @@ public class TipoBaja extends EntityBase<Long> {
     /**
      * Getter.
      *
-     * @return codigo: codigo del TipoBaja.
+     * @return codigo: codigo del TipoRetencion.
      */
     @Column(name="CODIGO", nullable = false, length = 4)
     public String getCodigo() {
@@ -46,9 +46,9 @@ public class TipoBaja extends EntityBase<Long> {
     /**
      * Getter.
      *
-     * @return descripcion: descripcion del TipoBaja.
+     * @return descripcion: descripcion del TipoRetencion.
      */
-    @Column(name="DESCRIPCION", nullable = false, length = 30)
+    @Column(name="DESCRIPCION", nullable = false, length = 200)
     public String getDescripcion() {
         return descripcion;
     }
@@ -60,7 +60,7 @@ public class TipoBaja extends EntityBase<Long> {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-
+    
     @Override
     public int hashCode() {
         int hash = 0;
@@ -71,16 +71,16 @@ public class TipoBaja extends EntityBase<Long> {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof TipoBaja)) {
+        if (!(object instanceof TipoRetencion)) {
             return false;
         }
-        TipoBaja other = (TipoBaja) object;
+        TipoRetencion other = (TipoRetencion) object;
         return !((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)));
     }
 
     @Override
     public String toString() {
-        return "entity.catalogo.TipoBaja[ id=" + id + " ]";
+        return "entity.catalogo.TipoRetencion[ id=" + id + " ]";
     }
 
     @Override
@@ -88,9 +88,8 @@ public class TipoBaja extends EntityBase<Long> {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     /**
-     * Constructor por defecto de la entidad TipoBaja
+     * Constructor por defecto de la entidad TipoRetencion
      */
-    public TipoBaja() {
+    public TipoRetencion() {
     }
-    
 }
