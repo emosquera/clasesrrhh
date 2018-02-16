@@ -95,7 +95,11 @@ public class DepartamentoTerritorial extends EntityBase<Long>{
     public List<Barrio> getBarrios() {
         return barrios;
     }
-
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo barrios
+     *
+     * @param barrios
+     */
     public void setBarrios(List<Barrio> barrios) {
         this.barrios = barrios;
     }
@@ -126,7 +130,9 @@ public class DepartamentoTerritorial extends EntityBase<Long>{
     public String getAsText() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+    /**
+     * Constructor por defecto de la entidad DepartamentoTerritorial
+     */
     public DepartamentoTerritorial() {
     }
 }
