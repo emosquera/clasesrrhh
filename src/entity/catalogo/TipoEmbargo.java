@@ -48,7 +48,7 @@ public class TipoEmbargo extends EntityBase<Long>  {
      *
      * @return descripcion: descripcion del TipoEmbargo.
      */
-    @Column(name="DESCRIPCION", nullable = false, length = 200)
+    @Column(name="DESCRIPCION", nullable = false, length = 30)
     public String getDescripcion() {
         return descripcion;
     }

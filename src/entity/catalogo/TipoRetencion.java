@@ -48,7 +48,7 @@ public class TipoRetencion extends EntityBase<Long> {
      *
      * @return descripcion: descripcion del TipoRetencion.
      */
-    @Column(name="DESCRIPCION", nullable = false, length = 200)
+    @Column(name="DESCRIPCION", nullable = false, length = 30)
     public String getDescripcion() {
         return descripcion;
     }
