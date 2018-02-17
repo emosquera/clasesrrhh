@@ -22,21 +22,18 @@ public class FormacionPersona extends EntityBase<Long>  {
      *
      * @see #getOficioProfesion()
      */
-    
     private OficioProfesion oficioProfesion;
     /**
      * nivel academico asociado a la Formacion
      *
      * @see #getNivelAcademico()
      */
-    
     private NivelAcademico nivelAcademico;
     /**
      * especialidad academica asociada a la Formacion
      *
      * @see #getEspecialidadAcademica()
      */
-    
     private EspecialidadAcademica especialidadAcademica;
     /**
      * institucionn que imparte la Formacion
@@ -269,7 +266,7 @@ public class FormacionPersona extends EntityBase<Long>  {
      *
      * @return numeroDocumentoAcademico: numero que identifica al docummento Academico de Formacion.
      */ 
-    @Column(name="NUMERO_DOCUMENTO_ACADEMICO", nullable = true)
+    @Column(name="NUMERO_DOCUMENTO_ACADEMICO", nullable = true, length = 14)
     public String getNumeroDocumentoAcademico() {
         return numeroDocumentoAcademico;
     }

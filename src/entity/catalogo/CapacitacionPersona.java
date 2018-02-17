@@ -237,7 +237,7 @@ public class CapacitacionPersona extends EntityBase<Long> {
      *
      * @return numeroDocumentoAcademico: numero que identifica al docummento Academico de Capacitacion.
      */ 
-    @Column(name="NUMERO_DOCUMENTO_ACADEMICO", nullable = true)
+    @Column(name="NUMERO_DOCUMENTO_ACADEMICO", nullable = true, length = 14)
     public String getNumeroDocumentoAcademico() {
         return numeroDocumentoAcademico;
     }
