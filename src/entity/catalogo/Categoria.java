@@ -118,6 +118,7 @@ public class Categoria extends EntityBase<Long> {
      *
      * @return estado: estado que tiene la Categoria.
      */
+    @Enumerated(EnumType.STRING)
     @Column(name="ESTADO", nullable = false)
     public EstadoCategoria getEstado() {
         return estado;

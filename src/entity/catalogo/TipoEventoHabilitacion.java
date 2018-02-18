@@ -95,6 +95,7 @@ public class TipoEventoHabilitacion extends EntityBase<Long> {
      *
      * @return naturaleza: naturaleza del TipoEventoHabilitacion.
      */
+    @Enumerated(EnumType.STRING)
     @Column(name="NATURALEZA", nullable = false)
     public NaturalezaEvento getNaturaleza() {
         return naturaleza;

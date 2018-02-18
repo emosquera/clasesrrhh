@@ -50,6 +50,7 @@ public class Horario extends EntityBase<Long> {
      *
      * @return diaSemana: dia de la semana del Horario
      */
+    @Enumerated(EnumType.STRING)
     @Column(name="DIA")
     public DiaSemana getDiaSemana() {
         return diaSemana;

@@ -104,6 +104,7 @@ public class InhabilitacionPersona extends EntityBase<Long> {
      *
      * @return motivoInhabilitacion: motivo de la Inhabilitacion.
      */
+    @Enumerated(EnumType.STRING)
     @Column(name="MOTIVO_INHABILITACION", nullable = false)
     public MotivoInhabilitacion getMotivoInhabilitacion() {
         return motivoInhabilitacion;
