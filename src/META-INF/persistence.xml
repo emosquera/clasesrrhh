@@ -7,6 +7,25 @@
     <class>entity.catalogo.DepartamentoTerritorial</class>
     <class>entity.catalogo.Pais</class>
     <class>entity.catalogo.EspecialidadAcademica</class>
+    <class>entity.catalogo.NivelAcademico</class>
+    <class>entity.catalogo.OficioProfesion</class>
+    <class>entity.catalogo.TipoCargo</class>
+    <class>enums.catalogo.TipoDiscapacidad</class>
+    <class>entity.catalogo.Discapacidad</class>
+    <class>entity.catalogo.TipoBaja</class>
+    <class>entity.catalogo.TipoPermiso</class>
+    <class>entity.catalogo.TipoPuesto</class>
+    <class>entity.catalogo.TipoRetencion</class>
+    <class>entity.catalogo.TipoEmbargo</class>
+    <class>entity.catalogo.Categoria</class>
+    <class>entity.catalogo.CapacitacionPersona</class>
+    <class>entity.catalogo.FormacionPersona</class>
+    <class>entity.catalogo.InhabilitacionPersona</class>
+    <class>entity.catalogo.Horario</class>
+    <class>entity.catalogo.TipoEventoHabilitacion</class>
+    <class>entity.catalogo.TipoHabilitacion</class>
+    <class>entity.catalogo.TipoInclusionDatos</class>
+    <class>entity.catalogo.TipoEventoResolucion</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/syslife?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
