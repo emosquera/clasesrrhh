@@ -2,44 +2,42 @@
 package entity.catalogo;
 
 import entity.base.EntityBase;
-import java.util.List;
 import javax.persistence.*;
 /**
- * Clase TipoHabilitacion extiende de {@link EntityBase}
+ * Clase TipoDisposicion extiende de {@link EntityBase}
  *
- * Contiene la información relacionada al tipo de habilitacion
+ * Contiene la información relacionada al tipo de Disposicion
  *
  * @author Quarksoft-CIDESA
  * @version 1.0
  */
 @Entity
-@Table(name="TIPO_HABILITACION")
-public class TipoHabilitacion extends EntityBase<Long> {
-    
+@Table(name="TIPO_DISPOSICION")
+public class TipoDisposicion extends EntityBase<Long> {
     /**
-     * codigo de registro del Tipo de Habilitacion
+     * codigo de registro del Tipo de Disposicion
      *
      * @see #getCodigo()
      */
     private String codigo;
     /**
-     * descripcion del Tipo de Habilitacion
+     * descripcion del Tipo de Disposicion
      *
      * @see #getDescripcion()
      */
     private String descripcion;
     /**
-     * tipos de Disposiciones Asociadas al Tipo de Habilitacion
+     * resuluciones del Tipo de Disposicion
      *
-     * @see #getTipoDisposiciones()
+     * @see #getResoluciones()
      */
-    private List<TipoDisposicion> tipoDisposiciones;
+    private TipoHabilitacion resoluciones;
     /**
      * Getter.
      *
-     * @return codigo: codigo identificador del TipoHabilitacion
+     * @return codigo: codigo identificador del TipoDisposicion
      */
-    @Column(name="CODIGO", nullable = false, length = 4)
+    @Column(name="CODIGO", nullable = false, length = 10)
     public String getCodigo() {
         return codigo;
     }
@@ -54,9 +52,9 @@ public class TipoHabilitacion extends EntityBase<Long> {
     /**
      * Getter.
      *
-     * @return descripcion: descripcion del TipoHabilitacion.
+     * @return descripcion: descripcion del TipoDisposicion.
      */
-    @Column(name="DESCRIPCION", nullable = false, length = 75)
+    @Column(name="DESCRIPCION", nullable = false, length = 100)
     public String getDescripcion() {
         return descripcion;
     }
@@ -71,19 +69,20 @@ public class TipoHabilitacion extends EntityBase<Long> {
     /**
      * Getter.
      *
-     * @return tipoDisposiciones: tipos de disposiciones asociadas al TipoHabilitacion.
+     * @return resoluciones: resoluciones del TipoDisposicion.
      */
-    @OneToMany(mappedBy = "resoluciones")
-    public List<TipoDisposicion> getTipoDisposiciones() {
-        return tipoDisposiciones;
+    @ManyToOne
+    @Column(name="RESOLUCIONES", nullable = false)
+    public TipoHabilitacion getResoluciones() {
+        return resoluciones;
     }
     /**
-     * Setter. Asigna lo que recibe por parámetro al atributo tipoDisposiciones
+     * Setter. Asigna lo que recibe por parámetro al atributo resoluciones
      *
-     * @param tipoDisposiciones 
+     * @param resoluciones
      */
-    public void setTipoDisposiciones(List<TipoDisposicion> tipoDisposiciones) {
-        this.tipoDisposiciones = tipoDisposiciones;
+    public void setResoluciones(TipoHabilitacion resoluciones) {
+        this.resoluciones = resoluciones;
     }
     
     @Override
@@ -96,29 +95,24 @@ public class TipoHabilitacion extends EntityBase<Long> {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof TipoHabilitacion)) {
+        if (!(object instanceof TipoDisposicion)) {
             return false;
         }
-        TipoHabilitacion other = (TipoHabilitacion) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
+        TipoDisposicion other = (TipoDisposicion) object;
+        return !((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)));
     }
 
     @Override
     public String toString() {
-        return "entity.catalogo.TipoHabilitacion[ id=" + id + " ]";
+        return "entity.catalogo.TipoDisposicion[ id=" + id + " ]";
     }
 
     @Override
     public String getAsText() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    /**
-     * Constructor por defecto de la entidad TipoHabilitacion
-     */
-    public TipoHabilitacion() {
+
+    public TipoDisposicion() {
     }
     
 }

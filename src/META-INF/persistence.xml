@@ -26,6 +26,8 @@
     <class>entity.catalogo.TipoHabilitacion</class>
     <class>entity.catalogo.TipoInclusionDatos</class>
     <class>entity.catalogo.TipoEventoResolucion</class>
+    <class>entity.catalogo.TipoDisposicion</class>
+    <class>entity.catalogo.InstitucionEmbargo</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/syslife?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

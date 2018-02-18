@@ -46,6 +46,12 @@ public class DepartamentoTerritorial extends EntityBase<Long>{
      */
     private List<Barrio> barrios;
     /**
+     * Lista de Instituciones de Embargo que pertenecen al Departamento Territorial
+     *
+     * @see #getInstitucionesEmbargo()
+     */
+    private List<InstitucionEmbargo> institucionesEmbargo;
+    /**
      * Getter.
      *
      * @return codigo: codigo del DepartamentoTerritorial.
@@ -131,6 +137,23 @@ public class DepartamentoTerritorial extends EntityBase<Long>{
     public void setBarrios(List<Barrio> barrios) {
         this.barrios = barrios;
     }
+    /**
+     * Getter.
+     *
+     * @return institucionesEmbargo: listado de Instituciones de Embargo que pertenecen al DepartamentoTerritorial
+     */
+    @OneToMany(mappedBy = "DEPARTAMENTO_TERRITORIAL")
+    public List<InstitucionEmbargo> getInstitucionesEmbargo() {
+        return institucionesEmbargo;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo institucionesEmbargo
+     *
+     * @param institucionesEmbargo
+     */
+    public void setInstitucionesEmbargo(List<InstitucionEmbargo> institucionesEmbargo) {
+        this.institucionesEmbargo = institucionesEmbargo;
+    }
    
     @Override
     public int hashCode() {
@@ -163,4 +186,5 @@ public class DepartamentoTerritorial extends EntityBase<Long>{
      */
     public DepartamentoTerritorial() {
     }
+    
 }

@@ -46,6 +46,12 @@ public class Ciudad  extends EntityBase<Long>{
      */
     private List<DepartamentoTerritorial> departamentosTerritoriales;
     /**
+     * Lista de Instituciones de Embargo que pertenecen a la Ciudad
+     *
+     * @see #getInstitucionesEmbargo()
+     */
+    private List<InstitucionEmbargo> institucionesEmbargo;
+    /**
      * Getter.
      *
      * @return codigo: codigo de la Ciudad.
@@ -117,7 +123,7 @@ public class Ciudad  extends EntityBase<Long>{
     /**
      * Getter.
      *
-     * @return departamentoTerritorials: listado de DepartamentoTerritorial que pertenecen a la Ciudad
+     * @return departamentosTerritoriales: listado de Departamentos Territoriales que pertenecen a la Ciudad
      */
     @OneToMany(mappedBy = "CIUDAD")
     public List<DepartamentoTerritorial> getDepartamentosTerritoriales() {
@@ -130,6 +136,23 @@ public class Ciudad  extends EntityBase<Long>{
      */
     public void setDepartamentoTerritorials(List<DepartamentoTerritorial> departamentosTerritoriales) {
         this.departamentosTerritoriales = departamentosTerritoriales;
+    }
+    /**
+     * Getter.
+     *
+     * @return institucionesEmbargo: listado de Instituciones de Embargo que pertenecen a la Ciudad
+     */
+    @OneToMany(mappedBy = "CIUDAD")
+    public List<InstitucionEmbargo> getInstitucionesEmbargo() {
+        return institucionesEmbargo;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo institucionesEmbargo
+     *
+     * @param institucionesEmbargo
+     */
+    public void setInstitucionesEmbargo(List<InstitucionEmbargo> institucionesEmbargo) {
+        this.institucionesEmbargo = institucionesEmbargo;
     }
 
     @Override
