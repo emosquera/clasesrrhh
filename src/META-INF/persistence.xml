@@ -30,6 +30,7 @@
     <class>entity.catalogo.InstitucionEmbargo</class>
     <class>entity.externos.Nivel</class>
     <class>entity.catalogo.EntidadPlanillaPersonal</class>
+    <class>entity.catalogo.TipoPlanillaPersonal</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/syslife?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

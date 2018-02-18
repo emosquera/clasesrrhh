@@ -41,6 +41,12 @@ public class EntidadPlanillaPersonal extends EntityBase<Long> {
      */
     private EstadoEntidadPlanillaPersonal estadoEntidad;
     /**
+     * Planilla de Personal a la cual esta asociada la Entidad.
+     *
+     * @see #getTipoPlanillaPersonal()
+     */
+    private TipoPlanillaPersonal tipoPlanillaPersonal;
+    /**
      * Getter.
      *
      * @return codigo: codigo identificador de la Entidad de la Planilla de Personal.
@@ -109,6 +115,23 @@ public class EntidadPlanillaPersonal extends EntityBase<Long> {
      */
     public void setEstadoEntidad(EstadoEntidadPlanillaPersonal estadoEntidad) {
         this.estadoEntidad = estadoEntidad;
+    }
+    /**
+     * Getter.
+     *
+     * @return tipoPlanillaPersonal: Planilla de Personal a la cual esta asociada la Entidad.
+     */ 
+    @ManyToOne
+    public TipoPlanillaPersonal getTipoPlanillaPersonal() {
+        return tipoPlanillaPersonal;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo tipoPlanillaPersonal
+     *
+     * @param tipoPlanillaPersonal
+     */
+    public void setTipoPlanillaPersonal(TipoPlanillaPersonal tipoPlanillaPersonal) {
+        this.tipoPlanillaPersonal = tipoPlanillaPersonal;
     }
     
     @Override
