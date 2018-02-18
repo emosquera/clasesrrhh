@@ -203,6 +203,7 @@ public class CapacitacionPersona extends EntityBase<Long> {
      *
      * @return estadoAvanceAcademico: estado del avance acedemico de la persona en la Capacitacion.
      */ 
+    @Enumerated(EnumType.STRING)
     @Column(name="ESTADO_AVANCE_ACADEMICO", nullable = false)
     public EstadoAvanceAcademico getEstadoAvanceAcademico() {
         return estadoAvanceAcademico;
@@ -220,6 +221,7 @@ public class CapacitacionPersona extends EntityBase<Long> {
      *
      * @return tipoDocumentoProbatorio: tipo de documento probatorio de la Capacitacion.
      */ 
+    @Enumerated(EnumType.STRING)
     @Column(name="TIPO_DOCUMENTO_PROBATORIO", nullable = true)
     public TipoDocumentoProbatorioCapacitacion getTipoDocumentoProbatorio() {
         return tipoDocumentoProbatorio;
