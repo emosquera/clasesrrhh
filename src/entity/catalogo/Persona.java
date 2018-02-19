@@ -179,7 +179,14 @@ public class Persona extends EntityBase<Long>{
      * @see #getMotivoFallecimiento()
      */
     private MotivoFallecimiento motivoFallecimiento;
-    //private familiares: List<Familiares Persona>
+    /**
+     * Listado de familiares de la Persona
+     *
+     * @see #getCapacitacionesPersona()
+     */
+    private List<FamiliarPersona> familiaresPersona;
+    
+
     //private discapacidades: List<Discapacidades Persona>
     
     /**
@@ -654,6 +661,23 @@ public class Persona extends EntityBase<Long>{
      */
     public void setMotivoFallecimiento(MotivoFallecimiento motivoFallecimiento) {
         this.motivoFallecimiento = motivoFallecimiento;
+    }
+    /**
+     * Getter.
+     *
+     * @return familiaresPersona: listado de familiares de la Persona.
+     */
+    @OneToMany(mappedBy = "PERSONA")
+    public List<FamiliarPersona> getFamiliaresPersona() {
+        return familiaresPersona;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo formacifamiliaresPersonaonesPersona
+     *
+     * @param familiaresPersona
+     */
+    public void setFamiliaresPersona(List<FamiliarPersona> familiaresPersona) {
+        this.familiaresPersona = familiaresPersona;
     }
     /**
      * Getter.
