@@ -84,6 +84,12 @@ public class FormacionPersona extends EntityBase<Long>  {
      */
     private String numeroDocumentoAcademico;
     /**
+     * Persona que recibe la Formacion
+     *
+     * @see #getPersona()
+     */
+    private Persona persona;
+    /**
      * Getter.
      *
      * @return oficioProfesion: oficio o profesion asociado a la Formacion.
@@ -280,6 +286,23 @@ public class FormacionPersona extends EntityBase<Long>  {
     public void setNumeroDocumentoAcademico(String numeroDocumentoAcademico) {
         this.numeroDocumentoAcademico = numeroDocumentoAcademico;
     }
+    /**
+     * Getter.
+     *
+     * @return persona: persona que recibe la Formacion.
+     */ 
+    @ManyToOne
+    public Persona getPersona() {
+        return persona;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo persona
+     *
+     * @param persona
+     */
+    public void setPersona(Persona persona) {
+        this.persona = persona;
+    }
     
     @Override
     public int hashCode() {
@@ -312,5 +335,5 @@ public class FormacionPersona extends EntityBase<Long>  {
      */
     public FormacionPersona() {
     }
-    
+        
 }

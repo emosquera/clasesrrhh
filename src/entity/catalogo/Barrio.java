@@ -2,6 +2,7 @@
 package entity.catalogo;
 
 import entity.base.EntityBase;
+import java.util.List;
 import javax.persistence.*;
 /**
  * Clase Barrio extiende de {@link EntityBase}
@@ -38,6 +39,12 @@ public class Barrio extends EntityBase<Long>{
      * @see #getDepartamentoTerritorial()
      */
     private DepartamentoTerritorial departamentoTerritorial;
+    /**
+     * listado de personas que residen en el Barrio
+     *
+     * @see #getPersonas()
+     */
+    private List<Persona> personas;
     /**
      * Getter.
      *
@@ -107,6 +114,23 @@ public class Barrio extends EntityBase<Long>{
     public void setDepartamentoTerritorial(DepartamentoTerritorial departamentoTerritorial) {
         this.departamentoTerritorial = departamentoTerritorial;
     }
+    /**
+     * Getter.
+     *
+     * @return personas: listado de personas que residen en el Barrio.
+     */
+    @OneToMany(mappedBy = "BARRIO")
+    public List<Persona> getPersonas() {
+        return personas;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo personas
+     *
+     * @param personas
+     */
+    public void setPersonas(List<Persona> personas) {
+        this.personas = personas;
+    }
 
     @Override
     public int hashCode() {
@@ -139,5 +163,7 @@ public class Barrio extends EntityBase<Long>{
      */
     public Barrio() {
     }
+
+    
     
 }

@@ -47,6 +47,12 @@ public class InhabilitacionPersona extends EntityBase<Long> {
      */
     private String descripcion;
     /**
+     * Persona que recibe la Inhabilitacion de APN
+     *
+     * @see #getPersona()
+     */
+    private Persona persona;
+    /**
      * Getter.
      *
      * @return fechaInicio: fecha de inicio de la Inhabilitacion.
@@ -134,7 +140,24 @@ public class InhabilitacionPersona extends EntityBase<Long> {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-
+    /**
+     * Getter.
+     *
+     * @return persona: persona que recibe la Inhabilitacion de APN.
+     */ 
+    @ManyToOne
+    public Persona getPersona() {
+        return persona;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo persona
+     *
+     * @param persona
+     */
+    public void setPersona(Persona persona) {
+        this.persona = persona;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 0;
@@ -166,5 +189,5 @@ public class InhabilitacionPersona extends EntityBase<Long> {
      */
     public InhabilitacionPersona() {
     }
-    
+        
 }

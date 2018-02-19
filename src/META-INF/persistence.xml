@@ -35,6 +35,7 @@
     <class>entity.catalogo.ElementoEstructuraOrganizacional</class>
     <class>entity.catalogo.ConfiguracionEstructuraOrganizacional</class>
     <class>entity.catalogo.EstructuraOrganizacional</class>
+    <class>entity.catalogo.Persona</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/syslife?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
