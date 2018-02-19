@@ -101,6 +101,7 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
      *
      * @return codigo: codigo de la Estructura Organizacional.
      */
+    @Column(name="CODIGO", nullable = false, length = 30)
     public String getCodigo() {
         return codigo;
     }
@@ -117,6 +118,7 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
      *
      * @return abreviatura: abreviatura de la Estructura Organizacional.
      */
+    @Column(name="ABREVIATURA", nullable = false, length = 5)
     public String getAbreviatura() {
         return abreviatura;
     }
@@ -133,6 +135,7 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
      *
      * @return descripcion: descripcion de la Estructura Organizacional.
      */
+    @Column(name="DESCRIPCION", nullable = false, length = 200)
     public String getDescripcion() {
         return descripcion;
     }
@@ -149,6 +152,8 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
      *
      * @return estado: estado de la Estructura Organizacional.
      */
+    @Enumerated(EnumType.STRING)
+    @Column(name="ESTADO", nullable = false)
     public EstadoEstructuraOrganizacional getEstado() {
         return estado;
     }
@@ -165,6 +170,7 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
      *
      * @return codigoPadre: codigo de la Estructura Organizacional padre.
      */
+    @Column(name="CODIGO_PADRE", nullable = false, length = 30)
     public String getCodigoPadre() {
         return codigoPadre;
     }
