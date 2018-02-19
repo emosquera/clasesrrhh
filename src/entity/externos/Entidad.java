@@ -6,7 +6,6 @@
 package entity.externos;
 
 import entity.catalogo.ElementoEstructuraOrganizacional;
-import entity.catalogo.EntidadPlanillaPersonal;
 import entity.catalogo.EstructuraOrganizacional;
 import java.io.Serializable;
 import java.util.List;
@@ -21,16 +20,13 @@ import javax.persistence.OneToMany;
  * @author syslife01
  */
 @Entity
-public class Nivel implements Serializable {
+public class Entidad implements Serializable {
 
-    @OneToMany(mappedBy = "nivel")
+    @OneToMany(mappedBy = "entidad")
     private List<EstructuraOrganizacional> estructuraOrganizacionals;
 
-    @OneToMany(mappedBy = "nivel")
+    @OneToMany(mappedBy = "entidad")
     private List<ElementoEstructuraOrganizacional> elementoEstructuraOrganizacionals;
-
-    @OneToMany(mappedBy = "nivel")
-    private List<EntidadPlanillaPersonal> entidadPlanillaPersonals;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -55,16 +51,19 @@ public class Nivel implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Nivel)) {
+        if (!(object instanceof Entidad)) {
             return false;
         }
-        Nivel other = (Nivel) object;
-        return !((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)));
+        Entidad other = (Entidad) object;
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+            return false;
+        }
+        return true;
     }
 
     @Override
     public String toString() {
-        return "entity.externos.Nivel[ id=" + id + " ]";
+        return "entity.externos.Entidad[ id=" + id + " ]";
     }
     
 }

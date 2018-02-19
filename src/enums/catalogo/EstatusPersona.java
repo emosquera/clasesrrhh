@@ -6,13 +6,13 @@ public enum EstatusPersona {
     DATOS_INCOMPLETOS    ("DATOS_INCOMPLETOS"),
     DATOS_INCONSISTENTES ("DATOS_INCONSISTENTES");
 	
-	private final String EstatusPersona;
+	private final String estatusPersona;
 	
-	private EstatusPersona (String EstatusPersona) {
-		this.EstatusPersona = EstatusPersona;
+	private EstatusPersona (String estatusPersona) {
+		this.estatusPersona = estatusPersona;
 	}
 
 	public String getEstatusPersona() {
-		return EstatusPersona;
+		return estatusPersona;
 	}
 }

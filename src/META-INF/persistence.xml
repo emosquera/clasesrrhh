@@ -31,6 +31,10 @@
     <class>entity.externos.Nivel</class>
     <class>entity.catalogo.EntidadPlanillaPersonal</class>
     <class>entity.catalogo.TipoPlanillaPersonal</class>
+    <class>entity.externos.Entidad</class>
+    <class>entity.catalogo.ElementoEstructuraOrganizacional</class>
+    <class>entity.catalogo.ConfiguracionEstructuraOrganizacional</class>
+    <class>entity.catalogo.EstructuraOrganizacional</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/syslife?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
