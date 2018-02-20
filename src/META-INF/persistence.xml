@@ -44,6 +44,7 @@
     <class>g_gestion_tablas_catalogos.Barrio</class>
     <class>b_legajo_personal.DiscapacidadPersona</class>
     <class>z_enums.catalogo.TipoDiscapacidad</class>
+    <class>entity.externos.TipoMoneda</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/syslife?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
