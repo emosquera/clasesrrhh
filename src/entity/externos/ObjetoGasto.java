@@ -5,7 +5,7 @@
  */
 package entity.externos;
 
-import entity.catalogo.ConceptoPlanillaPersonal;
+import d_preparacion_planilla_personal.ConceptoPlanillaPersonal;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;

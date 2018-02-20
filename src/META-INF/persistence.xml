@@ -2,47 +2,48 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="ClasesRecursosHumanosPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>entity.catalogo.Barrio</class>
-    <class>entity.catalogo.Ciudad</class>
-    <class>entity.catalogo.DepartamentoTerritorial</class>
-    <class>entity.catalogo.Pais</class>
-    <class>entity.catalogo.EspecialidadAcademica</class>
-    <class>entity.catalogo.NivelAcademico</class>
-    <class>entity.catalogo.OficioProfesion</class>
-    <class>entity.catalogo.TipoCargo</class>
-    <class>enums.catalogo.TipoDiscapacidad</class>
-    <class>entity.catalogo.Discapacidad</class>
-    <class>entity.catalogo.TipoBaja</class>
-    <class>entity.catalogo.TipoPermiso</class>
-    <class>entity.catalogo.TipoPuesto</class>
-    <class>entity.catalogo.TipoRetencion</class>
-    <class>entity.catalogo.TipoEmbargo</class>
-    <class>entity.catalogo.Categoria</class>
-    <class>entity.catalogo.CapacitacionPersona</class>
-    <class>entity.catalogo.FormacionPersona</class>
-    <class>entity.catalogo.InhabilitacionPersona</class>
-    <class>entity.catalogo.Horario</class>
-    <class>entity.catalogo.TipoEventoHabilitacion</class>
-    <class>entity.catalogo.TipoHabilitacion</class>
-    <class>entity.catalogo.TipoInclusionDatos</class>
-    <class>entity.catalogo.TipoEventoResolucion</class>
-    <class>entity.catalogo.TipoDisposicion</class>
-    <class>entity.catalogo.InstitucionEmbargo</class>
     <class>entity.externos.Nivel</class>
-    <class>entity.catalogo.EntidadPlanillaPersonal</class>
-    <class>entity.catalogo.TipoPlanillaPersonal</class>
     <class>entity.externos.Entidad</class>
-    <class>entity.catalogo.ElementoEstructuraOrganizacional</class>
-    <class>entity.catalogo.ConfiguracionEstructuraOrganizacional</class>
-    <class>entity.catalogo.EstructuraOrganizacional</class>
-    <class>entity.catalogo.Persona</class>
-    <class>entity.catalogo.FamiliarPersona</class>
     <class>entity.externos.EstructuraPresupuestariaBase</class>
     <class>entity.externos.ObjetoGasto</class>
     <class>entity.externos.FuenteFinanciamiento</class>
-    <class>entity.catalogo.DetalleTopeContratos</class>
-    <class>entity.catalogo.TopeContratos</class>
-    <class>entity.catalogo.ConceptoPlanillaPersonal</class>
+    <class>a_programacion_presupuestaria.TopeContratos</class>
+    <class>a_programacion_presupuestaria.ElementoEstructuraOrganizacional</class>
+    <class>a_programacion_presupuestaria.TipoPuesto</class>
+    <class>a_programacion_presupuestaria.EstructuraOrganizacional</class>
+    <class>a_programacion_presupuestaria.ConfiguracionEstructuraOrganizacional</class>
+    <class>a_programacion_presupuestaria.Categoria</class>
+    <class>a_programacion_presupuestaria.DetalleTopeContratos</class>
+    <class>b_legajo_personal.InhabilitacionPersona</class>
+    <class>b_legajo_personal.TipoEventoHabilitacion</class>
+    <class>b_legajo_personal.Persona</class>
+    <class>b_legajo_personal.TipoInclusionDatos</class>
+    <class>b_legajo_personal.FormacionPersona</class>
+    <class>b_legajo_personal.CapacitacionPersona</class>
+    <class>b_legajo_personal.FamiliarPersona</class>
+    <class>b_legajo_personal.TipoDisposicion</class>
+    <class>b_legajo_personal.TipoHabilitacion</class>
+    <class>b_legajo_personal.TipoBaja</class>
+    <class>b_legajo_personal.TipoEventoResolucion</class>
+    <class>b_legajo_personal.Horario</class>
+    <class>d_preparacion_planilla_personal.EntidadPlanillaPersonal</class>
+    <class>d_preparacion_planilla_personal.TipoPlanillaPersonal</class>
+    <class>d_preparacion_planilla_personal.TipoPermiso</class>
+    <class>d_preparacion_planilla_personal.TipoRetencion</class>
+    <class>d_preparacion_planilla_personal.TipoEmbargo</class>
+    <class>d_preparacion_planilla_personal.ConceptoPlanillaPersonal</class>
+    <class>d_preparacion_planilla_personal.InstitucionEmbargo</class>
+    <class>g_gestion_tablas_catalogos.OficioProfesion</class>
+    <class>g_gestion_tablas_catalogos.Ciudad</class>
+    <class>g_gestion_tablas_catalogos.Pais</class>
+    <class>g_gestion_tablas_catalogos.TipoCargo</class>
+    <class>g_gestion_tablas_catalogos.Discapacidad</class>
+    <class>g_gestion_tablas_catalogos.NivelAcademico</class>
+    <class>g_gestion_tablas_catalogos.DepartamentoTerritorial</class>
+    <class>g_gestion_tablas_catalogos.EspecialidadAcademica</class>
+    <class>g_gestion_tablas_catalogos.Barrio</class>
+    <class>b_legajo_personal.DiscapacidadPersona</class>
+    <class>z_enums.catalogo.TipoDiscapacidad</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/syslife?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

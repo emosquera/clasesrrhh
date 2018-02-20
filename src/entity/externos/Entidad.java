@@ -5,8 +5,8 @@
  */
 package entity.externos;
 
-import entity.catalogo.ElementoEstructuraOrganizacional;
-import entity.catalogo.EstructuraOrganizacional;
+import a_programacion_presupuestaria.ElementoEstructuraOrganizacional;
+import a_programacion_presupuestaria.EstructuraOrganizacional;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;

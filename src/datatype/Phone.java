@@ -2,7 +2,7 @@ package datatype;
 
 
 
-import entity.base.PhoneLineType;
+import y_entity.base.PhoneLineType;
 import java.io.Serializable;
 
 import javax.persistence.*;
