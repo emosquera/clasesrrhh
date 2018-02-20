@@ -5,6 +5,7 @@ import entity.base.EntityBase;
 import entity.externos.Entidad;
 import entity.externos.Nivel;
 import enums.catalogo.EstadoEstructuraOrganizacional;
+import java.util.List;
 import javax.persistence.*;
 /**
  * Clase EstructuraOrganizacional extiende de {@link EntityBase}
@@ -17,7 +18,6 @@ import javax.persistence.*;
 @Entity
 @Table(name="ESTRUCTURA_ORGANIZACIONAL")
 public class EstructuraOrganizacional extends EntityBase<Long> {
-    
     /**
      * Nivel al cual pertenece la Estructura Organizacional
      *
@@ -60,6 +60,12 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
      * @see #getCodigoPadre()
      */
     private String codigoPadre;
+    /**
+     * topes de Contratos de la Estructura Organizacional
+     *
+     * @see #getTopesContratos()
+     */
+    private List<TopeContratos> topesContratos;
     /**
      * Getter.
      *
@@ -182,6 +188,23 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
     public void setCodigoPadre(String codigoPadre) {
         this.codigoPadre = codigoPadre;
     }
+    /**
+     * Getter.
+     *
+     * @return topesContratos: topes de contratos de la Estructura Organizacional padre.
+     */
+    @OneToMany(mappedBy = "estructuraOrganizacional")
+    public List<TopeContratos> getTopesContratos() {
+        return topesContratos;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo topesContratos
+     *
+     * @param topesContratos
+     */
+    public void setTopesContratos(List<TopeContratos> topesContratos) {
+        this.topesContratos = topesContratos;
+    }
     
     @Override
     public int hashCode() {
@@ -214,4 +237,5 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
      */
     public EstructuraOrganizacional() {
     }
+    
 }
