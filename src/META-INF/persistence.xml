@@ -42,6 +42,7 @@
     <class>entity.externos.FuenteFinanciamiento</class>
     <class>entity.catalogo.DetalleTopeContratos</class>
     <class>entity.catalogo.TopeContratos</class>
+    <class>entity.catalogo.ConceptoPlanillaPersonal</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/syslife?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

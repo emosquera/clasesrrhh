@@ -41,6 +41,12 @@ public class FamiliarPersona extends EntityBase<Long>  {
      */
     private Persona persona;
     /**
+     * Datos del Familiar
+     *
+     * @see #getPersona()
+     */
+    private Persona familiar;
+    /**
      * Getter.
      *
      * @return parentesco: parentesco del familiar con la persona.
@@ -107,6 +113,23 @@ public class FamiliarPersona extends EntityBase<Long>  {
      */
     public void setPersona(Persona persona) {
         this.persona = persona;
+    }
+    /**
+     * Getter.
+     *
+     * @return familiar: datos de la persona familiar.
+     */
+    @OneToOne
+    public Persona getFamiliar() {
+        return familiar;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo familiar
+     *
+     * @param familiar
+     */
+    public void setFamiliar(Persona familiar) {
+        this.familiar = familiar;
     }
 
     @Override
