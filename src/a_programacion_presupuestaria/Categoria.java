@@ -1,6 +1,7 @@
 //QSGEN This file will be ignored in future code generations if it's changed
 package a_programacion_presupuestaria;
 
+import java.util.List;
 import y_entity.base.EntityBase;
 import z_enums.catalogo.EstadoCategoria;
 import javax.persistence.*;
@@ -45,6 +46,12 @@ public class Categoria extends EntityBase<Long> {
      * @see #getEstado()
      */
     private EstadoCategoria estado;
+    /**
+     * Listado de Tablas de Categorias a las cuales esta asociada la Categoria
+     *
+     * @see #getCategoriaTablasCategorias()
+     */
+    private List<CategoriaTablaCategorias> categoriaTablasCategorias;
     /**
      * Getter.
      *
@@ -131,6 +138,23 @@ public class Categoria extends EntityBase<Long> {
     public void setEstado(EstadoCategoria estado) {
         this.estado = estado;
     }
+    /**
+     * Getter.
+     *
+     * @return categoriaTablaCategoriass: Listado de Tablas de Categorias a las cuales esta asociada la Categoria.
+     */
+    @OneToMany(mappedBy = "CATEGORIA")
+    public List<CategoriaTablaCategorias> getCategoriaTablasCategorias() {
+        return categoriaTablasCategorias;
+    }
+     /**
+     * Setter. Asigna lo que recibe por parámetro al atributo categoriaTablasCategorias
+     *
+     * @param categoriaTablasCategorias
+     */
+    public void setCategoriaTablasCategorias(List<CategoriaTablaCategorias> categoriaTablasCategorias) {
+        this.categoriaTablasCategorias = categoriaTablasCategorias;
+    }
     
     @Override
     public int hashCode() {
@@ -153,7 +177,7 @@ public class Categoria extends EntityBase<Long> {
     public String toString() {
         return "entity.catalogo.Categoria[ id=" + id + " ]";
     }
-
+    
     @Override
     public String getAsText() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

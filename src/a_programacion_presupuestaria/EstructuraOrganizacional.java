@@ -67,6 +67,12 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
      */
     private List<TopeContratos> topesContratos;
     /**
+     * Tablas de Categorias asociadas a la Estructura Organizacional
+     *
+     * @see #getTablasCategorias()
+     */
+    private List<TablaCategorias> tablasCategorias;
+    /**
      * Getter.
      *
      * @return nivel: nivel al cual pertenece la Estructura Organizacional.
@@ -205,6 +211,23 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
     public void setTopesContratos(List<TopeContratos> topesContratos) {
         this.topesContratos = topesContratos;
     }
+    /**
+     * Getter.
+     *
+     * @return tablasCategorias: Tablas de Categorias asociadas a la Estructura Organizacional.
+     */
+    @OneToMany(mappedBy = "estructuraOrganizacional")
+    public List<TablaCategorias> getTablasCategorias() {
+        return tablasCategorias;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo tablasCategorias
+     *
+     * @param tablasCategorias
+     */
+    public void setTablasCategorias(List<TablaCategorias> tablasCategorias) {
+        this.tablasCategorias = tablasCategorias;
+    }
     
     @Override
     public int hashCode() {
@@ -237,5 +260,6 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
      */
     public EstructuraOrganizacional() {
     }
+    
     
 }
