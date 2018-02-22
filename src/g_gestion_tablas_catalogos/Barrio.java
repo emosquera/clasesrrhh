@@ -48,7 +48,6 @@ public class Barrio extends EntityBase<Long>{
      * @see #getCiudad()
      */
     private Ciudad ciudad;
-    
     /**
      * Getter.
      *
@@ -100,7 +99,6 @@ public class Barrio extends EntityBase<Long>{
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
     /**
      * Getter.
      *
@@ -118,13 +116,21 @@ public class Barrio extends EntityBase<Long>{
     public void setPersonas(List<Persona> personas) {
         this.personas = personas;
     }
-
+    /**
+     * Getter.
+     *
+     * @return ciudad: ciudad a la cual pertenece el Barrio.
+     */
     @ManyToOne
     @JoinColumn(name = "CIUDAD_ID")
     public Ciudad getCiudad() {
         return ciudad;
     }
-
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo ciudad
+     *
+     * @param ciudad
+     */
     public void setCiudad(Ciudad ciudad) {
         this.ciudad = ciudad;
     }
@@ -160,7 +166,5 @@ public class Barrio extends EntityBase<Long>{
      */
     public Barrio() {
     }
-
-    
     
 }

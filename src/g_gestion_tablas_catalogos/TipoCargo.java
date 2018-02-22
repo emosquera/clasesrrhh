@@ -1,6 +1,8 @@
 //QSGEN This file will be ignored in future code generations if it's changed
 package g_gestion_tablas_catalogos;
 
+import a_programacion_presupuestaria.Cargo;
+import java.util.List;
 import y_entity.base.EntityBase;
 import javax.persistence.*;
 /**
@@ -32,6 +34,12 @@ public class TipoCargo extends EntityBase<Long> {
      * @see #getNombre()
      */
     private String nombre;
+    /**
+     * Listado de cargos asociados al TipoCargo
+     *
+     * @see #getCargos()
+     */
+    private List<Cargo> cargos;
     /**
      * Getter.
      *
@@ -82,6 +90,23 @@ public class TipoCargo extends EntityBase<Long> {
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+    /**
+     * Getter.
+     *
+     * @return cargos: Listado de cargos asociados al TipoCargo.
+     */
+    @OneToMany(mappedBy = "tipoCargo")
+    public List<Cargo> getCargos() {
+        return cargos;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo cargos
+     *
+     * @param cargos
+     */
+    public void setCargos(List<Cargo> cargos) {
+        this.cargos = cargos;
     }
 
     @Override

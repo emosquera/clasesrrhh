@@ -68,6 +68,7 @@ public class FamiliarPersona extends EntityBase<Long>  {
      *
      * @return tipoDocumentoIdentificacion: tipo de documento de identificacion del familiar con la persona.
      */
+    @Enumerated(EnumType.STRING)
     @Column(name="TIPO_DOCUMENTO_IDENTIFICACION", nullable = false)
     public TipoDocumentoIdentificacion getTipoDocumentoIdentificacion() {
         return tipoDocumentoIdentificacion;
@@ -103,6 +104,7 @@ public class FamiliarPersona extends EntityBase<Long>  {
      * @return persona: persona a la cual se le asocia el familiar.
      */
     @ManyToOne
+    @JoinColumn(name="PERSONA_ID")
     public Persona getPersona() {
         return persona;
     }

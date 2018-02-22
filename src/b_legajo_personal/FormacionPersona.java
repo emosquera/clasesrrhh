@@ -98,8 +98,7 @@ public class FormacionPersona extends EntityBase<Long>  {
      * @return oficioProfesion: oficio o profesion asociado a la Formacion.
      */
     @ManyToOne
-    @JoinColumn(name="OFICIO_PROFESION_ID")
-    @Column(name = "OFICIO_PROFESION")
+    @JoinColumn(name = "OFICIO_PROFESION_ID")
     public OficioProfesion getOficioProfesion() {
         return oficioProfesion;
     }
@@ -117,8 +116,7 @@ public class FormacionPersona extends EntityBase<Long>  {
      * @return nivelAcademico: nivel academico asociado a la Formacion.
      */
     @ManyToOne
-    @JoinColumn(name="NIVEL_ACADEMICO_ID")
-    @Column(name = "NIVEL_ACADEMICO")
+    @JoinColumn(name = "NIVEL_ACADEMICO_ID")
     public NivelAcademico getNivelAcademico() {
         return nivelAcademico;
     }
@@ -136,8 +134,7 @@ public class FormacionPersona extends EntityBase<Long>  {
      * @return especialidadAcademica: especialidad academica asociada a la Formacion.
      */
     @ManyToOne
-    @JoinColumn(name="ESPECIALIDAD_ACADEMICA_ID")
-    @Column(name = "ESPECIALIDAD_ACADEMICA")
+    @JoinColumn(name = "ESPECIALIDAD_ACADEMICA_ID")
     public EspecialidadAcademica getEspecialidadAcademica() {
         return especialidadAcademica;
     }
@@ -295,6 +292,7 @@ public class FormacionPersona extends EntityBase<Long>  {
      * @return persona: persona que recibe la Formacion.
      */ 
     @ManyToOne
+    @JoinColumn(name="PERSONA_ID", nullable = false)
     public Persona getPersona() {
         return persona;
     }

@@ -244,6 +244,7 @@ public class Persona extends EntityBase<Long>{
      *
      * @return tipoContribuyente: tipo de contribuyente que es la Persona.
      */
+    @Enumerated(EnumType.STRING)
     @Column(name="TIPO_CONTRIBUYENTE", nullable = true)
     public TipoContribuyente getTipoContribuyente() {
         return tipoContribuyente;
@@ -329,6 +330,7 @@ public class Persona extends EntityBase<Long>{
      *
      * @return sexo: Genero de la Persona.
      */
+    @Enumerated(EnumType.STRING)
     @Column(name="SEXO", nullable = false)
     public Sexo getSexo() {
         return sexo;
@@ -346,6 +348,7 @@ public class Persona extends EntityBase<Long>{
      *
      * @return estadoCivil: estado civil  de la Persona.
      */
+    @Enumerated(EnumType.STRING)
     @Column(name="ESTADO_CIVIL", nullable = false)
     public EstadoCivil getEstadoCivil() {
         return estadoCivil;
@@ -467,7 +470,7 @@ public class Persona extends EntityBase<Long>{
      * @return ciudad: ciudad donde reside la Persona.
      */
     @ManyToOne
-    @Column(name="CIUDAD", nullable = false)
+    @JoinColumn(name="CIUDAD_ID")
     public Ciudad getCiudad() {
         return ciudad;
     }
@@ -485,7 +488,7 @@ public class Persona extends EntityBase<Long>{
      * @return departamentoTerritorial: departamento territorial donde reside la Persona.
      */
     @ManyToOne
-    @Column(name="DEPARTAMENTO_TERRITORIAL", nullable = false)
+    @JoinColumn(name="DEPARTAMENTO_TERRITORIAL_ID")
     public DepartamentoTerritorial getDepartamentoTerritorial() {
         return departamentoTerritorial;
     }
@@ -503,7 +506,7 @@ public class Persona extends EntityBase<Long>{
      * @return barrio: barrio donde reside la Persona.
      */
     @ManyToOne
-    @Column(name="BARRIO", nullable = false)
+    @JoinColumn(name="BARRIO_ID")
     public Barrio getBarrio() {
         return barrio;
     }
@@ -588,6 +591,7 @@ public class Persona extends EntityBase<Long>{
      *
      * @return tipoRegistroConducir: tipo de registro de conducir de la Persona.
      */
+    @Enumerated(EnumType.STRING)
     @Column(name="TIPO_REGISTRO_CONDUCIR", nullable = true)
     public TipoRegistroConducir getTipoRegistroConducir() {
         return tipoRegistroConducir;
@@ -622,6 +626,7 @@ public class Persona extends EntityBase<Long>{
      *
      * @return grupoSanguineo: grupo sanguineo de la Persona.
      */
+    @Enumerated(EnumType.STRING)
     @Column(name="GRUPO_SANGUINEO", nullable = false)
     public GrupoSanguineo getGrupoSanguineo() {
         return grupoSanguineo;
@@ -639,8 +644,8 @@ public class Persona extends EntityBase<Long>{
      *
      * @return fechaFallecimiento: fecha de fallecimiento de la Persona.
      */
-    @Column(name="FECHA_FALLECIMIENTO", nullable = true)
     @Temporal(javax.persistence.TemporalType.DATE)
+    @Column(name="FECHA_FALLECIMIENTO", nullable = true)
     public Date getFechaFallecimiento() {
         return fechaFallecimiento;
     }
@@ -657,6 +662,7 @@ public class Persona extends EntityBase<Long>{
      *
      * @return motivoFallecimiento: motivo de fallecimiento de la Persona.
      */
+    @Enumerated(EnumType.STRING)
     @Column(name="MOTIVO_FALLECIMIENTO", nullable = true)
     public MotivoFallecimiento getMotivoFallecimiento() {
         return motivoFallecimiento;
@@ -674,7 +680,7 @@ public class Persona extends EntityBase<Long>{
      *
      * @return familiaresPersona: listado de familiares de la Persona.
      */
-    @OneToMany(mappedBy = "PERSONA")
+    @OneToMany(mappedBy = "persona")
     public List<FamiliarPersona> getFamiliaresPersona() {
         return familiaresPersona;
     }
@@ -691,7 +697,7 @@ public class Persona extends EntityBase<Long>{
      *
      * @return discapacidadesPersona: listado de discapacidades de la Persona.
      */
-    @OneToMany(mappedBy = "PERSONA")
+    @OneToMany(mappedBy = "persona")
     public List<DiscapacidadPersona> getDiscapacidadesPersona() {
         return discapacidadesPersona;
     }
@@ -708,7 +714,7 @@ public class Persona extends EntityBase<Long>{
      *
      * @return formacionesPersona: listado de cada formacion recibida por la Persona.
      */
-    @OneToMany(mappedBy = "PERSONA")
+    @OneToMany(mappedBy = "persona")
     public List<FormacionPersona> getFormacionesPersona() {
         return formacionesPersona;
     }
@@ -725,7 +731,7 @@ public class Persona extends EntityBase<Long>{
      *
      * @return capacitacionesPersona: Listado de cada capacitacion recibida por la Persona.
      */
-    @OneToMany(mappedBy = "PERSONA")
+    @OneToMany(mappedBy = "persona")
     public List<CapacitacionPersona> getCapacitacionesPersona() {
         return capacitacionesPersona;
     }
@@ -742,7 +748,7 @@ public class Persona extends EntityBase<Long>{
      *
      * @return inhabilitacionesPersona: Listado de cada inhabilitacion de APN que ha recibido la Persona.
      */
-    @OneToMany(mappedBy = "PERSONA")
+    @OneToMany(mappedBy = "persona")
     public List<InhabilitacionPersona> getInhabilitacionesPersona() {
         return inhabilitacionesPersona;
     }
@@ -759,6 +765,7 @@ public class Persona extends EntityBase<Long>{
      *
      * @return estatusPersona: estatus de la Persona.
      */
+    @Enumerated(EnumType.STRING)
     @Column(name="ESTATUS", nullable = false)
     public EstatusPersona getEstatusPersona() {
         return estatusPersona;

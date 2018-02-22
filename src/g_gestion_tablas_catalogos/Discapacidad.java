@@ -98,7 +98,7 @@ public class Discapacidad extends EntityBase<Long> {
      *
      * @return discapacidadesPersonas: Listado de discapacidades de personas.
      */
-    @OneToMany(mappedBy = "DISCAPACIDAD")
+    @OneToMany(mappedBy = "discapacidad")
     public List<DiscapacidadPersona> getDiscapacidadesPersonas() {
         return discapacidadesPersonas;
     }

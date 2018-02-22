@@ -13,14 +13,13 @@ import javax.persistence.*;
  * @version 1.0
  */
 @Entity
-@Table(name="CONFIGURACION_EO")
+@Table(name="CONFIGURACION_ESTRUCTURA_ORGANIZACIONAL")
 public class ConfiguracionEstructuraOrganizacional extends EntityBase<Long> {
     /**
      * Listado de Elementos que permite generar la configuracion de la Estructura Organizacional
      *
      * @see #getElementoEstructuraOrganizacional()
      */
-    @OneToMany(mappedBy = "configuracionEstructuraOrganizacional")
     private List<ElementoEstructuraOrganizacional> elementosEstructuraOrganizacional;
     /**
      * formato generado con los codigos de los Elementos de la Estructura Organizacional
@@ -33,6 +32,7 @@ public class ConfiguracionEstructuraOrganizacional extends EntityBase<Long> {
      *
      * @return elementosEstructuraOrganizacional: Listado de Elementos de Estructura Organizacional.
      */
+    @OneToMany(mappedBy = "configuracionEstructuraOrganizacional")
     public List<ElementoEstructuraOrganizacional> getElementosEstructuraOrganizacional() {
         return elementosEstructuraOrganizacional;
     }
@@ -49,6 +49,7 @@ public class ConfiguracionEstructuraOrganizacional extends EntityBase<Long> {
      *
      * @return formato: formato generado de los Elementos de Estructura Organizacional.
      */
+    @Column(name="FORMATO", nullable = false, length = 30)
     public String getFormato() {
         return formato;
     }

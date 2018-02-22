@@ -31,6 +31,7 @@ public class NivelAcademico extends EntityBase<Long> {
      *
      * @return codigo: codigo del NivelAcademico.
      */
+    @Column(name="CODIGO", nullable = false, length = 9)
     public String getCodigo() {
         return codigo;
     }
@@ -47,6 +48,7 @@ public class NivelAcademico extends EntityBase<Long> {
      *
      * @return nombre: nombre del NivelAcademico.
      */
+    @Column(name="NOMBRE", nullable = false, length = 100)
     public String getNombre() {
         return nombre;
     }

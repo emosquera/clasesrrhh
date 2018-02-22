@@ -59,6 +59,7 @@ public class DetalleTopeContratos extends EntityBase<Long> {
      * @return estructuraPresupuestariaBase: Estructura Presupuestaria Base a la cual esta asociada el detalle de tope de contratos.
      */
     @ManyToOne
+    @JoinColumn(name="ESTRUCTURA_PRESUPUESTARIA_BASE_ID")
     public EstructuraPresupuestariaBase getEstructuraPresupuestariaBase() {
         return estructuraPresupuestariaBase;
     }
@@ -76,6 +77,7 @@ public class DetalleTopeContratos extends EntityBase<Long> {
      * @return objetoGasto: Objeto de Gasto al cual esta asociada el detalle de tope de contratos.
      */
     @ManyToOne
+    @JoinColumn(name="OBJETO_GASTO_ID")
     public ObjetoGasto getObjetoGasto() {
         return objetoGasto;
     }
@@ -93,6 +95,7 @@ public class DetalleTopeContratos extends EntityBase<Long> {
      * @return fuenteFinanciamiento: Fuente de Financiamiento al cual esta asociada el detalle de tope de contratos.
      */
     @ManyToOne
+    @JoinColumn(name="FUENTE_FINANCIAMIENTO_ID")
     public FuenteFinanciamiento getFuenteFinanciamiento() {
         return fuenteFinanciamiento;
     }
@@ -144,6 +147,7 @@ public class DetalleTopeContratos extends EntityBase<Long> {
      * @return topeContratos: tope de contratos al cual esta asociado el detalle.
      */
     @ManyToOne
+    @JoinColumn(name="TOPE_CONTRATOS_ID")
     public TopeContratos getTopeContratos() {
         return topeContratos;
     }

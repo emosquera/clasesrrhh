@@ -73,12 +73,18 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
      */
     private List<TablaCategorias> tablasCategorias;
     /**
+     * Anexos de Personal asociados a la Estructura Organizacional
+     *
+     * @see #getAnexosPersonal()
+     */
+    private List<AnexoPersonal> anexosPersonal;
+    /**
      * Getter.
      *
      * @return nivel: nivel al cual pertenece la Estructura Organizacional.
      */
     @ManyToOne
-    @Column(name="NIVEL", nullable = false)
+    @JoinColumn(name="NIVEL_ID")
     public Nivel getNivel() {
         return nivel;
     }
@@ -96,7 +102,7 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
      * @return entidad: entidad al cual pertenece la Estructura Organizacional.
      */
     @ManyToOne
-    @Column(name="ENTIDAD", nullable = false)
+    @JoinColumn(name="ENTIDAD_ID")
     public Entidad getEntidad() {
         return entidad;
     }
@@ -228,6 +234,23 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
     public void setTablasCategorias(List<TablaCategorias> tablasCategorias) {
         this.tablasCategorias = tablasCategorias;
     }
+    /**
+     * Getter.
+     *
+     * @return anexosPersonal: Anexos de Personal asociados a la Estructura Organizacional.
+     */
+    @OneToMany(mappedBy = "estructuraOrganizacional")
+    public List<AnexoPersonal> getAnexoPersonals() {
+        return anexosPersonal;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo anexosPersonal
+     *
+     * @param anexosPersonal
+     */
+    public void setAnexoPersonals(List<AnexoPersonal> anexosPersonal) {
+        this.anexosPersonal = anexosPersonal;
+    }
     
     @Override
     public int hashCode() {
@@ -260,6 +283,8 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
      */
     public EstructuraOrganizacional() {
     }
+
+    
     
     
 }

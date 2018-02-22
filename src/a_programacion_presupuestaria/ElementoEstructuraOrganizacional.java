@@ -70,7 +70,7 @@ public class ElementoEstructuraOrganizacional extends EntityBase<Long> {
      * @return nivel: nivel al cual pertenece el Elemento de Estructura Organizacional.
      */
     @ManyToOne
-    @Column(name="NIVEL", nullable = false)
+    @JoinColumn(name="NIVEL_ID")
     public Nivel getNivel() {
         return nivel;
     }
@@ -88,7 +88,7 @@ public class ElementoEstructuraOrganizacional extends EntityBase<Long> {
      * @return entidad: entidad a la cual pertenece el Elemento de Estructura Organizacional.
      */
     @ManyToOne
-    @Column(name="ENTIDAD", nullable = false)
+    @JoinColumn(name="ENTIDAD_ID")
     public Entidad getEntidad() {
         return entidad;
     }
@@ -191,6 +191,7 @@ public class ElementoEstructuraOrganizacional extends EntityBase<Long> {
      * @return configuracionEstructuraOrganizacional: Configuracion a la cual pertenece el Elemento de la Estructura Organizacional.
      */
     @ManyToOne
+    @JoinColumn(name="CONFIGURACION_ESTRUCTURA_ORGANIZACIONAL_ID", nullable = false)
     public ConfiguracionEstructuraOrganizacional getConfiguracionEstructuraOrganizacional() {
         return configuracionEstructuraOrganizacional;
     }
@@ -234,7 +235,5 @@ public class ElementoEstructuraOrganizacional extends EntityBase<Long> {
      */
     public ElementoEstructuraOrganizacional() {
     }
-
-    
     
 }

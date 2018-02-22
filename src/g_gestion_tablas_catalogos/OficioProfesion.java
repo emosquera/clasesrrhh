@@ -31,6 +31,7 @@ public class OficioProfesion extends EntityBase<Long> {
      *
      * @return codigo: codigo del OficioProfesion.
      */
+    @Column(name="CODIGO", nullable = false, length = 9)
     public String getCodigo() {
         return codigo;
     }
@@ -47,6 +48,7 @@ public class OficioProfesion extends EntityBase<Long> {
      *
      * @return nombre: nombre del OficioProfesion.
      */
+    @Column(name="NOMBRE", nullable = false, length = 100)
     public String getNombre() {
         return nombre;
     }
@@ -85,7 +87,6 @@ public class OficioProfesion extends EntityBase<Long> {
     public String getAsText() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
     /**
      * Constructor por defecto de la entidad OficioProfesion
      */

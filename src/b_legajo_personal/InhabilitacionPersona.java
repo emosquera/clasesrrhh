@@ -146,6 +146,7 @@ public class InhabilitacionPersona extends EntityBase<Long> {
      * @return persona: persona que recibe la Inhabilitacion de APN.
      */ 
     @ManyToOne
+    @JoinColumn(name="PERSONA_ID", nullable = false)
     public Persona getPersona() {
         return persona;
     }

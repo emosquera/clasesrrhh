@@ -114,8 +114,8 @@ public class InstitucionEmbargo extends EntityBase<Long> {
      *
      * @return ciudad: ciudad donde se encuentra ubicada la Institucion de Embargo.
      */
-    @Column(name="CIUDAD", nullable = false)
     @ManyToOne
+    @JoinColumn(name="CIUDAD_ID")
     public Ciudad getCiudad() {
         return ciudad;
     }
@@ -132,8 +132,8 @@ public class InstitucionEmbargo extends EntityBase<Long> {
      *
      * @return departamentoTerritorial: departamento territorial donde se encuentra ubicada la Institucion de Embargo.
      */
-    @Column(name="DEPARTAMENTO_TERRITORIAL", nullable = false)
     @ManyToOne
+    @JoinColumn(name="DEPARTAMENTO_TERRITORIAL_ID")
     public DepartamentoTerritorial getDepartamentoTerritorial() {
         return departamentoTerritorial;
     }

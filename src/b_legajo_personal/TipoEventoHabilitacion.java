@@ -123,10 +123,7 @@ public class TipoEventoHabilitacion extends EntityBase<Long> {
             return false;
         }
         TipoEventoHabilitacion other = (TipoEventoHabilitacion) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
+        return !((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)));
     }
 
     @Override

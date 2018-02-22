@@ -143,7 +143,7 @@ public class Categoria extends EntityBase<Long> {
      *
      * @return categoriaTablaCategoriass: Listado de Tablas de Categorias a las cuales esta asociada la Categoria.
      */
-    @OneToMany(mappedBy = "CATEGORIA")
+    @OneToMany(mappedBy = "categoria")
     public List<CategoriaTablaCategorias> getCategoriaTablasCategorias() {
         return categoriaTablasCategorias;
     }

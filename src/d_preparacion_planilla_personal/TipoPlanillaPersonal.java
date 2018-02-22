@@ -92,8 +92,8 @@ public class TipoPlanillaPersonal extends EntityBase<Long> {
      *
      * @return desde: fecha inicio del periodo de la Planilla de Personal.
      */
-    @Column(name="FECHA_DESDE", nullable = false)
     @Temporal(javax.persistence.TemporalType.DATE)
+    @Column(name="FECHA_DESDE", nullable = false)
     public Date getDesde() {
         return desde;
     }
@@ -110,8 +110,8 @@ public class TipoPlanillaPersonal extends EntityBase<Long> {
      *
      * @return desde: fecha fin del periodo de la Planilla de Personal.
      */
-    @Column(name="FECHA_HASTA", nullable = false)
     @Temporal(javax.persistence.TemporalType.DATE)
+    @Column(name="FECHA_HASTA", nullable = false)
     public Date getHasta() {
         return hasta;
     }
@@ -128,6 +128,7 @@ public class TipoPlanillaPersonal extends EntityBase<Long> {
      *
      * @return periodicidad: periodicidad de la Planilla de Personal.
      */
+    @Enumerated(EnumType.STRING)
     @Column(name="PERIODICIDAD", nullable = false)
     public PeriodicidadPlanillaPersonal getPeriodicidad() {
         return periodicidad;
@@ -145,7 +146,7 @@ public class TipoPlanillaPersonal extends EntityBase<Long> {
      *
      * @return entidadesPlanillaPersonal: Entidades asociadas a la Planilla de Personal.
      */
-    @OneToMany(mappedBy = "TIPO_PLANILLA_PERSONAL")
+    @OneToMany(mappedBy = "tipoPlanillaPersonal")
     public List<EntidadPlanillaPersonal> getEntidadesPlanillaPersonal() {
         return entidadesPlanillaPersonal;
     }

@@ -1,60 +1,61 @@
 //QSGEN This file will be ignored in future code generations if it's changed
 package a_programacion_presupuestaria;
 
-import y_entity.base.EntityBase;
 import java.util.List;
+import y_entity.base.EntityBase;
 import javax.persistence.*;
 /**
- * Clase TopeContratos extiende de {@link EntityBase}
+ * Clase AnexoPersonal extiende de {@link EntityBase}
  *
- * Contiene la información relacionada al Tope de Contratos
+ * Contiene la información relacionada al Anexo de Personal
  *
  * @author Quarksoft-CIDESA
  * @version 1.0
  */
 @Entity
-@Table(name="TOPE_CONTRATOS")
-public class TopeContratos extends EntityBase<Long> {
+@Table(name="ANEXO_PERSONAL")
+public class AnexoPersonal extends EntityBase<Long> {
     /**
-     * Estructura Organizacional a la cual esta asociada el Tope de Contratos
+     * estructura Organizacional a la cual esta asociada el Anexo de Personal
      *
      * @see #getEstructuraOrganizacional()
      */
     private EstructuraOrganizacional estructuraOrganizacional;
     /**
-     * codigo del Tope de Contratos
+     * codigo de registro del Anexo de Personal
      *
      * @see #getCodigo()
      */
-    private String codigo;//: String(10)
+    private String codigo;
     /**
-     * descripcion del Tope de Contratos
+     * descripcion del Anexo de Personal
      *
      * @see #getDescripcion()
      */
-    private String descripcion;//:String(200)
+    private String descripcion;
     /**
-     * version del Tope de Contratos
+     * version del Anexo de Personal
      *
      * @see #getVersion()
      */
     private int version;
     /**
-     * año del Tope de Contratos
+     * año del Anexo de Personal
      *
      * @see #getAño()
      */
     private int año;
     /**
-     * Listado de detalles del Tope de Contratos
+     * Listado de detalles del Anexo de Personal
      *
-     * @see #getDetallesTopeContratos()
+     * @see #getDetallesAnexoPersonal()
      */
-    private List<DetalleTopeContratos> detallesTopeContratos;
+    private List<DetalleAnexoPersonal> detallesAnexoPersonal;
+    
     /**
      * Getter.
      *
-     * @return estructuraOrganizacional: Estructura Organizacional a la cual esta asociada el Tope de Contratos.
+     * @return estructuraOrganizacional: estructura Organizacional a la cual esta asociada el Anexo de Personal.
      */
     @ManyToOne
     @JoinColumn(name="ESTRUCTURA_ORGANIZACIONAL_ID")
@@ -72,7 +73,7 @@ public class TopeContratos extends EntityBase<Long> {
     /**
      * Getter.
      *
-     * @return codigo: codigo del Tope de Contratos.
+     * @return codigo: codigo del Anexo de Personal.
      */
     @Column(name="CODIGO", nullable = false, length = 10)
     public String getCodigo() {
@@ -89,7 +90,7 @@ public class TopeContratos extends EntityBase<Long> {
     /**
      * Getter.
      *
-     * @return descripcion: descripcion del Tope de Contratos.
+     * @return descipcion: descripcion del Anexo de Personal.
      */
     @Column(name="DESCRIPCION", nullable = false, length = 200)
     public String getDescripcion() {
@@ -106,7 +107,7 @@ public class TopeContratos extends EntityBase<Long> {
     /**
      * Getter.
      *
-     * @return version: version del Tope de Contratos.
+     * @return version: version del Anexo de Personal.
      */
     @Column(name="VERSION", nullable = false)
     public int getVersion() {
@@ -123,7 +124,7 @@ public class TopeContratos extends EntityBase<Long> {
     /**
      * Getter.
      *
-     * @return año: año del Tope de Contratos.
+     * @return año: año del Anexo de Personal.
      */
     @Column(name="AÑO", nullable = false)
     public int getAño() {
@@ -140,21 +141,21 @@ public class TopeContratos extends EntityBase<Long> {
     /**
      * Getter.
      *
-     * @return detallesTopeContratos: detalles asociados al Tope de Contratos.
+     * @return detallesAnexoPersonal: Listado de detalle del Anexo de Personal.
      */
-    @OneToMany(mappedBy = "topeContratos")
-    public List<DetalleTopeContratos> getDetallesTopeContratos() {
-        return detallesTopeContratos;
+    @OneToMany(mappedBy = "anexoPersonal")
+    public List<DetalleAnexoPersonal> getDetallesAnexoPersonal() {
+        return detallesAnexoPersonal;
     }
     /**
-     * Setter. Asigna lo que recibe por parámetro al atributo detallesTopeContratos
+     * Setter. Asigna lo que recibe por parámetro al atributo detallesAnexoPersonal
      *
-     * @param detallesTopeContratos
+     * @param detallesAnexoPersonal
      */
-    public void setDetallesTopeContratos(List<DetalleTopeContratos> detallesTopeContratos) {
-        this.detallesTopeContratos = detallesTopeContratos;
+    public void setDetallesAnexoPersonal(List<DetalleAnexoPersonal> detallesAnexoPersonal) {
+        this.detallesAnexoPersonal = detallesAnexoPersonal;
     }
-   
+    
     @Override
     public int hashCode() {
         int hash = 0;
@@ -165,16 +166,16 @@ public class TopeContratos extends EntityBase<Long> {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof TopeContratos)) {
+        if (!(object instanceof AnexoPersonal)) {
             return false;
         }
-        TopeContratos other = (TopeContratos) object;
+        AnexoPersonal other = (AnexoPersonal) object;
         return !((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)));
     }
 
     @Override
     public String toString() {
-        return "entity.catalogo.TopeContratos[ id=" + id + " ]";
+        return "a_programacion_presupuestaria.AnexoPersonal[ id=" + id + " ]";
     }
 
     @Override
@@ -182,9 +183,9 @@ public class TopeContratos extends EntityBase<Long> {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     /**
-     * Constructor por defecto de la entidad TopeContratos
+     * Constructor por defecto de la entidad AnexoPersonal
      */
-    public TopeContratos() {
+    public AnexoPersonal() {
     }
     
 }

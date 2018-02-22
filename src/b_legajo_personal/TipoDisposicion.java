@@ -72,7 +72,7 @@ public class TipoDisposicion extends EntityBase<Long> {
      * @return resoluciones: resoluciones del TipoDisposicion.
      */
     @ManyToOne
-    @Column(name="RESOLUCIONES", nullable = false)
+    @JoinColumn(name="RESOLUCIONES_ID")
     public TipoHabilitacion getResoluciones() {
         return resoluciones;
     }

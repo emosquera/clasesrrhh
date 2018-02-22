@@ -27,7 +27,7 @@ public class CategoriaTablaCategorias extends EntityBase<Long> {
      *
      * @see #getTablaCategorias()
      */
-    private TablaCategorias TablaCategorias;
+    private TablaCategorias tablaCategorias;
     /**
      * Monto de salario para la categoria en el mes
      *
@@ -41,11 +41,18 @@ public class CategoriaTablaCategorias extends EntityBase<Long> {
      */
     private Mes mes;
     /**
+     * Listado de Cargos Asociados a la Categoria asociada a la Tabla de Categorias
+     *
+     * @see #getMes()
+     */
+    private List<Cargo> cargos;
+    /**
      * Getter.
      *
      * @return categoria: categoria asociada a la Tabla de Categorias.
      */
     @ManyToOne
+    @JoinColumn(name="CATEGORIA_ID")
     public Categoria getCategoria() {
         return categoria;
     }
@@ -63,16 +70,17 @@ public class CategoriaTablaCategorias extends EntityBase<Long> {
      * @return TablaCategorias: Tabla de Categoria asociada a Categorias.
      */
     @ManyToOne
+    @JoinColumn(name="TABLA_CATEGORIA_ID")
     public TablaCategorias getTablaCategorias() {
-        return TablaCategorias;
+        return tablaCategorias;
     }
     /**
-     * Setter. Asigna lo que recibe por parámetro al atributo TablaCategorias
+     * Setter. Asigna lo que recibe por parámetro al atributo tablaCategorias
      *
-     * @param TablaCategorias
+     * @param tablaCategorias
      */
-    public void setTablaCategorias(TablaCategorias TablaCategorias) {
-        this.TablaCategorias = TablaCategorias;
+    public void setTablaCategorias(TablaCategorias tablaCategorias) {
+        this.tablaCategorias = tablaCategorias;
     }
     /**
      * Getter.
@@ -109,7 +117,24 @@ public class CategoriaTablaCategorias extends EntityBase<Long> {
     public void setMes(Mes mes) {
         this.mes = mes;
     }
-
+    /**
+     * Getter.
+     *
+     * @return cargos: Listado de Cargos Asociados a la Categoria asociada a la Tabla de Categorias.
+     */
+    @OneToMany(mappedBy = "categoriaTablaCategorias")
+    public List<Cargo> getCargos() {
+        return cargos;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo cargos
+     *
+     * @param cargos
+     */
+    public void setCargos(List<Cargo> cargos) {
+        this.cargos = cargos;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 0;

@@ -86,7 +86,7 @@ public class EntidadPlanillaPersonal extends EntityBase<Long> {
      * @return nivel: nivel al cual pertenece la Entidad de la Planilla de Personal.
      */ 
     @ManyToOne
-    @Column(name = "NIVEL", nullable = false)
+    @JoinColumn(name = "NIVEL_ID")
     public Nivel getNivel() {
         return nivel;
     }
@@ -122,6 +122,7 @@ public class EntidadPlanillaPersonal extends EntityBase<Long> {
      * @return tipoPlanillaPersonal: Planilla de Personal a la cual esta asociada la Entidad.
      */ 
     @ManyToOne
+    @JoinColumn(name="TIPO_PLANILLA_PERSONAL_ID")
     public TipoPlanillaPersonal getTipoPlanillaPersonal() {
         return tipoPlanillaPersonal;
     }

@@ -57,6 +57,7 @@ public class TablaCategorias extends EntityBase<Long> {
      *
      * @return codigo: codigo de la Tabla de Categorias.
      */
+    @Column(name="CODIGO", nullable = false, length = 5)
     public String getCodigo() {
         return codigo;
     }
@@ -73,6 +74,7 @@ public class TablaCategorias extends EntityBase<Long> {
      *
      * @return nombre: nombre de la Tabla de Categorias.
      */
+    @Column(name="NOMBRE", nullable = false, length = 500)
     public String getNombre() {
         return nombre;
     }
@@ -89,6 +91,7 @@ public class TablaCategorias extends EntityBase<Long> {
      *
      * @return abreviatura: abreviatura de la Tabla de Categorias.
      */
+    @Column(name="ABREVIATURA", nullable = false, length = 6)
     public String getAbreviatura() {
         return abreviatura;
     }
@@ -106,6 +109,7 @@ public class TablaCategorias extends EntityBase<Long> {
      * @return tipoMoneda: Tipo de Moneda de los Salarios Asociados a la Tabla de Categorias.
      */
     @ManyToOne
+    @JoinColumn(name="TIPO_MONEDA_ID")
     public TipoMoneda getTipoMoneda() {
         return tipoMoneda;
     }
@@ -122,7 +126,7 @@ public class TablaCategorias extends EntityBase<Long> {
      *
      * @return categoriasTablaCategorias: Listado de Categorias Asociadas a la Tabla de Categorias.
      */
-    @OneToMany(mappedBy = "TABLA_CATEGORIAS")
+    @OneToMany(mappedBy = "tablaCategorias")
     public List<CategoriaTablaCategorias> getCategoriasTablaCategorias() {
         return categoriasTablaCategorias;
     }
@@ -140,6 +144,7 @@ public class TablaCategorias extends EntityBase<Long> {
      * @return estructuraOrganizacional: Estructura Organizacional a la cual pertenece la Tabla de Categorias.
      */
     @ManyToOne
+    @Column(name="ESTRUCTURA_ORGANIZACIONAL_ID", nullable = false)
     public EstructuraOrganizacional getEstructuraOrganizacional() {
         return estructuraOrganizacional;
     }

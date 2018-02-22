@@ -2,7 +2,6 @@
 package b_legajo_personal;
 
 import g_gestion_tablas_catalogos.Discapacidad;
-import b_legajo_personal.Persona;
 import y_entity.base.EntityBase;
 import z_enums.catalogo.TipoDocumentoProbatorioDiscapacidad;
 import java.util.Date;
@@ -59,7 +58,7 @@ public class DiscapacidadPersona extends EntityBase<Long> {
      * @return discapacidad: Discapacidad que se asocia a la persona.
      */
     @ManyToOne
-    @Column(name="DISCAPACIDAD", nullable = false)
+    @JoinColumn(name="DISCAPACIDAD_ID")
     public Discapacidad getDiscapacidad() {
         return discapacidad;
     }
@@ -76,8 +75,8 @@ public class DiscapacidadPersona extends EntityBase<Long> {
      *
      * @return fechaInicio: fecha de inicio de la discapacidad.
      */
-    @Column(name="FECHA_INICIO", nullable = false)
     @Temporal(javax.persistence.TemporalType.DATE)
+    @Column(name="FECHA_INICIO", nullable = false)
     public Date getFechaInicio() {
         return fechaInicio;
     }
@@ -94,8 +93,8 @@ public class DiscapacidadPersona extends EntityBase<Long> {
      *
      * @return fechaFin: fecha de fin de la discapacidad.
      */
-    @Column(name="FECHA_FIN", nullable = true)
     @Temporal(javax.persistence.TemporalType.DATE)
+    @Column(name="FECHA_FIN", nullable = true)
     public Date getFechaFin() {
         return fechaFin;
     }
@@ -112,6 +111,7 @@ public class DiscapacidadPersona extends EntityBase<Long> {
      *
      * @return tipoDocumentoProbatorio: tipo de documento probatorio de la discapacidad.
      */
+    @Enumerated(EnumType.STRING)
     @Column(name="TIPO_DOCUMENTO_PROBATORIO", nullable = false)
     public TipoDocumentoProbatorioDiscapacidad getTipoDocumentoProbatorio() {
         return tipoDocumentoProbatorio;
@@ -147,7 +147,7 @@ public class DiscapacidadPersona extends EntityBase<Long> {
      * @return persona: persona a la cual se le asocia la discapacidad.
      */
     @ManyToOne
-    @Column(name="PERSONA", nullable = false)
+    @JoinColumn(name="PERSONA_ID")
     public Persona getPersona() {
         return persona;
     }

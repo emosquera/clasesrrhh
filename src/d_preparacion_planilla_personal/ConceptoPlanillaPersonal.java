@@ -120,7 +120,8 @@ public class ConceptoPlanillaPersonal extends EntityBase<Long> {
      *
      * @return objetoGasto: Objeto de Gasto asociado al concepto de la Planilla de Personal.
      */
-     @ManyToOne
+    @ManyToOne
+    @JoinColumn(name="OBJETO_GASTO_ID")
     public ObjetoGasto getObjetoGasto() {
         return objetoGasto;
     }

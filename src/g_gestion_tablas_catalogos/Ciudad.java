@@ -35,8 +35,6 @@ public class Ciudad  extends EntityBase<Long>{
      * @see #getNombre()
      */
     private String nombre;
-
-
     /**
      * Lista de Instituciones de Embargo que pertenecen a la Ciudad
      *
@@ -49,16 +47,18 @@ public class Ciudad  extends EntityBase<Long>{
      * @see #getPersonas()
      */
     private List<Persona> personas;
-    
     /**
      * Departamento Territorial al que pertence la Ciudad.
      *
      * @see #getPersonas()
      */
     private DepartamentoTerritorial departamentoTerritorial;
+    /**
+     * Listado de barrios que pertenecen a la Ciudad.
+     *
+     * @see #getPersonas()
+     */
     private List<Barrio> barrios;
-    
-    
     /**
      * Getter.
      *
@@ -110,8 +110,6 @@ public class Ciudad  extends EntityBase<Long>{
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
-    
     /**
      * Getter.
      *
@@ -146,18 +144,41 @@ public class Ciudad  extends EntityBase<Long>{
     public void setPersonas(List<Persona> personas) {
         this.personas = personas;
     }
-
+    /**
+     * Getter.
+     *
+     * @return departamentoTerritorial: departamento territorial al cual pertenece la ciudad.
+     */
     @ManyToOne
     @JoinColumn(name = "DEPARTAMENTO_TERRITORIAL_ID")
     public DepartamentoTerritorial getDepartamentoTerritorial() {
         return departamentoTerritorial;
     }
-
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo departamentoTerritorial
+     *
+     * @param departamentoTerritorial
+     */
     public void setDepartamentoTerritorial(DepartamentoTerritorial departamentoTerritorial) {
         this.departamentoTerritorial = departamentoTerritorial;
     }
-    
-    
+    /**
+     * Getter.
+     *
+     * @return barrios: Listado de barrios que pertenecen a la Ciudad.
+     */
+    @OneToMany(mappedBy = "ciudad")
+    public List<Barrio> getBarrios() {
+        return barrios;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo barrios
+     *
+     * @param barrios
+     */
+    public void setBarrios(List<Barrio> barrios) {
+        this.barrios = barrios;
+    }
 
     @Override
     public int hashCode() {
@@ -190,16 +211,5 @@ public class Ciudad  extends EntityBase<Long>{
      */
     public Ciudad() {
     }
-
-    @OneToMany(mappedBy = "ciudad")
-    public List<Barrio> getBarrios() {
-        return barrios;
-    }
-
-    public void setBarrios(List<Barrio> barrios) {
-        this.barrios = barrios;
-    }
-
-    
     
 }

@@ -263,6 +263,7 @@ public class CapacitacionPersona extends EntityBase<Long> {
      * @return persona: persona que recibe la Capacitacion.
      */ 
     @ManyToOne
+    @JoinColumn(name="PERSONA_ID")
     public Persona getPersona() {
         return persona;
     }
