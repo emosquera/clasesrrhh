@@ -33,12 +33,15 @@ public class Pais extends EntityBase<Long> {
      * @see #getNombre()
      */
     private String nombre;
+    
     /**
-     * Listado de Ciudad que pertenecen al Pais
+     * Listado de Depatamentos Territoriales asociados al Pais
      *
-     * @see #getCiudades()
+     * @see #getDepartamentosTerritoriales()
      */
-    private List<Ciudad> ciudades;
+    private List<DepartamentoTerritorial> departamentosTerritoriales;
+    
+    
     /**
      * Getter.
      *
@@ -90,22 +93,14 @@ public class Pais extends EntityBase<Long> {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    /**
-     * Getter.
-     *
-     * @return ciudades: Listado de Ciudad que pertenecen al Pais.
-     */
-    @OneToMany(mappedBy = "PAIS")
-    public List<Ciudad> getCiudades() {
-        return ciudades;
+    
+    @OneToMany(mappedBy = "pais")
+    public List<DepartamentoTerritorial> getDepartamentosTerritoriales() {
+        return departamentosTerritoriales;
     }
-    /**
-     * Setter. Asigna lo que recibe por parámetro al atributo ciudades
-     *
-     * @param ciudades
-     */
-    public void setCiudades(List<Ciudad> ciudades) {
-        this.ciudades = ciudades;
+
+    public void setDepartamentosTerritoriales(List<DepartamentoTerritorial> departamentosTerritoriales) {
+        this.departamentosTerritoriales = departamentosTerritoriales;
     }
     
     @Override

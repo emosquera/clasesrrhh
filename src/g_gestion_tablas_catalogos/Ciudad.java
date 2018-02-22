@@ -35,18 +35,8 @@ public class Ciudad  extends EntityBase<Long>{
      * @see #getNombre()
      */
     private String nombre;
-    /**
-     * pais al cual pertenece la Ciudad
-     *
-     * @see #getPais()
-     */
-    private Pais pais;
-    /**
-     * Lista de DepartamentoTerritorial que pertenecen a la Ciudad
-     *
-     * @see #getDepartamentosTerritoriales()
-     */
-    private List<DepartamentoTerritorial> departamentosTerritoriales;
+
+
     /**
      * Lista de Instituciones de Embargo que pertenecen a la Ciudad
      *
@@ -59,6 +49,16 @@ public class Ciudad  extends EntityBase<Long>{
      * @see #getPersonas()
      */
     private List<Persona> personas;
+    
+    /**
+     * Departamento Territorial al que pertence la Ciudad.
+     *
+     * @see #getPersonas()
+     */
+    private DepartamentoTerritorial departamentoTerritorial;
+    private List<Barrio> barrios;
+    
+    
     /**
      * Getter.
      *
@@ -110,47 +110,14 @@ public class Ciudad  extends EntityBase<Long>{
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    /**
-     * Getter.
-     *
-     * @return pais: Pais al cual pertenece la Ciudad.
-     */
-    @ManyToOne
-    @Column(name="PAIS", nullable = false)
-    public Pais getPais() {
-        return pais;
-    }
-    /**
-     * Setter. Asigna lo que recibe por parámetro al atributo pais
-     *
-     * @param pais
-     */
-    public void setPais(Pais pais) {
-        this.pais = pais;
-    }
-    /**
-     * Getter.
-     *
-     * @return departamentosTerritoriales: listado de Departamentos Territoriales que pertenecen a la Ciudad
-     */
-    @OneToMany(mappedBy = "CIUDAD")
-    public List<DepartamentoTerritorial> getDepartamentosTerritoriales() {
-        return departamentosTerritoriales;
-    }
-    /**
-     * Setter. Asigna lo que recibe por parámetro al atributo departamentoTerritorials
-     *
-     * @param departamentosTerritoriales
-     */
-    public void setDepartamentoTerritorials(List<DepartamentoTerritorial> departamentosTerritoriales) {
-        this.departamentosTerritoriales = departamentosTerritoriales;
-    }
+    
+    
     /**
      * Getter.
      *
      * @return institucionesEmbargo: listado de Instituciones de Embargo que pertenecen a la Ciudad
      */
-    @OneToMany(mappedBy = "CIUDAD")
+    @OneToMany(mappedBy = "ciudad")
     public List<InstitucionEmbargo> getInstitucionesEmbargo() {
         return institucionesEmbargo;
     }
@@ -167,7 +134,7 @@ public class Ciudad  extends EntityBase<Long>{
      *
      * @return personas: listado de personas que residen en la Ciudad.
      */
-    @OneToMany(mappedBy = "CIUDAD")
+    @OneToMany(mappedBy = "ciudad")
     public List<Persona> getPersonas() {
         return personas;
     }
@@ -179,6 +146,18 @@ public class Ciudad  extends EntityBase<Long>{
     public void setPersonas(List<Persona> personas) {
         this.personas = personas;
     }
+
+    @ManyToOne
+    @JoinColumn(name = "DEPARTAMENTO_TERRITORIAL_ID")
+    public DepartamentoTerritorial getDepartamentoTerritorial() {
+        return departamentoTerritorial;
+    }
+
+    public void setDepartamentoTerritorial(DepartamentoTerritorial departamentoTerritorial) {
+        this.departamentoTerritorial = departamentoTerritorial;
+    }
+    
+    
 
     @Override
     public int hashCode() {
@@ -210,6 +189,15 @@ public class Ciudad  extends EntityBase<Long>{
      * Constructor por defecto de la entidad Ciudad
      */
     public Ciudad() {
+    }
+
+    @OneToMany(mappedBy = "ciudad")
+    public List<Barrio> getBarrios() {
+        return barrios;
+    }
+
+    public void setBarrios(List<Barrio> barrios) {
+        this.barrios = barrios;
     }
 
     

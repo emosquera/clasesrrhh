@@ -34,18 +34,21 @@ public class Barrio extends EntityBase<Long>{
      * @see #getNombre()
      */
     private String nombre;
-    /**
-     * departamentoTerritorial al cual pertenece el Barrio
-     *
-     * @see #getDepartamentoTerritorial()
-     */
-    private DepartamentoTerritorial departamentoTerritorial;
+
     /**
      * listado de personas que residen en el Barrio
      *
      * @see #getPersonas()
      */
     private List<Persona> personas;
+    
+    /**
+     * Ciudad a la que pertenece el Barrio
+     *
+     * @see #getCiudad()
+     */
+    private Ciudad ciudad;
+    
     /**
      * Getter.
      *
@@ -97,30 +100,13 @@ public class Barrio extends EntityBase<Long>{
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    /**
-     * Getter.
-     *
-     * @return departamentoTerritorial: departamentoTerritorial al cual pertenece el Barrio.
-     */
-    @ManyToOne
-    @Column(name="DEPARTAMENTO_TERRITORIAL", nullable=false)
-    public DepartamentoTerritorial getDepartamentoTerritorial() {
-        return departamentoTerritorial;
-    }
-    /**
-     * Setter. Asigna lo que recibe por parámetro al atributo departamentoTerritorial
-     *
-     * @param departamentoTerritorial
-     */
-    public void setDepartamentoTerritorial(DepartamentoTerritorial departamentoTerritorial) {
-        this.departamentoTerritorial = departamentoTerritorial;
-    }
+    
     /**
      * Getter.
      *
      * @return personas: listado de personas que residen en el Barrio.
      */
-    @OneToMany(mappedBy = "BARRIO")
+    @OneToMany(mappedBy = "barrio")
     public List<Persona> getPersonas() {
         return personas;
     }
@@ -131,6 +117,16 @@ public class Barrio extends EntityBase<Long>{
      */
     public void setPersonas(List<Persona> personas) {
         this.personas = personas;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "CIUDAD_ID")
+    public Ciudad getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(Ciudad ciudad) {
+        this.ciudad = ciudad;
     }
 
     @Override
