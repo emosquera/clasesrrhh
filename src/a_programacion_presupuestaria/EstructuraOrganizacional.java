@@ -79,6 +79,12 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
      */
     private List<AnexoPersonal> anexosPersonal;
     /**
+     * Listado de Solicitudes de Nuevas Categorias asociadas a la Estructura Organizacional
+     *
+     * @see #getSolicitudesNuevaCategoria()
+     */
+    private List<SolicitudNuevaCategoria> solicitudesNuevaCategoria;
+    /**
      * Getter.
      *
      * @return nivel: nivel al cual pertenece la Estructura Organizacional.
@@ -251,6 +257,23 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
     public void setAnexoPersonals(List<AnexoPersonal> anexosPersonal) {
         this.anexosPersonal = anexosPersonal;
     }
+    /**
+     * Getter.
+     *
+     * @return solicitudesNuevaCategoria: Listado de Solicitudes de Nuevas Categorias asociadas a la Estructura Organizacional.
+     */
+    @OneToMany(mappedBy = "estructuraOrganizacional")
+    public List<SolicitudNuevaCategoria> getSolicitudesNuevaCategoria() {
+        return solicitudesNuevaCategoria;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo solicitudesNuevaCategoria
+     *
+     * @param solicitudesNuevaCategoria
+     */
+    public void setSolicitudesNuevaCategoria(List<SolicitudNuevaCategoria> solicitudesNuevaCategoria) {
+        this.solicitudesNuevaCategoria = solicitudesNuevaCategoria;
+    }
     
     @Override
     public int hashCode() {
@@ -283,8 +306,5 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
      */
     public EstructuraOrganizacional() {
     }
-
-    
-    
     
 }

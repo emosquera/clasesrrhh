@@ -51,6 +51,7 @@
     <class>a_programacion_presupuestaria.DetalleAnexoPersonal</class>
     <class>a_programacion_presupuestaria.Cargo</class>
     <class>a_programacion_presupuestaria.Puesto</class>
+    <class>a_programacion_presupuestaria.SolicitudNuevaCategoria</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/syslife?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

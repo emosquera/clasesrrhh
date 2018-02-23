@@ -53,6 +53,12 @@ public class Categoria extends EntityBase<Long> {
      */
     private List<CategoriaTablaCategorias> categoriaTablasCategorias;
     /**
+     * Solicitud de aprobacion de la categoria
+     *
+     * @see #getSolicitudNuevaCategoria()
+     */
+    private SolicitudNuevaCategoria solicitudNuevaCategoria;
+    /**
      * Getter.
      *
      * @return codigo: codigo de la Categoria.
@@ -147,13 +153,30 @@ public class Categoria extends EntityBase<Long> {
     public List<CategoriaTablaCategorias> getCategoriaTablasCategorias() {
         return categoriaTablasCategorias;
     }
-     /**
+    /**
      * Setter. Asigna lo que recibe por parámetro al atributo categoriaTablasCategorias
      *
      * @param categoriaTablasCategorias
      */
     public void setCategoriaTablasCategorias(List<CategoriaTablaCategorias> categoriaTablasCategorias) {
         this.categoriaTablasCategorias = categoriaTablasCategorias;
+    }
+    /**
+     * Getter.
+     *
+     * @return solicitudNuevaCategoria: Solicitud a la cual esta asociada la Categoria.
+     */
+    @OneToOne(mappedBy = "categoria")
+    public SolicitudNuevaCategoria getSolicitudNuevaCategoria() {
+        return solicitudNuevaCategoria;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo solicitudNuevaCategoria
+     *
+     * @param solicitudNuevaCategoria
+     */
+    public void setSolicitudNuevaCategoria(SolicitudNuevaCategoria solicitudNuevaCategoria) {
+        this.solicitudNuevaCategoria = solicitudNuevaCategoria;
     }
     
     @Override
