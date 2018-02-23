@@ -1,6 +1,8 @@
 //QSGEN This file will be ignored in future code generations if it's changed
 package a_programacion_presupuestaria;
 
+import b_legajo_personal.ExperienciaLaboralPersona;
+import java.util.List;
 import y_entity.base.EntityBase;
 import javax.persistence.*;
 /**
@@ -38,6 +40,7 @@ public class Puesto extends EntityBase<Long> {
      * @see #getDetalleAnexoPersonal()
      */
     private DetalleAnexoPersonal detalleAnexoPersonal;
+    private List<ExperienciaLaboralPersona> experienciaLaboralPersonas;
     //estructura presupuestaria base: Estructura Presupuestaria Base
     //objeto de gasto: Objeto de Gasto
     //fuente de financiamiento: Fuente de Financiamiento
@@ -141,6 +144,15 @@ public class Puesto extends EntityBase<Long> {
      * Constructor por defecto de la entidad Puesto
      */
     public Puesto() {
+    }
+
+    @OneToMany(mappedBy = "puesto")
+    public List<ExperienciaLaboralPersona> getExperienciaLaboralPersonas() {
+        return experienciaLaboralPersonas;
+    }
+
+    public void setExperienciaLaboralPersonas(List<ExperienciaLaboralPersona> experienciaLaboralPersonas) {
+        this.experienciaLaboralPersonas = experienciaLaboralPersonas;
     }
     
 }

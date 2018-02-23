@@ -212,16 +212,18 @@ public class Persona extends EntityBase<Long>{
      * @see #getInhabilitacionesPersona()
      */
     private List<InhabilitacionPersona> inhabilitacionesPersona;
-    
-    //private experiencia laboral: List<Experiencia Laboral Persona>
-    
+    /**
+     * Listado de las experiencias laborales de la Persona
+     *
+     * @see #getExperienciasLaboralesPersona()
+     */
+    private List<ExperienciaLaboralPersona> experienciasLaboralesPersona;
     /**
      * estatus de la Persona
      *
      * @see #getEstatusPersona()
      */
     private EstatusPersona estatusPersona;
-    
     /**
      * Getter.
      *
@@ -763,6 +765,23 @@ public class Persona extends EntityBase<Long>{
     /**
      * Getter.
      *
+     * @return experienciasLaboralesPersona: Listado de experiencias laborales de la Persona.
+     */
+    @OneToMany(mappedBy = "persona")
+    public List<ExperienciaLaboralPersona> getExperienciasLaboralesPersona() {
+        return experienciasLaboralesPersona;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo experienciasLaboralesPersona
+     *
+     * @param experienciasLaboralesPersona
+     */
+    public void setExperienciasLaboralesPersona(List<ExperienciaLaboralPersona> experienciasLaboralesPersona) {
+        this.experienciasLaboralesPersona = experienciasLaboralesPersona;
+    }
+    /**
+     * Getter.
+     *
      * @return estatusPersona: estatus de la Persona.
      */
     @Enumerated(EnumType.STRING)
@@ -810,5 +829,6 @@ public class Persona extends EntityBase<Long>{
      */
     public Persona() {
     }
+    
     
 }
