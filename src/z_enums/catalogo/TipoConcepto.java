@@ -1,7 +1,7 @@
 package z_enums.catalogo;
 
 public enum TipoConcepto {
-    ASGINACION  ("ASGINACION"),
+    ASIGNACION  ("ASIGNACION"),
     DEDUCCION   ("DEDUCCION"),
     APORTE      ("APORTE");
     

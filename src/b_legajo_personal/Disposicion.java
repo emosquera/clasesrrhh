@@ -76,6 +76,12 @@ public class Disposicion extends EntityBase<Long> {
      */
     private BajaFuncionario bajaFuncionario;
     /**
+     * Defuncion del funcionario asociado a la Disposicion
+     *
+     * @see #getDefuncionTrabajador()
+     */
+    private DefuncionTrabajador defuncionTrabajador;
+    /**
      * Getter.
      *
      * @return persona: Persona asociada a la disposicion
@@ -230,6 +236,23 @@ public class Disposicion extends EntityBase<Long> {
     public void setBajaFuncionario(BajaFuncionario bajaFuncionario) {
         this.bajaFuncionario = bajaFuncionario;
     }
+    /**
+     * Getter.
+     *
+     * @return defuncionTrabajador: Defuncion de Funcionario asociado a la Disposicion
+     */
+    @OneToOne
+    public DefuncionTrabajador getDefuncionTrabajador() {
+        return defuncionTrabajador;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo defuncionTrabajador
+     *
+     * @param defuncionTrabajador
+     */
+    public void setDefuncionTrabajador(DefuncionTrabajador defuncionTrabajador) {
+        this.defuncionTrabajador = defuncionTrabajador;
+    }
     
     @Override
     public int hashCode() {
@@ -262,5 +285,5 @@ public class Disposicion extends EntityBase<Long> {
      */
     public Disposicion() {
     }
-        
+            
 }

@@ -1,7 +1,6 @@
 //QSGEN This file will be ignored in future code generations if it's changed
 package b_legajo_personal;
 
-import a_programacion_presupuestaria.EstructuraOrganizacional;
 import java.util.Date;
 import y_entity.base.EntityBase;
 import javax.persistence.*;
@@ -14,7 +13,7 @@ import javax.persistence.*;
  * @version 1.0
  */
 @Entity
-@Table(name="DISPOSICION")
+@Table(name="BAJA_FUNCIONARIO")
 public class BajaFuncionario extends EntityBase<Long> {
     /**
      * Disposicion del Funcionario a la cual se da de baja
