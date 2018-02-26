@@ -1,6 +1,7 @@
 //QSGEN This file will be ignored in future code generations if it's changed
 package b_legajo_personal;
 
+import java.util.List;
 import y_entity.base.EntityBase;
 import javax.persistence.*;
 /**
@@ -32,6 +33,12 @@ public class TipoDisposicion extends EntityBase<Long> {
      * @see #getResoluciones()
      */
     private TipoHabilitacion resoluciones;
+    /**
+     * Listado de Disposiciones del Tipo de Disposicion
+     *
+     * @see #getDisposiciones()
+     */
+    private List<Disposicion> disposiciones;
     /**
      * Getter.
      *
@@ -84,6 +91,23 @@ public class TipoDisposicion extends EntityBase<Long> {
     public void setResoluciones(TipoHabilitacion resoluciones) {
         this.resoluciones = resoluciones;
     }
+    /**
+     * Getter.
+     *
+     * @return disposiciones: disposiciones asociadas al Tipo de Disposicion.
+     */
+    @OneToMany(mappedBy = "tipoDisposicion")
+    public List<Disposicion> getDisposiciones() {
+        return disposiciones;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo disposiciones
+     *
+     * @param disposiciones
+     */
+    public void setDisposiciones(List<Disposicion> disposiciones) {
+        this.disposiciones = disposiciones;
+    }
     
     @Override
     public int hashCode() {
@@ -111,8 +135,10 @@ public class TipoDisposicion extends EntityBase<Long> {
     public String getAsText() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    /**
+     * Constructor por defecto de la entidad TipoDisposicion
+     */
     public TipoDisposicion() {
     }
-    
+
 }

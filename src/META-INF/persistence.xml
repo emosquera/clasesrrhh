@@ -53,6 +53,8 @@
     <class>a_programacion_presupuestaria.Puesto</class>
     <class>a_programacion_presupuestaria.SolicitudNuevaCategoria</class>
     <class>b_legajo_personal.ExperienciaLaboral</class>
+    <class>b_legajo_personal.Disposicion</class>
+    <class>b_legajo_personal.BajaFuncionario</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/syslife?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

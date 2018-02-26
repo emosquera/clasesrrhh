@@ -15,6 +15,7 @@ import javax.persistence.*;
  * @version 1.0
  */
 @Entity
+@Table(name="DISPACACIDAD_PERSONA")
 public class DiscapacidadPersona extends EntityBase<Long> {
     /**
      * discapacidad asociada a la persona

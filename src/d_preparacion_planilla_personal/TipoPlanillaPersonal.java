@@ -1,6 +1,7 @@
 //QSGEN This file will be ignored in future code generations if it's changed
 package d_preparacion_planilla_personal;
 
+import b_legajo_personal.Disposicion;
 import y_entity.base.EntityBase;
 import z_enums.catalogo.PeriodicidadPlanillaPersonal;
 import java.util.Date;
@@ -53,6 +54,12 @@ public class TipoPlanillaPersonal extends EntityBase<Long> {
      * @see #getEntidadesPlanillaPersonal()
      */
     private List<EntidadPlanillaPersonal> entidadesPlanillaPersonal;
+    /**
+     * Disposiciones Asociadas a la Planilla de Personal
+     *
+     * @see #getDisposiciones()
+     */
+    private List<Disposicion> disposiciones;
     /**
      * Getter.
      *
@@ -157,6 +164,23 @@ public class TipoPlanillaPersonal extends EntityBase<Long> {
      */
     public void setEntidadesPlanillaPersonal(List<EntidadPlanillaPersonal> entidadesPlanillaPersonal) {
         this.entidadesPlanillaPersonal = entidadesPlanillaPersonal;
+    }
+    /**
+     * Getter.
+     *
+     * @return disposiciones: Disposiciones asociadas a la Planilla de Personal.
+     */
+    @OneToMany(mappedBy = "planillaPersonal")
+    public List<Disposicion> getDisposiciones() {
+        return disposiciones;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo disposiciones
+     *
+     * @param disposiciones
+     */
+    public void setDisposiciones(List<Disposicion> disposiciones) {
+        this.disposiciones = disposiciones;
     }
     
     @Override

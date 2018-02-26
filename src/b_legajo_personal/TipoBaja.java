@@ -1,6 +1,7 @@
 //QSGEN This file will be ignored in future code generations if it's changed
 package b_legajo_personal;
 
+import java.util.List;
 import y_entity.base.EntityBase;
 import javax.persistence.*;
 /**
@@ -26,6 +27,12 @@ public class TipoBaja extends EntityBase<Long> {
      * @see #getDescripcion()
      */
     private String descripcion;
+    /**
+     * Listado de Bajas asociadas al Tipo de Baja
+     *
+     * @see #getBajaFuncionarios()
+     */
+    private List<BajaFuncionario> bajaFuncionarios;
     /**
      * Getter.
      *
@@ -59,6 +66,23 @@ public class TipoBaja extends EntityBase<Long> {
      */
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+    /**
+     * Getter.
+     *
+     * @return bajaFuncionarios: Listado de bajas asociado al Tipo de Baja.
+     */
+    @OneToMany(mappedBy = "tipoBaja")
+    public List<BajaFuncionario> getBajaFuncionarios() {
+        return bajaFuncionarios;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo bajaFuncionarios
+     *
+     * @param bajaFuncionarios
+     */
+    public void setBajaFuncionarios(List<BajaFuncionario> bajaFuncionarios) {
+        this.bajaFuncionarios = bajaFuncionarios;
     }
 
     @Override

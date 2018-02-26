@@ -225,6 +225,12 @@ public class Persona extends EntityBase<Long>{
      */
     private EstatusPersona estatusPersona;
     /**
+     * Listado de Disposiciones ocupadas por la Persona
+     *
+     * @see #getDisposiciones()
+     */
+    private List<Disposicion> disposiciones;
+    /**
      * Getter.
      *
      * @return cedula: cedula de identidad de la Persona.
@@ -797,6 +803,23 @@ public class Persona extends EntityBase<Long>{
     public void setEstatusPersona(EstatusPersona estatusPersona) {
         this.estatusPersona = estatusPersona;
     }
+    /**
+     * Getter.
+     *
+     * @return disposiciones: Listado de Disposiciones ocupada por la Persona.
+     */
+    @OneToMany(mappedBy = "persona")
+    public List<Disposicion> getDisposiciones() {
+        return disposiciones;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo disposiciones
+     *
+     * @param disposiciones
+     */
+    public void setDisposiciones(List<Disposicion> disposiciones) {
+        this.disposiciones = disposiciones;
+    }
     
     @Override
     public int hashCode() {
@@ -829,6 +852,5 @@ public class Persona extends EntityBase<Long>{
      */
     public Persona() {
     }
-    
     
 }

@@ -1,6 +1,7 @@
 //QSGEN This file will be ignored in future code generations if it's changed
 package a_programacion_presupuestaria;
 
+import b_legajo_personal.Disposicion;
 import b_legajo_personal.ExperienciaLaboralPersona;
 import java.util.List;
 import y_entity.base.EntityBase;
@@ -40,7 +41,18 @@ public class Puesto extends EntityBase<Long> {
      * @see #getDetalleAnexoPersonal()
      */
     private DetalleAnexoPersonal detalleAnexoPersonal;
-    private List<ExperienciaLaboralPersona> experienciaLaboralPersonas;
+    /**
+     * Listado de Experiencia Laboral Asociadas al Puesto
+     *
+     * @see #getexperienciasLaboralesPersona()
+     */
+    private List<ExperienciaLaboralPersona> experienciasLaboralesPersona;
+    /**
+     * Disposicion asociada al Puesto
+     *
+     * @see #getexperienciasLaboralesPersona()
+     */
+    private Disposicion disposicion;
     //estructura presupuestaria base: Estructura Presupuestaria Base
     //objeto de gasto: Objeto de Gasto
     //fuente de financiamiento: Fuente de Financiamiento
@@ -113,6 +125,40 @@ public class Puesto extends EntityBase<Long> {
     public void setDetalleAnexoPersonal(DetalleAnexoPersonal detalleAnexoPersonal) {
         this.detalleAnexoPersonal = detalleAnexoPersonal;
     }
+    /**
+     * Getter.
+     *
+     * @return experienciasLaboralesPersona: Listado de Experiencia Laboral asociadas al puesto.
+     */
+    @OneToMany(mappedBy = "puesto")
+    public List<ExperienciaLaboralPersona> getExperienciasLaboralesPersona() {
+        return experienciasLaboralesPersona;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo experienciasLaboralesPersona
+     *
+     * @param experienciasLaboralesPersona
+     */
+    public void setExperienciasLaboralesPersona(List<ExperienciaLaboralPersona> experienciasLaboralesPersona) {
+        this.experienciasLaboralesPersona = experienciasLaboralesPersona;
+    }
+    /**
+     * Getter.
+     *
+     * @return disposicion: disposicion asociada al Puesto.
+     */
+    @OneToOne
+    public Disposicion getDisposicion() {
+        return disposicion;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo disposicion
+     *
+     * @param disposicion
+     */
+    public void setDisposicion(Disposicion disposicion) {
+        this.disposicion = disposicion;
+    }
     
     @Override
     public int hashCode() {
@@ -146,13 +192,4 @@ public class Puesto extends EntityBase<Long> {
     public Puesto() {
     }
 
-    @OneToMany(mappedBy = "puesto")
-    public List<ExperienciaLaboralPersona> getExperienciaLaboralPersonas() {
-        return experienciaLaboralPersonas;
-    }
-
-    public void setExperienciaLaboralPersonas(List<ExperienciaLaboralPersona> experienciaLaboralPersonas) {
-        this.experienciaLaboralPersonas = experienciaLaboralPersonas;
-    }
-    
 }
