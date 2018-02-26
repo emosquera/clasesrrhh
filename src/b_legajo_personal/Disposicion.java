@@ -2,8 +2,10 @@
 package b_legajo_personal;
 
 import a_programacion_presupuestaria.Puesto;
+import d_preparacion_planilla_personal.Permiso;
 import d_preparacion_planilla_personal.TipoPlanillaPersonal;
 import java.util.Date;
+import java.util.List;
 import y_entity.base.EntityBase;
 import javax.persistence.*;
 import z_enums.catalogo.EstatusDisposicion;
@@ -81,6 +83,12 @@ public class Disposicion extends EntityBase<Long> {
      * @see #getDefuncionTrabajador()
      */
     private DefuncionTrabajador defuncionTrabajador;
+    /**
+     * Listado de Permisos asociados a la disposicion
+     *
+     * @see #getPermisos()
+     */
+    private List<Permiso> permisos;
     /**
      * Getter.
      *
@@ -253,6 +261,23 @@ public class Disposicion extends EntityBase<Long> {
     public void setDefuncionTrabajador(DefuncionTrabajador defuncionTrabajador) {
         this.defuncionTrabajador = defuncionTrabajador;
     }
+    /**
+     * Getter.
+     *
+     * @return permisos: permisos asociados a la disposicion
+     */
+    @OneToMany(mappedBy = "disposicion")
+    public List<Permiso> getPermisos() {
+        return permisos;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo permisos
+     *
+     * @param permisos
+     */
+    public void setPermisos(List<Permiso> permisos) {
+        this.permisos = permisos;
+    }
     
     @Override
     public int hashCode() {
@@ -285,5 +310,5 @@ public class Disposicion extends EntityBase<Long> {
      */
     public Disposicion() {
     }
-            
+    
 }

@@ -1,6 +1,7 @@
 //QSGEN This file will be ignored in future code generations if it's changed
 package d_preparacion_planilla_personal;
 
+import java.util.List;
 import y_entity.base.EntityBase;
 import javax.persistence.*;
 /**
@@ -26,6 +27,12 @@ public class TipoPermiso extends EntityBase<Long> {
      * @see #getDescripcion()
      */
     private String descripcion;
+    /**
+     * Listado de permisos asociados al tipo de permiso
+     *
+     * @see #getDescripcion()
+     */
+    private List<Permiso> permisos;
     /**
      * Getter.
      *
@@ -60,7 +67,23 @@ public class TipoPermiso extends EntityBase<Long> {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    
+    /**
+     * Getter.
+     *
+     * @return permisos: permisos asociados al tipo de permiso.
+     */
+    @OneToMany(mappedBy = "tipoPermiso")
+    public List<Permiso> getPermisos() {
+        return permisos;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo permisos
+     *
+     * @param permisos
+     */
+    public void setPermisos(List<Permiso> permisos) {
+        this.permisos = permisos;
+    }
     
     @Override
     public int hashCode() {
