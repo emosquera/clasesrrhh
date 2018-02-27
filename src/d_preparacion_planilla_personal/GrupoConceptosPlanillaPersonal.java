@@ -40,6 +40,12 @@ public class GrupoConceptosPlanillaPersonal extends EntityBase<Long> {
      */
     private List<PlanillaPersonalGrupoConceptos> planillasPersonalGrupoConceptos;
     /**
+     * Solicitud a traves de la cual se realizo la aprobacion del grupo de conceptos
+     *
+     * @see #getDescripcion()
+     */
+    private SolicitudNuevoGrupoConceptos solicitudNuevoGrupoConceptos;
+    /**
      * Getter.
      *
      * @return codigo: codigo del Grupo de Conceptos.
@@ -106,6 +112,23 @@ public class GrupoConceptosPlanillaPersonal extends EntityBase<Long> {
      */
     public void setPlanillasPersonalGrupoConceptos(List<PlanillaPersonalGrupoConceptos> planillasPersonalGrupoConceptos) {
         this.planillasPersonalGrupoConceptos = planillasPersonalGrupoConceptos;
+    }
+    /**
+     * Getter.
+     *
+     * @return solicitudNuevoGrupoConceptos: Solicitud a traves de la cual se realizo la aprobacion del grupo de conceptos.
+     */
+    @OneToOne(mappedBy = "grupoConceptos")
+    public SolicitudNuevoGrupoConceptos getSolicitudNuevoGrupoConceptos() {
+        return solicitudNuevoGrupoConceptos;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo solicitudNuevoGrupoConceptos
+     *
+     * @param solicitudNuevoGrupoConceptos
+     */
+    public void setSolicitudNuevoGrupoConceptos(SolicitudNuevoGrupoConceptos solicitudNuevoGrupoConceptos) {
+        this.solicitudNuevoGrupoConceptos = solicitudNuevoGrupoConceptos;
     }
     
     @Override
