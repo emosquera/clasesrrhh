@@ -90,6 +90,12 @@ public class Disposicion extends EntityBase<Long> {
      */
     private List<Permiso> permisos;
     /**
+     * Listado de Seguros asociados a la disposicion
+     *
+     * @see #getSeguros()
+     */
+    private List<Seguro> seguros;
+    /**
      * Getter.
      *
      * @return persona: Persona asociada a la disposicion
@@ -277,6 +283,23 @@ public class Disposicion extends EntityBase<Long> {
      */
     public void setPermisos(List<Permiso> permisos) {
         this.permisos = permisos;
+    }
+    /**
+     * Getter.
+     *
+     * @return seguros: seguros asociados a la disposicion
+     */
+    @OneToMany(mappedBy = "disposicion")
+    public List<Seguro> getSeguros() {
+        return seguros;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo seguros
+     *
+     * @param seguros
+     */
+    public void setSeguros(List<Seguro> seguros) {
+        this.seguros = seguros;
     }
     
     @Override
