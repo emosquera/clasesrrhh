@@ -61,6 +61,12 @@ public class TipoPlanillaPersonal extends EntityBase<Long> {
      */
     private List<Disposicion> disposiciones;
     /**
+     * Listado de Grupos de conceptos asociados a la planilla de personal
+     *
+     * @see #getPlanillaPersonalGruposConceptos()
+     */
+    private List<PlanillaPersonalGrupoConceptos> planillaPersonalGruposConceptos;
+    /**
      * Getter.
      *
      * @return codigo: codigo de registro de la Planilla de Personal.
@@ -181,6 +187,23 @@ public class TipoPlanillaPersonal extends EntityBase<Long> {
      */
     public void setDisposiciones(List<Disposicion> disposiciones) {
         this.disposiciones = disposiciones;
+    }
+    /**
+     * Getter.
+     *
+     * @return planillaPersonalGruposConceptos: listado de grupo de conceptos asociados a la planilla de personal .
+     */
+    @OneToMany(mappedBy = "planillaPersonal")
+    public List<PlanillaPersonalGrupoConceptos> getPlanillaPersonalGruposConceptos() {
+        return planillaPersonalGruposConceptos;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo planillaPersonalGruposConceptos
+     *
+     * @param planillaPersonalGruposConceptos
+     */
+    public void setPlanillaPersonalGruposConceptos(List<PlanillaPersonalGrupoConceptos> planillaPersonalGruposConceptos) {
+        this.planillaPersonalGruposConceptos = planillaPersonalGruposConceptos;
     }
     
     @Override

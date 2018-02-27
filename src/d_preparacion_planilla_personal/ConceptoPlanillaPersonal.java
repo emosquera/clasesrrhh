@@ -3,6 +3,7 @@ package d_preparacion_planilla_personal;
 
 import y_entity.base.EntityBase;
 import entity.externos.ObjetoGasto;
+import java.util.List;
 import z_enums.catalogo.TipoConcepto;
 import javax.persistence.*;
 /**
@@ -46,6 +47,12 @@ public class ConceptoPlanillaPersonal extends EntityBase<Long> {
      * @see #getObjetoGasto()
      */
     private ObjetoGasto objetoGasto;
+    /**
+     * Listado de Grupos de conceptos a los cuales esta asociado el concepto
+     *
+     * @see #getConceptoGruposConceptosPlanillaPersonal()
+     */
+    private List<ConceptoGrupoConceptosPlanillaPersonal> conceptoGruposConceptosPlanillaPersonal;
     /**
      * Getter.
      *
@@ -132,6 +139,23 @@ public class ConceptoPlanillaPersonal extends EntityBase<Long> {
      */
     public void setObjetoGasto(ObjetoGasto objetoGasto) {
         this.objetoGasto = objetoGasto;
+    }
+    /**
+     * Getter.
+     *
+     * @return conceptoGruposConceptosPlanillaPersonal: Listado de Grupos de conceptos a los cuales esta asociado el concepto.
+     */
+    @OneToMany(mappedBy = "concepto")
+    public List<ConceptoGrupoConceptosPlanillaPersonal> getConceptosGrupoConceptosPlanillaPersonal() {
+        return conceptoGruposConceptosPlanillaPersonal;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo conceptoGruposConceptosPlanillaPersonal
+     *
+     * @param conceptoGruposConceptosPlanillaPersonal
+     */
+    public void setConceptoGruposConceptosPlanillaPersonal(List<ConceptoGrupoConceptosPlanillaPersonal> conceptoGruposConceptosPlanillaPersonal) {
+        this.conceptoGruposConceptosPlanillaPersonal = conceptoGruposConceptosPlanillaPersonal;
     }
     
     @Override
