@@ -63,7 +63,6 @@ public class Disposicion extends EntityBase<Long> {
      */
     private Date fechaFin;
     //private List<Horario> horarios;
-    //private List<ResolucionDisposicion> resoluciones
     //private DocumentoProbatorioResolucion documentoProbatorio;
     /**
      * Estatus de la Disposicion

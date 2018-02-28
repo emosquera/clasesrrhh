@@ -53,6 +53,12 @@ public class Cargo extends EntityBase<Long> {
      */
     private List<Puesto> puestos;
     /**
+     * Listado de aprobaciones por resolucion
+     *
+     * @see #getCargosAprobadosResoluciones()
+     */
+    private List<CargosAprobadosResolucion> cargosAprobadosResoluciones;
+    /**
      * Getter.
      *
      * @return codigo: codigo de registro del Cargo.
@@ -156,6 +162,23 @@ public class Cargo extends EntityBase<Long> {
     public void setPuestos(List<Puesto> puestos) {
         this.puestos = puestos;
     }
+    /**
+     * Getter.
+     *
+     * @return cargosAprobadosResoluciones: Listado de aprobaciones por resolucion.
+     */
+    @OneToMany(mappedBy = "cargo")
+    public List<CargosAprobadosResolucion> getCargosAprobadosResoluciones() {
+        return cargosAprobadosResoluciones;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo cargosAprobadosResoluciones
+     *
+     * @param cargosAprobadosResoluciones
+     */
+    public void setCargosAprobadosResoluciones(List<CargosAprobadosResolucion> cargosAprobadosResoluciones) {
+        this.cargosAprobadosResoluciones = cargosAprobadosResoluciones;
+    }
     
     @Override
     public int hashCode() {
@@ -188,5 +211,5 @@ public class Cargo extends EntityBase<Long> {
      */
     public Cargo() {
     }
-
+    
 }

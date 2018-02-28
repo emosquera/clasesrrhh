@@ -85,6 +85,12 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
      */
     private List<SolicitudNuevaCategoria> solicitudesNuevaCategoria;
     /**
+     * Listado resoluciones del EEN asociadas a la Estructura Organizacional
+     *
+     * @see #getResolucionesEEN()
+     */
+    private List<ResolucionEEN> resolucionesEEN;
+    /**
      * Getter.
      *
      * @return nivel: nivel al cual pertenece la Estructura Organizacional.
@@ -246,7 +252,7 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
      * @return anexosPersonal: Anexos de Personal asociados a la Estructura Organizacional.
      */
     @OneToMany(mappedBy = "estructuraOrganizacional")
-    public List<AnexoPersonal> getAnexoPersonals() {
+    public List<AnexoPersonal> getAnexosPersonal() {
         return anexosPersonal;
     }
     /**
@@ -254,7 +260,7 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
      *
      * @param anexosPersonal
      */
-    public void setAnexoPersonals(List<AnexoPersonal> anexosPersonal) {
+    public void setAnexosPersonal(List<AnexoPersonal> anexosPersonal) {
         this.anexosPersonal = anexosPersonal;
     }
     /**
@@ -273,6 +279,23 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
      */
     public void setSolicitudesNuevaCategoria(List<SolicitudNuevaCategoria> solicitudesNuevaCategoria) {
         this.solicitudesNuevaCategoria = solicitudesNuevaCategoria;
+    }
+    /**
+     * Getter.
+     *
+     * @return resolucionesEEN: Listado de resoluciones del EEN asociadas a la Estructura Organizacional.
+     */
+    @OneToMany(mappedBy = "estructuraOrganizacional")
+    public List<ResolucionEEN> getResolucionesEEN() {
+        return resolucionesEEN;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo resolucionesEEN
+     *
+     * @param resolucionesEEN
+     */
+    public void setResolucionEENs(List<ResolucionEEN> resolucionesEEN) {
+        this.resolucionesEEN = resolucionesEEN;
     }
     
     @Override
