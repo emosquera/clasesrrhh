@@ -66,6 +66,7 @@
     <class>c_foja_servicio.Retiro</class>
     <class>a_programacion_presupuestaria.CargosAprobadosResolucion</class>
     <class>a_programacion_presupuestaria.ResolucionEEN</class>
+    <class>b_legajo_personal.EventoHabilitacion</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/syslife?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

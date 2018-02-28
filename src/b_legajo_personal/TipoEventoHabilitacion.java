@@ -1,6 +1,7 @@
 //QSGEN This file will be ignored in future code generations if it's changed
 package b_legajo_personal;
 
+import java.util.List;
 import y_entity.base.EntityBase;
 import z_enums.catalogo.NaturalezaEvento;
 import javax.persistence.*;
@@ -39,6 +40,12 @@ public class TipoEventoHabilitacion extends EntityBase<Long> {
      * @see #getNaturaleza()
      */
     private NaturalezaEvento naturaleza;
+    /**
+     * Listado de eventos asociados al Tipo de Evento de Habilitacion
+     *
+     * @see #getEventosHabilitacion()
+     */
+    private List<EventoHabilitacion> eventosHabilitacion;
     /**
      * Getter.
      *
@@ -108,6 +115,23 @@ public class TipoEventoHabilitacion extends EntityBase<Long> {
     public void setNaturaleza(NaturalezaEvento naturaleza) {
         this.naturaleza = naturaleza;
     }
+    /**
+     * Getter.
+     *
+     * @return eventosHabilitacion: Listado de eventos asociados al tipo de evento de habilitacion.
+     */
+    @OneToMany(mappedBy = "tipoEvento")
+    public List<EventoHabilitacion> getEventosHabilitacion() {
+        return eventosHabilitacion;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo eventosHabilitacion
+     *
+     * @param eventosHabilitacion
+     */
+    public void setEventosHabilitacion(List<EventoHabilitacion> eventosHabilitacion) {
+        this.eventosHabilitacion = eventosHabilitacion;
+    }
 
     @Override
     public int hashCode() {
@@ -140,7 +164,5 @@ public class TipoEventoHabilitacion extends EntityBase<Long> {
      */
     public TipoEventoHabilitacion() {
     }
-    
-    
     
 }

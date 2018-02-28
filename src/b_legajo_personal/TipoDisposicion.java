@@ -28,7 +28,7 @@ public class TipoDisposicion extends EntityBase<Long> {
      */
     private String descripcion;
     /**
-     * resuluciones del Tipo de Disposicion
+     * resoluciones del Tipo de Disposicion
      *
      * @see #getResoluciones()
      */
