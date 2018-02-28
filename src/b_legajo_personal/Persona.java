@@ -1,6 +1,8 @@
 //QSGEN This file will be ignored in future code generations if it's changed
 package b_legajo_personal;
 
+import c_foja_servicio.Jubilacion;
+import c_foja_servicio.Retiro;
 import y_entity.base.EntityBase;
 import g_gestion_tablas_catalogos.Barrio;
 import g_gestion_tablas_catalogos.Ciudad;
@@ -230,6 +232,18 @@ public class Persona extends EntityBase<Long>{
      * @see #getDisposiciones()
      */
     private List<Disposicion> disposiciones;
+    /**
+     * Listado de Solicitudes de Jubilacion
+     *
+     * @see #getJubilaciones()
+     */
+    private List<Jubilacion> jubilaciones;
+    /**
+     * Listado de Solicitudes de retiro
+     *
+     * @see #getRetiros()
+     */
+    private List<Retiro> retiros;
     /**
      * Getter.
      *
@@ -820,6 +834,40 @@ public class Persona extends EntityBase<Long>{
     public void setDisposiciones(List<Disposicion> disposiciones) {
         this.disposiciones = disposiciones;
     }
+    /**
+     * Getter.
+     *
+     * @return jubilaciones: Listado de Solicitudes de Jubilacion.
+     */
+    @OneToMany(mappedBy = "persona")
+    public List<Jubilacion> getJubilaciones() {
+        return jubilaciones;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo jubilaciones
+     *
+     * @param jubilaciones
+     */
+    public void setJubilaciones(List<Jubilacion> jubilaciones) {
+        this.jubilaciones = jubilaciones;
+    }
+    /**
+     * Getter.
+     *
+     * @return retiros: Listado de Solicitudes de Retiro.
+     */
+    @OneToMany(mappedBy = "persona")
+    public List<Retiro> getRetiros() {
+        return retiros;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo retiros
+     *
+     * @param retiros
+     */
+    public void setRetiros(List<Retiro> retiros) {
+        this.retiros = retiros;
+    }
     
     @Override
     public int hashCode() {
@@ -852,5 +900,5 @@ public class Persona extends EntityBase<Long>{
      */
     public Persona() {
     }
-    
+        
 }

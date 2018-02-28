@@ -62,6 +62,8 @@
     <class>d_preparacion_planilla_personal.ConceptoGrupoConceptosPlanillaPersonal</class>
     <class>d_preparacion_planilla_personal.PlanillaGrupoConceptos</class>
     <class>d_preparacion_planilla_personal.SolicitudNuevoGrupoConceptos</class>
+    <class>c_foja_servicio.Jubilacion</class>
+    <class>c_foja_servicio.Retiro</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/syslife?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
