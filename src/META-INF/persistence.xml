@@ -67,6 +67,9 @@
     <class>a_programacion_presupuestaria.CargosAprobadosResolucion</class>
     <class>a_programacion_presupuestaria.ResolucionEEN</class>
     <class>b_legajo_personal.EventoHabilitacion</class>
+    <class>entity.externos.Beneficiario</class>
+    <class>d_preparacion_planilla_personal.Embargo</class>
+    <class>b_legajo_personal.LayoutProformaFuncionarios</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/syslife?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

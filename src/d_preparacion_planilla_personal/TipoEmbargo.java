@@ -1,6 +1,7 @@
 //QSGEN This file will be ignored in future code generations if it's changed
 package d_preparacion_planilla_personal;
 
+import java.util.List;
 import y_entity.base.EntityBase;
 import javax.persistence.*;
 /**
@@ -26,6 +27,12 @@ public class TipoEmbargo extends EntityBase<Long>  {
      * @see #getDescripcion()
      */
     private String descripcion;
+    /**
+     * embargos asociados al tipo
+     *
+     * @see #getEmbargos()
+     */
+    private List<Embargo> embargos;
     /**
      * Getter.
      *
@@ -60,6 +67,23 @@ public class TipoEmbargo extends EntityBase<Long>  {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+    /**
+     * Getter.
+     *
+     * @return embargos: Embargos asociados al tipo.
+     */
+    @OneToMany(mappedBy = "tipoEmbargo")
+    public List<Embargo> getEmbargos() {
+        return embargos;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo embargos
+     *
+     * @param embargos
+     */
+    public void setEmbargos(List<Embargo> embargos) {
+        this.embargos = embargos;
+    }
   
     @Override
     public int hashCode() {
@@ -92,4 +116,5 @@ public class TipoEmbargo extends EntityBase<Long>  {
      */
     public TipoEmbargo() {
     }
+    
 }

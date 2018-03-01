@@ -4,6 +4,7 @@ package d_preparacion_planilla_personal;
 import y_entity.base.EntityBase;
 import g_gestion_tablas_catalogos.Ciudad;
 import g_gestion_tablas_catalogos.DepartamentoTerritorial;
+import java.util.List;
 import javax.persistence.*;
 /**
  * Clase InstitucionEmbargo extiende de {@link EntityBase}
@@ -58,6 +59,12 @@ public class InstitucionEmbargo extends EntityBase<Long> {
      * @see #getRuc()
      */
     private String ruc;
+    /**
+     * Listados de embargos realizados por la institucion
+     *
+     * @see #getEmbargos()
+     */
+    private List<Embargo> embargos;
     /**
      * Getter.
      *
@@ -178,6 +185,23 @@ public class InstitucionEmbargo extends EntityBase<Long> {
      */
     public void setRuc(String ruc) {
         this.ruc = ruc;
+    }
+    /**
+     * Getter.
+     *
+     * @return embargos: Embargos realizados por la institucion.
+     */
+    @OneToMany(mappedBy = "institucionEmbargo")
+    public List<Embargo> getEmbargos() {
+        return embargos;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo embargos
+     *
+     * @param embargos
+     */
+    public void setEmbargos(List<Embargo> embargos) {
+        this.embargos = embargos;
     }
     
     @Override

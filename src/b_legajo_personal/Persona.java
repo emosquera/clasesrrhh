@@ -3,6 +3,7 @@ package b_legajo_personal;
 
 import c_foja_servicio.Jubilacion;
 import c_foja_servicio.Retiro;
+import d_preparacion_planilla_personal.Embargo;
 import y_entity.base.EntityBase;
 import g_gestion_tablas_catalogos.Barrio;
 import g_gestion_tablas_catalogos.Ciudad;
@@ -244,6 +245,12 @@ public class Persona extends EntityBase<Long>{
      * @see #getRetiros()
      */
     private List<Retiro> retiros;
+    /**
+     * Listado de embargos asociados a la persona
+     *
+     * @see #getEmbargos()
+     */
+    private List<Embargo> embargos;
     /**
      * Getter.
      *
@@ -868,6 +875,23 @@ public class Persona extends EntityBase<Long>{
     public void setRetiros(List<Retiro> retiros) {
         this.retiros = retiros;
     }
+    /**
+     * Getter.
+     *
+     * @return embargos: Listado de embargos asociados a la persona.
+     */
+    @OneToMany(mappedBy = "funcionario")
+    public List<Embargo> getEmbargos() {
+        return embargos;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo embargos
+     *
+     * @param embargos
+     */
+    public void setEmbargos(List<Embargo> embargos) {
+        this.embargos = embargos;
+    }
     
     @Override
     public int hashCode() {
@@ -900,5 +924,5 @@ public class Persona extends EntityBase<Long>{
      */
     public Persona() {
     }
-        
+    
 }
