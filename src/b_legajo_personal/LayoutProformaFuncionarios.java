@@ -1,36 +1,90 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+//QSGEN This file will be ignored in future code generations if it's changed
 package b_legajo_personal;
 
-import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
+import y_entity.base.EntityBase;
+import javax.persistence.*;
 /**
+ * Clase LayoutProformaFuncionarios extiende de {@link EntityBase}
  *
- * @author syslife01
+ * Contiene la información del layout de la proforma de funcionarios
+ *
+ * @author Quarksoft-CIDESA
+ * @version 1.0
  */
 @Entity
-public class LayoutProformaFuncionarios implements Serializable {
-
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-    public Long getId() {
-        return id;
+@Table(name="LAYOUT_PROFORMA_FUNCIONARIOS")
+public class LayoutProformaFuncionarios extends EntityBase<Long> {
+    /**
+     * codigo de registro del Layout
+     *
+     * @see #getCodigo()
+     */
+    private int codigo;
+    /**
+     * descripcion del Layout
+     *
+     * @see #getDescripcion()
+     */
+    private String descripcion;
+    /**
+     * numero de columnas del Layout
+     *
+     * @see #getNumeroColumnas()
+     */
+    private int numeroColumnas;
+    //private Disposicion disposicion;
+    /**
+     * Getter.
+     *
+     * @return codigo: codigo de registro del Layout.
+     */
+    @Column(name="CODIGO", nullable = false)
+    public int getCodigo() {
+        return codigo;
     }
-
-    public void setId(Long id) {
-        this.id = id;
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo codigo
+     *
+     * @param codigo
+     */
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
-
+    /**
+     * Getter.
+     *
+     * @return descripcion: descripcion del Layout.
+     */
+    @Column(name="DESCRIPCION", nullable = false, length = 50)
+    public String getDescripcion() {
+        return descripcion;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo descripcion
+     *
+     * @param descripcion
+     */
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+    /**
+     * Getter.
+     *
+     * @return numeroColumnas: numero de columnas del Layout.
+     */
+    @Column(name="NUMERO_COLUMNAS", nullable = false)
+    public int getNumeroColumnas() {
+        return numeroColumnas;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo numeroColumnas
+     *
+     * @param numeroColumnas
+     */
+    public void setNumeroColumnas(int numeroColumnas) {
+        this.numeroColumnas = numeroColumnas;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 0;
@@ -45,15 +99,22 @@ public class LayoutProformaFuncionarios implements Serializable {
             return false;
         }
         LayoutProformaFuncionarios other = (LayoutProformaFuncionarios) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
+        return !((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)));
     }
 
     @Override
     public String toString() {
         return "b_legajo_personal.LayoutProformaFuncionarios[ id=" + id + " ]";
+    }
+
+    @Override
+    public String getAsText() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    /**
+     * Constructor por defecto de la entidad LayoutProformaFuncionarios
+     */
+    public LayoutProformaFuncionarios() {
     }
     
 }
