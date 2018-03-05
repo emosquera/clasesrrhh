@@ -160,7 +160,9 @@ public class ResolucionEEN extends EntityBase<Long> {
     public String getAsText() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    /**
+     * Constructor por defecto de la entidad ResolucionEEN
+     */
     public ResolucionEEN() {
     }
     

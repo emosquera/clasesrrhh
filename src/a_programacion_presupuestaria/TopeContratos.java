@@ -42,9 +42,9 @@ public class TopeContratos extends EntityBase<Long> {
     /**
      * año del Tope de Contratos
      *
-     * @see #getAño()
+     * @see #getAnio()
      */
-    private int año;
+    private int anio;
     /**
      * Listado de detalles del Tope de Contratos
      *
@@ -123,19 +123,19 @@ public class TopeContratos extends EntityBase<Long> {
     /**
      * Getter.
      *
-     * @return año: año del Tope de Contratos.
+     * @return anio: año del Tope de Contratos.
      */
-    @Column(name="AÑO", nullable = false)
-    public int getAño() {
-        return año;
+    @Column(name="ANIO", nullable = false)
+    public int getAnio() {
+        return anio;
     }
     /**
-     * Setter. Asigna lo que recibe por parámetro al atributo año
+     * Setter. Asigna lo que recibe por parámetro al atributo anio
      *
-     * @param año
+     * @param anio
      */
-    public void setAño(int año) {
-        this.año = año;
+    public void setAnio(int anio) {
+        this.anio = anio;
     }
     /**
      * Getter.
@@ -174,7 +174,7 @@ public class TopeContratos extends EntityBase<Long> {
 
     @Override
     public String toString() {
-        return "entity.catalogo.TopeContratos[ id=" + id + " ]";
+        return "a_programacion_presupuestaria.TopeContratos[ id=" + id + " ]";
     }
 
     @Override

@@ -81,7 +81,7 @@ public class ConfiguracionEstructuraOrganizacional extends EntityBase<Long> {
 
     @Override
     public String toString() {
-        return "entity.catalogo.ConfiguracionEstructuraOrganizacional[ id=" + id + " ]";
+        return "a_programacion_presupuestaria.ConfiguracionEstructuraOrganizacional[ id=" + id + " ]";
     }
 
     @Override

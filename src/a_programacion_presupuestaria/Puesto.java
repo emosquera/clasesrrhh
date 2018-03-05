@@ -114,6 +114,7 @@ public class Puesto extends EntityBase<Long> {
      * @return detalle de Anexo de Personal al cual esta asociado el Puesto.
      */
     @OneToOne
+    @JoinColumn(name="DETALLE_ANEXO_PERSONAL_ID")
     public DetalleAnexoPersonal getDetalleAnexoPersonal() {
         return detalleAnexoPersonal;
     }
@@ -148,6 +149,7 @@ public class Puesto extends EntityBase<Long> {
      * @return disposicion: disposicion asociada al Puesto.
      */
     @OneToOne
+    @JoinColumn(name="DISPOSICION_ID")
     public Disposicion getDisposicion() {
         return disposicion;
     }

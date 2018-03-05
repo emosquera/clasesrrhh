@@ -179,7 +179,7 @@ public class DetalleTopeContratos extends EntityBase<Long> {
 
     @Override
     public String toString() {
-        return "entity.catalogo.DetalleTopeContratos[ id=" + id + " ]";
+        return "a_programacion_presupuestaria.DetalleTopeContratos[ id=" + id + " ]";
     }
 
     @Override

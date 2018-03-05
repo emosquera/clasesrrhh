@@ -223,7 +223,7 @@ public class ElementoEstructuraOrganizacional extends EntityBase<Long> {
 
     @Override
     public String toString() {
-        return "entity.catalogo.ElementoEstructuraOrganizacional[ id=" + id + " ]";
+        return "a_programacion_presupuestaria.ElementoEstructuraOrganizacional[ id=" + id + " ]";
     }
 
     @Override

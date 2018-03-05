@@ -144,7 +144,7 @@ public class TablaCategorias extends EntityBase<Long> {
      * @return estructuraOrganizacional: Estructura Organizacional a la cual pertenece la Tabla de Categorias.
      */
     @ManyToOne
-    @Column(name="ESTRUCTURA_ORGANIZACIONAL_ID", nullable = false)
+    @Column(name="ESTRUCTURA_ORGANIZACIONAL_ID")
     public EstructuraOrganizacional getEstructuraOrganizacional() {
         return estructuraOrganizacional;
     }

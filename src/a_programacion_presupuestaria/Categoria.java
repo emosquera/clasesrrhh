@@ -198,7 +198,7 @@ public class Categoria extends EntityBase<Long> {
 
     @Override
     public String toString() {
-        return "entity.catalogo.Categoria[ id=" + id + " ]";
+        return "a_programacion_presupuestaria.Categoria[ id=" + id + " ]";
     }
     
     @Override

@@ -42,9 +42,9 @@ public class AnexoPersonal extends EntityBase<Long> {
     /**
      * año del Anexo de Personal
      *
-     * @see #getAño()
+     * @see #getAnio()
      */
-    private int año;
+    private int anio;
     /**
      * Listado de detalles del Anexo de Personal
      *
@@ -124,19 +124,19 @@ public class AnexoPersonal extends EntityBase<Long> {
     /**
      * Getter.
      *
-     * @return año: año del Anexo de Personal.
+     * @return anio: año del Anexo de Personal.
      */
-    @Column(name="AÑO", nullable = false)
-    public int getAño() {
-        return año;
+    @Column(name="ANIO", nullable = false)
+    public int getAnio() {
+        return anio;
     }
     /**
-     * Setter. Asigna lo que recibe por parámetro al atributo año
+     * Setter. Asigna lo que recibe por parámetro al atributo anio
      *
-     * @param año
+     * @param anio
      */
-    public void setAño(int año) {
-        this.año = año;
+    public void setAnio(int anio) {
+        this.anio = anio;
     }
     /**
      * Getter.

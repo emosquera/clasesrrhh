@@ -43,7 +43,7 @@ public class CategoriaTablaCategorias extends EntityBase<Long> {
     /**
      * Listado de Cargos Asociados a la Categoria asociada a la Tabla de Categorias
      *
-     * @see #getMes()
+     * @see #getCargos()
      */
     private List<Cargo> cargos;
     /**
