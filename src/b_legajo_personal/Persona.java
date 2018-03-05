@@ -6,8 +6,6 @@ import c_foja_servicio.Retiro;
 import d_preparacion_planilla_personal.Embargo;
 import y_entity.base.EntityBase;
 import g_gestion_tablas_catalogos.Barrio;
-import g_gestion_tablas_catalogos.Ciudad;
-import g_gestion_tablas_catalogos.DepartamentoTerritorial;
 import z_enums.catalogo.EstadoCivil;
 import z_enums.catalogo.EstatusPersona;
 import z_enums.catalogo.GrupoSanguineo;
@@ -106,25 +104,13 @@ public class Persona extends EntityBase<Long>{
      *
      * @see #getNumeroExterior()
      */
-    private String numeroExterior;
+    private Integer numeroExterior;
     /**
      * numero interior de la Persona
      *
      * @see #getNumeroInterior()
      */
-    private String numeroInterior;
-    /**
-     * ciudad de residencia de la Persona
-     *
-     * @see #getCiudad()
-     */
-    private Ciudad ciudad;
-    /**
-     * Departamento Territorial donde reside la Persona
-     *
-     * @see #getDepartamentoTerritorial()
-     */
-    private DepartamentoTerritorial departamentoTerritorial;
+    private Integer numeroInterior;
     /**
      * Barrio donde reside la Persona
      *
@@ -464,8 +450,8 @@ public class Persona extends EntityBase<Long>{
      *
      * @return numeroExterior: numero exterior de la Persona.
      */
-    @Column(name="NUMERO_EXTERIOR", nullable = false, length = 16)
-    public String getNumeroExterior() {
+    @Column(name="NUMERO_EXTERIOR", nullable = false)
+    public Integer getNumeroExterior() {
         return numeroExterior;
     }
     /**
@@ -473,7 +459,7 @@ public class Persona extends EntityBase<Long>{
      *
      * @param numeroExterior
      */
-    public void setNumeroExterior(String numeroExterior) {
+    public void setNumeroExterior(Integer numeroExterior) {
         this.numeroExterior = numeroExterior;
     }
     /**
@@ -481,8 +467,8 @@ public class Persona extends EntityBase<Long>{
      *
      * @return numeroInterior: numero interior de la Persona.
      */
-    @Column(name="NUMERO_INTERIOR", nullable = false, length = 16)
-    public String getNumeroInterior() {
+    @Column(name="NUMERO_INTERIOR", nullable = false)
+    public Integer getNumeroInterior() {
         return numeroInterior;
     }
     /**
@@ -490,44 +476,8 @@ public class Persona extends EntityBase<Long>{
      *
      * @param numeroInterior
      */
-    public void setNumeroInterior(String numeroInterior) {
+    public void setNumeroInterior(Integer numeroInterior) {
         this.numeroInterior = numeroInterior;
-    }
-    /**
-     * Getter.
-     *
-     * @return ciudad: ciudad donde reside la Persona.
-     */
-    @ManyToOne
-    @JoinColumn(name="CIUDAD_ID")
-    public Ciudad getCiudad() {
-        return ciudad;
-    }
-    /**
-     * Setter. Asigna lo que recibe por parámetro al atributo ciudad
-     *
-     * @param ciudad
-     */
-    public void setCiudad(Ciudad ciudad) {
-        this.ciudad = ciudad;
-    }
-    /**
-     * Getter.
-     *
-     * @return departamentoTerritorial: departamento territorial donde reside la Persona.
-     */
-    @ManyToOne
-    @JoinColumn(name="DEPARTAMENTO_TERRITORIAL_ID")
-    public DepartamentoTerritorial getDepartamentoTerritorial() {
-        return departamentoTerritorial;
-    }
-    /**
-     * Setter. Asigna lo que recibe por parámetro al atributo departamentoTerritorial
-     *
-     * @param departamentoTerritorial
-     */
-    public void setDepartamentoTerritorial(DepartamentoTerritorial departamentoTerritorial) {
-        this.departamentoTerritorial = departamentoTerritorial;
     }
     /**
      * Getter.

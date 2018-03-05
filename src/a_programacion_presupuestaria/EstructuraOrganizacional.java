@@ -1,6 +1,7 @@
 //QSGEN This file will be ignored in future code generations if it's changed
 package a_programacion_presupuestaria;
 
+import b_legajo_personal.ProformaFuncionarios;
 import y_entity.base.EntityBase;
 import entity.externos.Entidad;
 import entity.externos.Nivel;
@@ -90,6 +91,12 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
      * @see #getResolucionesEEN()
      */
     private List<ResolucionEEN> resolucionesEEN;
+    /**
+     * Listado  de Proformas de funcionarios asociadas a la Estructura Organizacional
+     *
+     * @see #getProformasFuncionarios()
+     */
+    private List<ProformaFuncionarios> proformasFuncionarios;
     /**
      * Getter.
      *
@@ -297,6 +304,23 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
     public void setResolucionEENs(List<ResolucionEEN> resolucionesEEN) {
         this.resolucionesEEN = resolucionesEEN;
     }
+    /**
+     * Getter.
+     *
+     * @return proformasFuncionarios: Listado de Proformas de funcionarios asociadas a la Estructura Organizacional.
+     */
+    @OneToMany(mappedBy = "estructuraOrganizacional")
+    public List<ProformaFuncionarios> getProformasFuncionarios() {
+        return proformasFuncionarios;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo proformasFuncionarios
+     *
+     * @param proformasFuncionarios
+     */
+    public void setProformasFuncionarios(List<ProformaFuncionarios> proformasFuncionarios) {
+        this.proformasFuncionarios = proformasFuncionarios;
+    }
     
     @Override
     public int hashCode() {
@@ -329,5 +353,5 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
      */
     public EstructuraOrganizacional() {
     }
-    
+        
 }

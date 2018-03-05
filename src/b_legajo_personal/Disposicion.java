@@ -2,8 +2,8 @@
 package b_legajo_personal;
 
 import a_programacion_presupuestaria.Puesto;
+import d_preparacion_planilla_personal.FuncionarioPlanilla;
 import d_preparacion_planilla_personal.Permiso;
-import d_preparacion_planilla_personal.TipoPlanillaPersonal;
 import java.util.Date;
 import java.util.List;
 import y_entity.base.EntityBase;
@@ -38,12 +38,6 @@ public class Disposicion extends EntityBase<Long> {
      * @see #getTipoPuesto()
      */
     private Puesto puesto;
-    /**
-     * Planilla de Personal a la cual esta asociada la Disposicion
-     *
-     * @see #getPlanillaPersonal()
-     */
-    private TipoPlanillaPersonal planillaPersonal;
     /**
      * Fecha de registro de la Disposicion
      *
@@ -101,6 +95,12 @@ public class Disposicion extends EntityBase<Long> {
      */
     private List<EventoHabilitacion> eventosHabilitacion;
     /**
+     * Listado de planillas a las cuales se ha asociado la disposicion
+     *
+     * @see #getFuncionarioPlanillas()
+     */
+    private List<FuncionarioPlanilla> funcionarioPlanillas;
+    /**
      * Getter.
      *
      * @return persona: Persona asociada a la disposicion
@@ -156,24 +156,6 @@ public class Disposicion extends EntityBase<Long> {
     /**
      * Getter.
      *
-     * @return planillaPersonal: Planilla de Personal a la cual se asocia la Disposicion
-     */
-    @ManyToOne
-    @JoinColumn(name="PLANILLA_PERSONAL_ID")
-    public TipoPlanillaPersonal getPlanillaPersonal() {
-        return planillaPersonal;
-    }
-    /**
-     * Setter. Asigna lo que recibe por parámetro al atributo planillaPersonal
-     *
-     * @param planillaPersonal
-     */
-    public void setPlanillaPersonal(TipoPlanillaPersonal planillaPersonal) {
-        this.planillaPersonal = planillaPersonal;
-    }
-    /**
-     * Getter.
-     *
      * @return fechaDisposicion: fecha de registro de la Disposicion
      */
     @Temporal(javax.persistence.TemporalType.DATE)
@@ -225,6 +207,11 @@ public class Disposicion extends EntityBase<Long> {
     public void setFechaFin(Date fechaFin) {
         this.fechaFin = fechaFin;
     }
+    /**
+     * Getter.
+     *
+     * @return estatus: estatus de la Disposicion
+     */
     @Enumerated(EnumType.STRING)
     @Column(name="ESTATUS", nullable = false)
     public EstatusDisposicion getEstatus() {
@@ -322,6 +309,23 @@ public class Disposicion extends EntityBase<Long> {
      */
     public void setEventosHabilitacion(List<EventoHabilitacion> eventosHabilitacion) {
         this.eventosHabilitacion = eventosHabilitacion;
+    }
+    /**
+     * Getter.
+     *
+     * @return funcionarioPlanillas: Listado de planillas a las cuales se ha asociado la Disposicion
+     */
+    @OneToMany(mappedBy = "disposicion")
+    public List<FuncionarioPlanilla> getFuncionarioPlanillas() {
+        return funcionarioPlanillas;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo funcionarioPlanillas
+     *
+     * @param funcionarioPlanillas
+     */
+    public void setFuncionarioPlanillas(List<FuncionarioPlanilla> funcionarioPlanillas) {
+        this.funcionarioPlanillas = funcionarioPlanillas;
     }
     
     @Override

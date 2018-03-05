@@ -48,12 +48,6 @@ public class DepartamentoTerritorial extends EntityBase<Long>{
      */
     private List<InstitucionEmbargo> institucionesEmbargo;
     /**
-     * listado de personas que residen en el Departamento Territorial.
-     *
-     * @see #getPersonas()
-     */
-    private List<Persona> personas;
-    /**
      * listado de ciudades que pertenecen al Departamento Territorial
      *
      * @see #getCiudades()
@@ -144,23 +138,6 @@ public class DepartamentoTerritorial extends EntityBase<Long>{
      */
     public void setInstitucionesEmbargo(List<InstitucionEmbargo> institucionesEmbargo) {
         this.institucionesEmbargo = institucionesEmbargo;
-    }
-    /**
-     * Getter.
-     *
-     * @return personas: listado de personas que residen en el Departamento Territorial.
-     */
-    @OneToMany(mappedBy = "departamentoTerritorial")
-    public List<Persona> getPersonas() {
-        return personas;
-    }
-    /**
-     * Setter. Asigna lo que recibe por parámetro al atributo personas
-     *
-     * @param personas
-     */
-    public void setPersonas(List<Persona> personas) {
-        this.personas = personas;
     }
     /**
      * Getter.

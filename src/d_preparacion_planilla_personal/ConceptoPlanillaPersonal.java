@@ -54,6 +54,12 @@ public class ConceptoPlanillaPersonal extends EntityBase<Long> {
      */
     private List<ConceptoGrupoConceptosPlanillaPersonal> conceptoGruposConceptosPlanillaPersonal;
     /**
+     * Listado de conceptos de funcionarios asociados al concepto
+     *
+     * @see #getConceptosFuncionarioPlanillas()
+     */
+    private List<ConceptosFuncionarioPlanilla> conceptosFuncionarioPlanillas;
+    /**
      * Getter.
      *
      * @return codigo: codigo del Concepto de la Planilla de Personal.
@@ -157,6 +163,23 @@ public class ConceptoPlanillaPersonal extends EntityBase<Long> {
     public void setConceptoGruposConceptosPlanillaPersonal(List<ConceptoGrupoConceptosPlanillaPersonal> conceptoGruposConceptosPlanillaPersonal) {
         this.conceptoGruposConceptosPlanillaPersonal = conceptoGruposConceptosPlanillaPersonal;
     }
+    /**
+     * Getter.
+     *
+     * @return conceptosFuncionarioPlanillas: Listado de conceptos de funcionarios asociados al Concepto.
+     */
+    @OneToMany(mappedBy = "concepto")
+    public List<ConceptosFuncionarioPlanilla> getConceptosFuncionarioPlanillas() {
+        return conceptosFuncionarioPlanillas;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo conceptosFuncionarioPlanillas
+     *
+     * @param conceptosFuncionarioPlanillas
+     */
+    public void setConceptosFuncionarioPlanillas(List<ConceptosFuncionarioPlanilla> conceptosFuncionarioPlanillas) {
+        this.conceptosFuncionarioPlanillas = conceptosFuncionarioPlanillas;
+    }
     
     @Override
     public int hashCode() {
@@ -177,7 +200,7 @@ public class ConceptoPlanillaPersonal extends EntityBase<Long> {
 
     @Override
     public String toString() {
-        return "entity.catalogo.ConceptoPlanillaPersonal[ id=" + id + " ]";
+        return "d_preparacion_planilla_personal.ConceptoPlanillaPersonal[ id=" + id + " ]";
     }
 
     @Override

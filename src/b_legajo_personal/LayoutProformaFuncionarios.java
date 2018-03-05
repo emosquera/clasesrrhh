@@ -1,6 +1,7 @@
 //QSGEN This file will be ignored in future code generations if it's changed
 package b_legajo_personal;
 
+import java.util.List;
 import y_entity.base.EntityBase;
 import javax.persistence.*;
 /**
@@ -32,6 +33,12 @@ public class LayoutProformaFuncionarios extends EntityBase<Long> {
      * @see #getNumeroColumnas()
      */
     private int numeroColumnas;
+    /**
+     * Proformas de funcionarios asociados al Layout
+     *
+     * @see #getProformasFuncionarios()
+     */
+    private List<ProformaFuncionarios> proformasFuncionarios;
     //private Disposicion disposicion;
     /**
      * Getter.
@@ -83,6 +90,23 @@ public class LayoutProformaFuncionarios extends EntityBase<Long> {
      */
     public void setNumeroColumnas(int numeroColumnas) {
         this.numeroColumnas = numeroColumnas;
+    }
+    /**
+     * Getter.
+     *
+     * @return proformasFuncionarios: Proformas de funcionarios asociadas al Layout.
+     */
+    @OneToMany(mappedBy = "layoutProforma")
+    public List<ProformaFuncionarios> getProformasFuncionarios() {
+        return proformasFuncionarios;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo proformasFuncionarios
+     *
+     * @param proformasFuncionarios
+     */
+    public void setProformasFuncionarios(List<ProformaFuncionarios> proformasFuncionarios) {
+        this.proformasFuncionarios = proformasFuncionarios;
     }
     
     @Override

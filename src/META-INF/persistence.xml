@@ -70,6 +70,9 @@
     <class>entity.externos.Beneficiario</class>
     <class>d_preparacion_planilla_personal.Embargo</class>
     <class>b_legajo_personal.LayoutProformaFuncionarios</class>
+    <class>b_legajo_personal.ProformaFuncionario</class>
+    <class>d_preparacion_planilla_personal.FuncionarioPlanilla</class>
+    <class>d_preparacion_planilla_personal.ConceptosFuncionarioPlanilla</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/syslife?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

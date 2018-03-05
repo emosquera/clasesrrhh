@@ -1,6 +1,7 @@
 //QSGEN This file will be ignored in future code generations if it's changed
 package b_legajo_personal;
 
+import java.util.List;
 import y_entity.base.EntityBase;
 import javax.persistence.*;
 /**
@@ -26,6 +27,12 @@ public class TipoInclusionDatos extends EntityBase<Long> {
      * @see #getInformacion()
      */
     private String informacion;
+    /**
+     * Listado de proformas de funcionarios donde se ha incluido los datos
+     *
+     * @see #getInformacion()
+     */
+    private List<ProformaFuncionarios> proformasFuncionarios;
     /**
      * Getter.
      *
@@ -60,6 +67,23 @@ public class TipoInclusionDatos extends EntityBase<Long> {
     public void setInformacion(String informacion) {
         this.informacion = informacion;
     }
+    /**
+     * Getter.
+     *
+     * @return proformasFuncionarios: listado de proformas donde se ha incluido los datos.
+     */
+    @ManyToMany(mappedBy = "datosIncluidos")
+    public List<ProformaFuncionarios> getProformasFuncionarios() {
+        return proformasFuncionarios;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo proformasFuncionarios
+     *
+     * @param proformasFuncionarios
+     */
+    public void setProformasFuncionarios(List<ProformaFuncionarios> proformasFuncionarios) {
+        this.proformasFuncionarios = proformasFuncionarios;
+    }
 
     @Override
     public int hashCode() {
@@ -80,7 +104,7 @@ public class TipoInclusionDatos extends EntityBase<Long> {
 
     @Override
     public String toString() {
-        return "entity.catalogo.TipoInclusionDatos[ id=" + id + " ]";
+        return "b_legajo_personal.TipoInclusionDatos[ id=" + id + " ]";
     }
 
     @Override

@@ -55,17 +55,17 @@ public class TipoPlanillaPersonal extends EntityBase<Long> {
      */
     private List<EntidadPlanillaPersonal> entidadesPlanillaPersonal;
     /**
-     * Disposiciones Asociadas a la Planilla de Personal
-     *
-     * @see #getDisposiciones()
-     */
-    private List<Disposicion> disposiciones;
-    /**
      * Listado de Grupos de conceptos asociados a la planilla de personal
      *
      * @see #getPlanillaPersonalGruposConceptos()
      */
     private List<PlanillaPersonalGrupoConceptos> planillaPersonalGruposConceptos;
+    /**
+     * Listado de disposiciones asociadas a la planilla
+     *
+     * @see #getFuncionariosPlanilla()
+     */
+    private List<FuncionarioPlanilla> funcionariosPlanilla;
     /**
      * Getter.
      *
@@ -174,23 +174,6 @@ public class TipoPlanillaPersonal extends EntityBase<Long> {
     /**
      * Getter.
      *
-     * @return disposiciones: Disposiciones asociadas a la Planilla de Personal.
-     */
-    @OneToMany(mappedBy = "planillaPersonal")
-    public List<Disposicion> getDisposiciones() {
-        return disposiciones;
-    }
-    /**
-     * Setter. Asigna lo que recibe por parámetro al atributo disposiciones
-     *
-     * @param disposiciones
-     */
-    public void setDisposiciones(List<Disposicion> disposiciones) {
-        this.disposiciones = disposiciones;
-    }
-    /**
-     * Getter.
-     *
      * @return planillaPersonalGruposConceptos: listado de grupo de conceptos asociados a la planilla de personal .
      */
     @OneToMany(mappedBy = "planillaPersonal")
@@ -204,6 +187,23 @@ public class TipoPlanillaPersonal extends EntityBase<Long> {
      */
     public void setPlanillaPersonalGruposConceptos(List<PlanillaPersonalGrupoConceptos> planillaPersonalGruposConceptos) {
         this.planillaPersonalGruposConceptos = planillaPersonalGruposConceptos;
+    }
+    /**
+     * Getter.
+     *
+     * @return funcionariosPlanilla: Listado de disposiciones asociadas a la planilla.
+     */
+    @OneToMany(mappedBy = "planillaPersonal")
+    public List<FuncionarioPlanilla> getFuncionariosPlanilla() {
+        return funcionariosPlanilla;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo funcionariosPlanilla
+     *
+     * @param funcionariosPlanilla
+     */
+    public void setFuncionariosPlanilla(List<FuncionarioPlanilla> funcionariosPlanilla) {
+        this.funcionariosPlanilla = funcionariosPlanilla;
     }
     
     @Override
@@ -237,5 +237,5 @@ public class TipoPlanillaPersonal extends EntityBase<Long> {
      */
     public TipoPlanillaPersonal() {
     }
-
+    
 }
