@@ -225,7 +225,7 @@ public class TipoPlanillaPersonal extends EntityBase<Long> {
 
     @Override
     public String toString() {
-        return "entity.catalogo.TipoPlanillaPersonal[ id=" + id + " ]";
+        return "d_preparacion_planilla_personal.TipoPlanillaPersonal[ id=" + id + " ]";
     }
 
     @Override

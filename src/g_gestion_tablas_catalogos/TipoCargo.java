@@ -128,7 +128,7 @@ public class TipoCargo extends EntityBase<Long> {
 
     @Override
     public String toString() {
-        return "entity.catalogo.TipoCargo[ id=" + id + " ]";
+        return "g_gestion_tablas_catalogos.TipoCargo[ id=" + id + " ]";
     }
 
     @Override

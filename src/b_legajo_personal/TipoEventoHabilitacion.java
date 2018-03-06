@@ -152,7 +152,7 @@ public class TipoEventoHabilitacion extends EntityBase<Long> {
 
     @Override
     public String toString() {
-        return "entity.catalogo.tipoEventoHabilitacion[ id=" + id + " ]";
+        return "b_legajo_personal.tipoEventoHabilitacion[ id=" + id + " ]";
     }
 
     @Override

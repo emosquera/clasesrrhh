@@ -80,7 +80,7 @@ public class TipoRetencion extends EntityBase<Long> {
 
     @Override
     public String toString() {
-        return "entity.catalogo.TipoRetencion[ id=" + id + " ]";
+        return "d_preparacion_planilla_personal.TipoRetencion[ id=" + id + " ]";
     }
 
     @Override

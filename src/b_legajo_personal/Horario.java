@@ -1,7 +1,6 @@
 //QSGEN This file will be ignored in future code generations if it's changed
 package b_legajo_personal;
 
-import java.util.List;
 import y_entity.base.EntityBase;
 import z_enums.catalogo.DiaSemana;
 import javax.persistence.*;
@@ -152,7 +151,7 @@ public class Horario extends EntityBase<Long> {
 
     @Override
     public String toString() {
-        return "entity.catalogo.Horario[ id=" + id + " ]";
+        return "b_legajo_personal.Horario[ id=" + id + " ]";
     }
 
     @Override

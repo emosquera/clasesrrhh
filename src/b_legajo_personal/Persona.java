@@ -862,7 +862,7 @@ public class Persona extends EntityBase<Long>{
 
     @Override
     public String toString() {
-        return "entity.catalogo.Persona[ id=" + id + " ]";
+        return "b_legajo_personal.Persona[ id=" + id + " ]";
     }
 
     @Override

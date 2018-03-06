@@ -104,7 +104,7 @@ public class TipoEmbargo extends EntityBase<Long>  {
 
     @Override
     public String toString() {
-        return "entity.catalogo.TipoEmbargo[ id=" + id + " ]";
+        return "d_preparacion_planilla_personal.TipoEmbargo[ id=" + id + " ]";
     }
 
     @Override

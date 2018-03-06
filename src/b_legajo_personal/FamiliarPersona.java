@@ -122,6 +122,7 @@ public class FamiliarPersona extends EntityBase<Long>  {
      * @return familiar: datos de la persona familiar.
      */
     @OneToOne
+    @JoinColumn(name="FAMILIAR_ID")
     public Persona getFamiliar() {
         return familiar;
     }
@@ -153,7 +154,7 @@ public class FamiliarPersona extends EntityBase<Long>  {
 
     @Override
     public String toString() {
-        return "entity.catalogo.FamiliarPersona[ id=" + id + " ]";
+        return "b_legajo_personal.FamiliarPersona[ id=" + id + " ]";
     }
 
     @Override

@@ -104,7 +104,7 @@ public class TipoBaja extends EntityBase<Long> {
 
     @Override
     public String toString() {
-        return "entity.catalogo.TipoBaja[ id=" + id + " ]";
+        return "b_legajo_personal.TipoBaja[ id=" + id + " ]";
     }
 
     @Override

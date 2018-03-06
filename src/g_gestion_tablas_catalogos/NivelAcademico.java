@@ -80,7 +80,7 @@ public class NivelAcademico extends EntityBase<Long> {
 
     @Override
     public String toString() {
-        return "entity.catalogo.NivelAcademico[ id=" + id + " ]";
+        return "g_gestion_tablas_catalogos.NivelAcademico[ id=" + id + " ]";
     }
     
     @Override

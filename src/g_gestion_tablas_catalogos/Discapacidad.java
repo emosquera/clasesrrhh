@@ -130,7 +130,7 @@ public class Discapacidad extends EntityBase<Long> {
 
     @Override
     public String toString() {
-        return "entity.catalogo.Discapacidad[ id=" + id + " ]";
+        return "g_gestion_tablas_catalogos.Discapacidad[ id=" + id + " ]";
     }
 
     @Override

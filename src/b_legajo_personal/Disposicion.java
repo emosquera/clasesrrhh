@@ -231,6 +231,7 @@ public class Disposicion extends EntityBase<Long> {
      * @return bajaFuncionario: Baja de Funcionario asociado a la Disposicion
      */
     @OneToOne
+    @JoinColumn(name="BAJA_FUNCIONARIO_ID")
     public BajaFuncionario getBajaFuncionario() {
         return bajaFuncionario;
     }
@@ -248,6 +249,7 @@ public class Disposicion extends EntityBase<Long> {
      * @return defuncionTrabajador: Defuncion de Funcionario asociado a la Disposicion
      */
     @OneToOne
+    @JoinColumn(name="DEFUNCION_TRABAJADOR_ID")
     public DefuncionTrabajador getDefuncionTrabajador() {
         return defuncionTrabajador;
     }

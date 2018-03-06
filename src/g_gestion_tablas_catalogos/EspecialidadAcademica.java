@@ -80,7 +80,7 @@ public class EspecialidadAcademica extends EntityBase<Long> {
 
     @Override
     public String toString() {
-        return "entity.catalogo.EspecialidadAcademica[ id=" + id + " ]";
+        return "g_gestion_tablas_catalogos.EspecialidadAcademica[ id=" + id + " ]";
     }
 
     @Override

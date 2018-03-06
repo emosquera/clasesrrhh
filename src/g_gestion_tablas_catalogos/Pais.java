@@ -127,7 +127,7 @@ public class Pais extends EntityBase<Long> {
 
     @Override
     public String toString() {
-        return "entity.catalogo.Pais[ id=" + id + " ]";
+        return "g_gestion_tablas_catalogos.Pais[ id=" + id + " ]";
     }
 
     @Override

@@ -154,7 +154,7 @@ public class Barrio extends EntityBase<Long>{
 
     @Override
     public String toString() {
-        return "entity.catalogo.Barrio[ id=" + id + " ]";
+        return "g_gestion_tablas_catalogos.Barrio[ id=" + id + " ]";
     }
 
     @Override

@@ -124,6 +124,7 @@ public class ProformaFuncionarios extends EntityBase<Long> {
      * @return datosIncluidos: Datos a incluir en la proforma de funcionarios.
      */
     @ManyToMany
+    @JoinColumn(name="TIPO_INCLUSION_DATOS_ID")
     public List<TipoInclusionDatos> getDatosIncluidos() {
         return datosIncluidos;
     }

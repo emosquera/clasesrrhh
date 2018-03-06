@@ -2,7 +2,6 @@
 package g_gestion_tablas_catalogos;
 
 import d_preparacion_planilla_personal.InstitucionEmbargo;
-import b_legajo_personal.Persona;
 import y_entity.base.EntityBase;
 import java.util.List;
 import javax.persistence.*;
@@ -176,7 +175,7 @@ public class Ciudad  extends EntityBase<Long>{
 
     @Override
     public String toString() {
-        return "entity.catalogo.Ciudad[ id=" + id + " ]";
+        return "g_gestion_tablas_catalogos.Ciudad[ id=" + id + " ]";
     }
 
     @Override

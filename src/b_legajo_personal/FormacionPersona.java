@@ -324,7 +324,7 @@ public class FormacionPersona extends EntityBase<Long>  {
 
     @Override
     public String toString() {
-        return "entity.catalogo.FormacionPersona[ id=" + id + " ]";
+        return "b_legajo_personal.FormacionPersona[ id=" + id + " ]";
     }
 
     @Override

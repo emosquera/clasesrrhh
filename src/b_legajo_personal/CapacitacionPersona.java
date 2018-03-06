@@ -295,7 +295,7 @@ public class CapacitacionPersona extends EntityBase<Long> {
 
     @Override
     public String toString() {
-        return "entity.catalogo.CapacitacionPersona[ id=" + id + " ]";
+        return "b_legajo_personal.CapacitacionPersona[ id=" + id + " ]";
     }
 
     @Override

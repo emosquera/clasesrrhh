@@ -223,7 +223,7 @@ public class InstitucionEmbargo extends EntityBase<Long> {
 
     @Override
     public String toString() {
-        return "entity.catalogo.InstitucionEmbargo[ id=" + id + " ]";
+        return "d_preparacion_planilla_personal.InstitucionEmbargo[ id=" + id + " ]";
     }
 
     @Override

@@ -46,6 +46,7 @@ public class SolicitudNuevoGrupoConceptos extends EntityBase<Long> {
      * @return grupoConceptos: Grupo de conceptos a ser aprobado
      */
     @OneToOne
+    @JoinColumn(name="GRUPO_CONCEPTOS_PLANILLA_ID")
     public GrupoConceptosPlanillaPersonal getGrupoConceptos() {
         return grupoConceptos;
     }

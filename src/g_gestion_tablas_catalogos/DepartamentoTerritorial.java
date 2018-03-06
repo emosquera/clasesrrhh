@@ -176,7 +176,7 @@ public class DepartamentoTerritorial extends EntityBase<Long>{
 
     @Override
     public String toString() {
-        return "entity.catalogo.DepartamentoTerritorial[ id=" + id + " ]";
+        return "g_gestion_tablas_catalogos.DepartamentoTerritorial[ id=" + id + " ]";
     }
 
     @Override
