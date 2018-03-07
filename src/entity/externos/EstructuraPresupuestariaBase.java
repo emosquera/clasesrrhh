@@ -6,6 +6,7 @@
 package entity.externos;
 
 import a_programacion_presupuestaria.DetalleAnexoPersonal;
+import a_programacion_presupuestaria.Puesto;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
@@ -20,6 +21,9 @@ import javax.persistence.OneToMany;
  */
 @Entity
 public class EstructuraPresupuestariaBase implements Serializable {
+
+    @OneToMany(mappedBy = "estructuraPresupuestaria")
+    private List<Puesto> puestos;
 
     @OneToMany(mappedBy = "tituloPresupuestario")
     private List<DetalleAnexoPersonal> detalleAnexoPersonals;

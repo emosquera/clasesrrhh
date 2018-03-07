@@ -3,6 +3,9 @@ package a_programacion_presupuestaria;
 
 import b_legajo_personal.Disposicion;
 import b_legajo_personal.ExperienciaLaboralPersona;
+import entity.externos.EstructuraPresupuestariaBase;
+import entity.externos.FuenteFinanciamiento;
+import entity.externos.ObjetoGasto;
 import java.util.List;
 import y_entity.base.EntityBase;
 import javax.persistence.*;
@@ -53,9 +56,24 @@ public class Puesto extends EntityBase<Long> {
      * @see #getexperienciasLaboralesPersona()
      */
     private Disposicion disposicion;
-    //estructura presupuestaria base: Estructura Presupuestaria Base
-    //objeto de gasto: Objeto de Gasto
-    //fuente de financiamiento: Fuente de Financiamiento
+    /**
+     * Estructura Presupuestaria Base del Puesto
+     *
+     * @see #getEstructuraPresupuestaria()
+     */
+    private EstructuraPresupuestariaBase estructuraPresupuestaria;
+    /**
+     * Objeto de Gasto del Puesto
+     *
+     * @see #getObjetoGasto()
+     */
+    private ObjetoGasto objetoGasto;
+    /**
+     * Fuente de Financiamiento del Puesto
+     *
+     * @see #getFuenteFinanciamiento()
+     */
+    private FuenteFinanciamiento fuenteFinanciamiento;
     /**
      * Getter.
      *
@@ -160,6 +178,60 @@ public class Puesto extends EntityBase<Long> {
      */
     public void setDisposicion(Disposicion disposicion) {
         this.disposicion = disposicion;
+    }
+    /**
+     * Getter.
+     *
+     * @return estructuraPresupuestaria: Estructura Presupuestaria Base del Puesto.
+     */
+    @ManyToOne
+    @JoinColumn(name="ESTRUCTURA_PRESUPUESTARIA_ID")
+    public EstructuraPresupuestariaBase getEstructuraPresupuestaria() {
+        return estructuraPresupuestaria;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo estructuraPresupuestaria
+     *
+     * @param estructuraPresupuestaria
+     */
+    public void setEstructuraPresupuestaria(EstructuraPresupuestariaBase estructuraPresupuestaria) {
+        this.estructuraPresupuestaria = estructuraPresupuestaria;
+    }
+    /**
+     * Getter.
+     *
+     * @return objetoGasto: Objeto de Gasto del Puesto.
+     */
+    @ManyToOne
+    @JoinColumn(name="OBJETO_GASTO_ID")
+    public ObjetoGasto getObjetoGasto() {
+        return objetoGasto;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo objetoGasto
+     *
+     * @param objetoGasto
+     */
+    public void setObjetoGasto(ObjetoGasto objetoGasto) {
+        this.objetoGasto = objetoGasto;
+    }
+    /**
+     * Getter.
+     *
+     * @return fuenteFinanciamiento: Fuente de financiamiento del Puesto.
+     */
+    @ManyToOne
+    @JoinColumn(name="FUENTE_FINANCIAMIENTO_ID")
+    public FuenteFinanciamiento getFuenteFinanciamiento() {
+        return fuenteFinanciamiento;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo fuenteFinanciamiento
+     *
+     * @param fuenteFinanciamiento
+     */
+    public void setFuenteFinanciamiento(FuenteFinanciamiento fuenteFinanciamiento) {
+        this.fuenteFinanciamiento = fuenteFinanciamiento;
     }
     
     @Override

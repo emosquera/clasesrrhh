@@ -66,8 +66,12 @@ public class Embargo extends EntityBase<Long> {
      * @see #getReferenciaDocumento()
      */
     private String referenciaDocumento;
-    //concepto asociado: 
-    
+    /**
+     * Concepto de descuento del Embargo
+     *
+     * @see #getConceptoAsociado()
+     */
+    private ConceptoPlanillaPersonal conceptoAsociado;
     /**
      * fecha de inicio del embargo
      *
@@ -80,8 +84,12 @@ public class Embargo extends EntityBase<Long> {
      * @see #getFechaFin()
      */
     private Date fechaFin;
-    //concepto base: 
-    
+    /**
+     * Concepto sobre el cual se realiza el Embargo
+     *
+     * @see #getConceptoBase()
+     */
+    private ConceptoPlanillaPersonal conceptoBase;
     /**
      * tipo de calculo del embargo
      *
@@ -101,7 +109,7 @@ public class Embargo extends EntityBase<Long> {
      */
     private Beneficiario beneficiario;
     /**
-     * relacion del beneficiario del embargocon el funcionario
+     * relacion del beneficiario del embargo con el funcionario
      *
      * @see #getRelacion()
      */
@@ -352,6 +360,42 @@ public class Embargo extends EntityBase<Long> {
      */
     public void setRelacion(String relacion) {
         this.relacion = relacion;
+    }
+    /**
+     * Getter.
+     *
+     * @return conceptoAsociado: Concepto de descuento del Embargo
+     */
+    @ManyToOne
+    @JoinColumn(name="CONCEPTO_ASOCIADO_ID")
+    public ConceptoPlanillaPersonal getConceptoAsociado() {
+        return conceptoAsociado;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo conceptoAsociado
+     *
+     * @param conceptoAsociado
+     */
+    public void setConceptoAsociado(ConceptoPlanillaPersonal conceptoAsociado) {
+        this.conceptoAsociado = conceptoAsociado;
+    }
+    /**
+     * Getter.
+     *
+     * @return conceptoBase: Concepto sobre el cual se realiza el Embargo
+     */
+    @ManyToOne
+    @JoinColumn(name="CONCEPTO_BASE_ID")
+    public ConceptoPlanillaPersonal getConceptoBase() {
+        return conceptoBase;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo conceptoBase
+     *
+     * @param conceptoBase
+     */
+    public void setConceptoBase(ConceptoPlanillaPersonal conceptoBase) {
+        this.conceptoBase = conceptoBase;
     }
 
     @Override

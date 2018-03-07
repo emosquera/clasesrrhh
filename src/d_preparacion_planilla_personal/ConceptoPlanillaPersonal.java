@@ -60,6 +60,18 @@ public class ConceptoPlanillaPersonal extends EntityBase<Long> {
      */
     private List<ConceptosFuncionarioPlanilla> conceptosFuncionarioPlanillas;
     /**
+     * Listado de Embargos donde se aplica el concepto como descuento
+     *
+     * @see #getEmbargosConceptoAsociado()
+     */
+    private List<Embargo> embargosConceptoAsociado;
+    /**
+     * Listado de Embargos donde se aplica el concepto como base
+     *
+     * @see #getEmbargosConceptoBase()
+     */
+    private List<Embargo> embargosConceptoBase;
+    /**
      * Getter.
      *
      * @return codigo: codigo del Concepto de la Planilla de Personal.
@@ -180,6 +192,40 @@ public class ConceptoPlanillaPersonal extends EntityBase<Long> {
     public void setConceptosFuncionarioPlanillas(List<ConceptosFuncionarioPlanilla> conceptosFuncionarioPlanillas) {
         this.conceptosFuncionarioPlanillas = conceptosFuncionarioPlanillas;
     }
+    /**
+     * Getter.
+     *
+     * @return embargosConceptoAsociado: Listado de Embargos donde se aplica el concepto como descuento.
+     */
+    @OneToMany(mappedBy = "conceptoAsociado")
+    public List<Embargo> getEmbargosConceptoAsociado() {
+        return embargosConceptoAsociado;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo embargosConceptoAsociado
+     *
+     * @param embargosConceptoAsociado
+     */
+    public void setEmbargosConceptoAsociado(List<Embargo> embargosConceptoAsociado) {
+        this.embargosConceptoAsociado = embargosConceptoAsociado;
+    }
+    /**
+     * Getter.
+     *
+     * @return embargosConceptoBase: Listado de Embargos donde se aplica el concepto como base.
+     */
+    @OneToMany(mappedBy = "conceptoBase")
+    public List<Embargo> getEmbargosConceptoBase() {
+        return embargosConceptoBase;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo embargosConceptoBase
+     *
+     * @param embargosConceptoBase
+     */
+    public void setEmbargosConceptoBase(List<Embargo> embargosConceptoBase) {
+        this.embargosConceptoBase = embargosConceptoBase;
+    }
     
     @Override
     public int hashCode() {
@@ -212,5 +258,6 @@ public class ConceptoPlanillaPersonal extends EntityBase<Long> {
      */
     public ConceptoPlanillaPersonal() {
     }
+    
     
 }
