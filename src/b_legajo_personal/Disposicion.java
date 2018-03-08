@@ -3,7 +3,6 @@ package b_legajo_personal;
 
 import a_programacion_presupuestaria.Puesto;
 import d_preparacion_planilla_personal.FuncionarioPlanilla;
-import d_preparacion_planilla_personal.HorarioEspecial;
 import d_preparacion_planilla_personal.Permiso;
 import java.util.Date;
 import java.util.List;

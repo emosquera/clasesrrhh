@@ -4,6 +4,7 @@ package d_preparacion_planilla_personal;
 import b_legajo_personal.Disposicion;
 import java.io.File;
 import java.util.Date;
+import java.util.List;
 import y_entity.base.EntityBase;
 import javax.persistence.*;
 /**
@@ -53,6 +54,12 @@ public class Permiso extends EntityBase<Long> {
      * @see #getDescripcion()
      */
     private String descripcion;
+    /**
+     * Listado de horario especial asociados al Permiso
+     *
+     * @see #getHorariosEspecial()
+     */
+    private List<HorarioEspecial> horariosEspecial;
     /**
      * Getter.
      *
@@ -159,6 +166,23 @@ public class Permiso extends EntityBase<Long> {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+    /**
+     * Getter.
+     *
+     * @return horariosEspecial: Listado de horario especial asociados al Permiso.
+     */
+    @OneToMany(mappedBy = "permiso")
+    public List<HorarioEspecial> getHorariosEspecial() {
+        return horariosEspecial;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo horariosEspecial
+     *
+     * @param horariosEspecial
+     */
+    public void setHorariosEspecial(List<HorarioEspecial> horariosEspecial) {
+        this.horariosEspecial = horariosEspecial;
+    }
     
     @Override
     public int hashCode() {
@@ -191,5 +215,5 @@ public class Permiso extends EntityBase<Long> {
      */
     public Permiso() {
     }
-    
+
 }

@@ -1,6 +1,7 @@
 //QSGEN This file will be ignored in future code generations if it's changed
 package a_programacion_presupuestaria;
 
+import b_legajo_personal.Horario;
 import b_legajo_personal.ProformaFuncionarios;
 import y_entity.base.EntityBase;
 import entity.externos.Entidad;
@@ -97,6 +98,12 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
      * @see #getProformasFuncionarios()
      */
     private List<ProformaFuncionarios> proformasFuncionarios;
+    /**
+     * Horarios asociados a la estructura organizacional
+     *
+     * @see #getHorarios()
+     */
+    private List<Horario> horarios;
     /**
      * Getter.
      *
@@ -321,6 +328,23 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
     public void setProformasFuncionarios(List<ProformaFuncionarios> proformasFuncionarios) {
         this.proformasFuncionarios = proformasFuncionarios;
     }
+    /**
+     * Getter.
+     *
+     * @return horarios: horarios asociados a la Estructura Organizacional.
+     */
+    @OneToMany(mappedBy = "estructuraOrganizacional")
+    public List<Horario> getHorarios() {
+        return horarios;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo horarios
+     *
+     * @param horarios
+     */
+    public void setHorarios(List<Horario> horarios) {
+        this.horarios = horarios;
+    }
     
     @Override
     public int hashCode() {
@@ -353,5 +377,5 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
      */
     public EstructuraOrganizacional() {
     }
-        
+    
 }

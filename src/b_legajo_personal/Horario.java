@@ -1,6 +1,7 @@
 //QSGEN This file will be ignored in future code generations if it's changed
 package b_legajo_personal;
 
+import a_programacion_presupuestaria.EstructuraOrganizacional;
 import y_entity.base.EntityBase;
 import z_enums.catalogo.DiaSemana;
 import javax.persistence.*;
@@ -45,6 +46,12 @@ public class Horario extends EntityBase<Long> {
      * @see #getHoraDescansoFin()
      */
     private String horaDescansoFin;
+    /**
+     * Estructura Organizacional a la cual esta asociada el horario
+     *
+     * @see #getEstructuraOrganizacional()
+     */
+    private EstructuraOrganizacional estructuraOrganizacional;
     /**
      * Getter.
      *
@@ -131,6 +138,26 @@ public class Horario extends EntityBase<Long> {
     public void setHoraDescansoFin(String horaDescansoFin) {
         this.horaDescansoFin = horaDescansoFin;
     }
+    /**
+     * Getter.
+     *
+     * @return estructuraOrganizacional: estructura organizacional a la cual esta asociada el Horario
+     */
+    @ManyToOne
+    @JoinColumn(name="ESTRUCTURA_ORGANIZACIONAL_ID")
+    public EstructuraOrganizacional getEstructuraOrganizacional() {
+        return estructuraOrganizacional;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo estructuraOrganizacional
+     *
+     * @param estructuraOrganizacional
+     */
+    public void setEstructuraOrganizacional(EstructuraOrganizacional estructuraOrganizacional) {
+        this.estructuraOrganizacional = estructuraOrganizacional;
+    }
+    
+    
     
     @Override
     public int hashCode() {
