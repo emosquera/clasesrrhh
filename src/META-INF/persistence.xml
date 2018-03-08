@@ -75,6 +75,16 @@
     <class>d_preparacion_planilla_personal.ConceptosFuncionarioPlanilla</class>
     <class>d_preparacion_planilla_personal.HorarioEspecial</class>
     <class>d_preparacion_planilla_personal.HorarioEspecialDisposicion</class>
+    <class>g_gestion_tablas_catalogos.NivelEducativo</class>
+    <class>g_gestion_tablas_catalogos.TipoEventoCapacitacion</class>
+    <class>g_gestion_tablas_catalogos.Universidad</class>
+    <class>g_gestion_tablas_catalogos.TipoJornadaLaboral</class>
+    <class>g_gestion_tablas_catalogos.TipoHorario</class>
+    <class>g_gestion_tablas_catalogos.TipoAusenciaLaboral</class>
+    <class>g_gestion_tablas_catalogos.TipoAsueto</class>
+    <class>g_gestion_tablas_catalogos.ModalidadContrato</class>
+    <class>g_gestion_tablas_catalogos.TipoMovimientoPersonal</class>
+    <class>g_gestion_tablas_catalogos.Idioma</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/syslife?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
