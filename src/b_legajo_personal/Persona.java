@@ -7,7 +7,7 @@ import d_preparacion_planilla_personal.Embargo;
 import y_entity.base.EntityBase;
 import g_gestion_tablas_catalogos.Barrio;
 import z_enums.catalogo.EstadoCivil;
-import z_enums.catalogo.EstatusPersona;
+import z_enums.catalogo.EstadoDatosPersona;
 import z_enums.catalogo.GrupoSanguineo;
 import z_enums.catalogo.MotivoFallecimiento;
 import z_enums.catalogo.Sexo;
@@ -208,11 +208,11 @@ public class Persona extends EntityBase<Long>{
      */
     private List<ExperienciaLaboralPersona> experienciasLaboralesPersona;
     /**
-     * estatus de la Persona
+     * estado de los datos de la Persona
      *
-     * @see #getEstatusPersona()
+     * @see #getEstadoDatosPersona()
      */
-    private EstatusPersona estatusPersona;
+    private EstadoDatosPersona estadoDatosPersona;
     /**
      * Listado de Disposiciones ocupadas por la Persona
      *
@@ -237,6 +237,12 @@ public class Persona extends EntityBase<Long>{
      * @see #getEmbargos()
      */
     private List<Embargo> embargos;
+    /**
+     * Estado de la persona
+     *
+     * @see #getActivo()
+     */
+    private boolean activo;
     /**
      * Getter.
      *
@@ -759,20 +765,20 @@ public class Persona extends EntityBase<Long>{
     /**
      * Getter.
      *
-     * @return estatusPersona: estatus de la Persona.
+     * @return estadoDatosPersona: estado de los datos de la Persona.
      */
     @Enumerated(EnumType.STRING)
-    @Column(name="ESTATUS", nullable = false)
-    public EstatusPersona getEstatusPersona() {
-        return estatusPersona;
+    @Column(name="ESTADO_DATOS", nullable = false)
+    public EstadoDatosPersona getEstadoDatosPersona() {
+        return estadoDatosPersona;
     }
     /**
-     * Setter. Asigna lo que recibe por parámetro al atributo estatusPersona
+     * Setter. Asigna lo que recibe por parámetro al atributo estadoDatosPersona
      *
-     * @param estatusPersona
+     * @param estadoDatosPersona
      */
-    public void setEstatusPersona(EstatusPersona estatusPersona) {
-        this.estatusPersona = estatusPersona;
+    public void setEstadoDatosPersona(EstadoDatosPersona estadoDatosPersona) {
+        this.estadoDatosPersona = estadoDatosPersona;
     }
     /**
      * Getter.
@@ -841,6 +847,22 @@ public class Persona extends EntityBase<Long>{
      */
     public void setEmbargos(List<Embargo> embargos) {
         this.embargos = embargos;
+    }
+    /**
+     * Getter.
+     *
+     * @return activo: Estado de la Persona.
+     */
+    public boolean isActivo() {
+        return activo;
+    }
+    /**
+     * Setter. Asigna lo que recibe por parámetro al atributo activo
+     *
+     * @param activo
+     */
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
     
     @Override

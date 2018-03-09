@@ -3,7 +3,6 @@ package d_preparacion_planilla_personal;
 
 import y_entity.base.EntityBase;
 import entity.externos.Nivel;
-import z_enums.catalogo.EstadoEntidadPlanillaPersonal;
 import javax.persistence.*;
 /**
  * Clase EntidadPlanillaPersonal extiende de {@link EntityBase}
@@ -37,9 +36,9 @@ public class EntidadPlanillaPersonal extends EntityBase<Long> {
     /**
      * Estado de la Entidad de la Planilla de Personal
      *
-     * @see #getEstadoEntidad()
+     * @see #getActivo()
      */
-    private EstadoEntidadPlanillaPersonal estadoEntidad;
+    private boolean activo;
     /**
      * Planilla de Personal a la cual esta asociada la Entidad.
      *
@@ -101,20 +100,19 @@ public class EntidadPlanillaPersonal extends EntityBase<Long> {
     /**
      * Getter.
      *
-     * @return estadoEntidad: estado de la Entidad de la Planilla de Personal.
+     * @return activo: estado de la Entidad de la Planilla de Personal.
      */ 
-    @Enumerated(EnumType.STRING)
-    @Column(name="ESTADO_ENTIDAD")
-    public EstadoEntidadPlanillaPersonal getEstadoEntidad() {
-        return estadoEntidad;
+    @Column(name="ACTIVO", nullable = false)
+    public boolean getActivo() {
+        return activo;
     }
     /**
-     * Setter. Asigna lo que recibe por parámetro al atributo estadoEntidad
+     * Setter. Asigna lo que recibe por parámetro al atributo activo
      *
-     * @param estadoEntidad
+     * @param activo
      */
-    public void setEstadoEntidad(EstadoEntidadPlanillaPersonal estadoEntidad) {
-        this.estadoEntidad = estadoEntidad;
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
     /**
      * Getter.

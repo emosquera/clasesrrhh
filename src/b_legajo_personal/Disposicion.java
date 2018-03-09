@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.List;
 import y_entity.base.EntityBase;
 import javax.persistence.*;
-import z_enums.catalogo.EstatusDisposicion;
+import z_enums.catalogo.EstadoDisposicion;
 /**
  * Clase Disposicion extiende de {@link EntityBase}
  *
@@ -61,9 +61,9 @@ public class Disposicion extends EntityBase<Long> {
     /**
      * Estatus de la Disposicion
      *
-     * @see #getEstatus()
+     * @see #getEstado()
      */
-    private EstatusDisposicion estatus;
+    private EstadoDisposicion estado;
     /**
      * Baja del funcionario asociado a la Disposicion
      *
@@ -210,20 +210,20 @@ public class Disposicion extends EntityBase<Long> {
     /**
      * Getter.
      *
-     * @return estatus: estatus de la Disposicion
+     * @return estado: estado de la Disposicion
      */
     @Enumerated(EnumType.STRING)
-    @Column(name="ESTATUS", nullable = false)
-    public EstatusDisposicion getEstatus() {
-        return estatus;
+    @Column(name="ESTAOD", nullable = false)
+    public EstadoDisposicion getEstado() {
+        return estado;
     }
     /**
-     * Setter. Asigna lo que recibe por parámetro al atributo estatus
+     * Setter. Asigna lo que recibe por parámetro al atributo estado
      *
-     * @param estatus
+     * @param estado
      */
-    public void setEstatus(EstatusDisposicion estatus) {
-        this.estatus = estatus;
+    public void setEstado(EstadoDisposicion estado) {
+        this.estado = estado;
     }
     /**
      * Getter.
