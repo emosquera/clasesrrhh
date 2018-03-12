@@ -1,13 +1,13 @@
 package z_enums.catalogo;
 
-public enum TipoInformante {
+public enum TipoInformanteEnum {
     INSPECTOR  ("INSPECTOR"),
     FAMILIAR   ("FAMILIAR"),
     OTRO       ("OTRO");
     
         private final String tipoInformante;
         
-        private TipoInformante (String tipoInformante) {
+        private TipoInformanteEnum (String tipoInformante) {
 		this.tipoInformante = tipoInformante;
 	}
 

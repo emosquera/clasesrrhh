@@ -1,6 +1,6 @@
 package z_enums.catalogo;
 
-public enum DiaSemana {
+public enum DiaSemanaEnum {
     LUNES       ("LU"),
     MARTES      ("MA"),
     MIERCOLES   ("MI"),
@@ -11,7 +11,7 @@ public enum DiaSemana {
     
         private final String diaSemana;
         
-        private DiaSemana (String diaSemana) {
+        private DiaSemanaEnum (String diaSemana) {
 		this.diaSemana = diaSemana;
 	}
 

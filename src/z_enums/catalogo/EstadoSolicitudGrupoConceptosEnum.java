@@ -1,13 +1,13 @@
 package z_enums.catalogo;
 
-public enum EstadoSolicitudGrupoConceptos {
+public enum EstadoSolicitudGrupoConceptosEnum {
     POR_APROBAR ("POR APROBAR"),
     APROBADO    ("APROBADO"),
     RECHAZADO   ("RECHAZADO");
 	
 	private final String estadoSolicitudGrupoConceptos;
 	
-	private EstadoSolicitudGrupoConceptos (String estadoSolicitudGrupoConceptos) {
+	private EstadoSolicitudGrupoConceptosEnum (String estadoSolicitudGrupoConceptos) {
 		this.estadoSolicitudGrupoConceptos = estadoSolicitudGrupoConceptos;
 	}
 

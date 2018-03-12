@@ -1,6 +1,6 @@
 package z_enums.catalogo;
 
-public enum Mes {
+public enum MesEnum {
     ENERO       ("ENERO"),
     FEBRERO     ("FEBRERO"),
     MARZO       ("MARZO"),
@@ -16,7 +16,7 @@ public enum Mes {
 	
     private final String mes;
 
-    private Mes (String mes) {
+    private MesEnum (String mes) {
         this.mes = mes;
     }
 

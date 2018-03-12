@@ -2,8 +2,8 @@
 package b_legajo_personal;
 
 import y_entity.base.EntityBase;
-import z_enums.catalogo.EstadoAvanceAcademico;
-import z_enums.catalogo.TipoDocumentoProbatorioCapacitacion;
+import z_enums.catalogo.EstadoAvanceAcademicoEnum;
+import z_enums.catalogo.TipoDocumentoProbatorioCapacitacionEnum;
 import java.util.Date;
 import javax.persistence.*;
 /**
@@ -64,13 +64,13 @@ public class CapacitacionPersona extends EntityBase<Long> {
      *
      * @see #getEstadoAvanceAcademico()
      */
-    private EstadoAvanceAcademico estadoAvanceAcademico;
+    private EstadoAvanceAcademicoEnum estadoAvanceAcademico;
     /**
      * tipo documento probatorio de la Capacitacion
      *
      * @see #getTipoDocumentoProbatorio()
      */
-    private TipoDocumentoProbatorioCapacitacion tipoDocumentoProbatorio;
+    private TipoDocumentoProbatorioCapacitacionEnum tipoDocumentoProbatorio;
     /**
      * numero de documento academico de la Capacitacion
      *
@@ -211,7 +211,7 @@ public class CapacitacionPersona extends EntityBase<Long> {
      */ 
     @Enumerated(EnumType.STRING)
     @Column(name="ESTADO_AVANCE_ACADEMICO", nullable = false)
-    public EstadoAvanceAcademico getEstadoAvanceAcademico() {
+    public EstadoAvanceAcademicoEnum getEstadoAvanceAcademico() {
         return estadoAvanceAcademico;
     }
     /**
@@ -219,7 +219,7 @@ public class CapacitacionPersona extends EntityBase<Long> {
      *
      * @param estadoAvanceAcademico
      */
-    public void setEstadoAvanceAcademico(EstadoAvanceAcademico estadoAvanceAcademico) {
+    public void setEstadoAvanceAcademico(EstadoAvanceAcademicoEnum estadoAvanceAcademico) {
         this.estadoAvanceAcademico = estadoAvanceAcademico;
     }
     /**
@@ -229,7 +229,7 @@ public class CapacitacionPersona extends EntityBase<Long> {
      */ 
     @Enumerated(EnumType.STRING)
     @Column(name="TIPO_DOCUMENTO_PROBATORIO", nullable = true)
-    public TipoDocumentoProbatorioCapacitacion getTipoDocumentoProbatorio() {
+    public TipoDocumentoProbatorioCapacitacionEnum getTipoDocumentoProbatorio() {
         return tipoDocumentoProbatorio;
     }
     /**
@@ -237,7 +237,7 @@ public class CapacitacionPersona extends EntityBase<Long> {
      *
      * @param tipoDocumentoProbatorio
      */
-    public void setTipoDocumentoProbatorio(TipoDocumentoProbatorioCapacitacion tipoDocumentoProbatorio) {
+    public void setTipoDocumentoProbatorio(TipoDocumentoProbatorioCapacitacionEnum tipoDocumentoProbatorio) {
         this.tipoDocumentoProbatorio = tipoDocumentoProbatorio;
     }
     /**

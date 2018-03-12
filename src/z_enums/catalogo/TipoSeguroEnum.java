@@ -1,13 +1,13 @@
 package z_enums.catalogo;
 
-public enum TipoSeguro {
+public enum TipoSeguroEnum {
     VIDA            ("VIDA"),
     MEDICO          ("MEDICO COBERTURA AMPLIA"),
     GASTO_MAYORES   ("GASTOS MAYORES");
     
         private final String tipoSeguro;
         
-        private TipoSeguro (String tipoSeguro) {
+        private TipoSeguroEnum (String tipoSeguro) {
 		this.tipoSeguro = tipoSeguro;
 	}
 

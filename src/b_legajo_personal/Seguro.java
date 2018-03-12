@@ -4,7 +4,7 @@ package b_legajo_personal;
 import java.util.Date;
 import y_entity.base.EntityBase;
 import javax.persistence.*;
-import z_enums.catalogo.TipoSeguro;
+import z_enums.catalogo.TipoSeguroEnum;
 /**
  * Clase Seguro extiende de {@link EntityBase}
  *
@@ -27,7 +27,7 @@ public class Seguro extends EntityBase<Long> {
      *
      * @see #getTipoSeguro()
      */
-    private TipoSeguro tipoSeguro;
+    private TipoSeguroEnum tipoSeguro;
     /**
      * fecha de registro del Seguro
      *
@@ -71,7 +71,7 @@ public class Seguro extends EntityBase<Long> {
      */
     @Enumerated(EnumType.STRING)
     @Column(name="TIPO_SEGURO", nullable = false)
-    public TipoSeguro getTipoSeguro() {
+    public TipoSeguroEnum getTipoSeguro() {
         return tipoSeguro;
     }
     /**
@@ -79,7 +79,7 @@ public class Seguro extends EntityBase<Long> {
      *
      * @param tipoSeguro
      */
-    public void setTipoSeguro(TipoSeguro tipoSeguro) {
+    public void setTipoSeguro(TipoSeguroEnum tipoSeguro) {
         this.tipoSeguro = tipoSeguro;
     }
     /**

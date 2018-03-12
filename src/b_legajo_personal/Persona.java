@@ -6,13 +6,13 @@ import c_foja_servicio.Retiro;
 import d_preparacion_planilla_personal.Embargo;
 import y_entity.base.EntityBase;
 import g_gestion_tablas_catalogos.Barrio;
-import z_enums.catalogo.EstadoCivil;
-import z_enums.catalogo.EstadoDatosPersona;
-import z_enums.catalogo.GrupoSanguineo;
-import z_enums.catalogo.MotivoFallecimiento;
-import z_enums.catalogo.Sexo;
-import z_enums.catalogo.TipoContribuyente;
-import z_enums.catalogo.TipoRegistroConducir;
+import z_enums.catalogo.EstadoCivilEnum;
+import z_enums.catalogo.EstadoDatosPersonaEnum;
+import z_enums.catalogo.GrupoSanguineoEnum;
+import z_enums.catalogo.MotivoFallecimientoEnum;
+import z_enums.catalogo.SexoEnum;
+import z_enums.catalogo.TipoContribuyenteEnum;
+import z_enums.catalogo.TipoRegistroConducirEnum;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
@@ -38,7 +38,7 @@ public class Persona extends EntityBase<Long>{
      *
      * @see #getTipoContribuyente()
      */
-    private TipoContribuyente tipoContribuyente;
+    private TipoContribuyenteEnum tipoContribuyente;
     /**
      * nombres de la Persona
      *
@@ -68,13 +68,13 @@ public class Persona extends EntityBase<Long>{
      *
      * @see #getSexo()
      */
-    private Sexo sexo;
+    private SexoEnum sexo;
     /**
      * estado civil de la Persona
      *
      * @see #getEstadoCivil()
      */
-    private EstadoCivil estadoCivil;
+    private EstadoCivilEnum estadoCivil;
     /**
      * fecha de nacimiento de la Persona
      *
@@ -146,7 +146,7 @@ public class Persona extends EntityBase<Long>{
      *
      * @see #getTipoRegistroConducir()
      */
-    private TipoRegistroConducir tipoRegistroConducir;
+    private TipoRegistroConducirEnum tipoRegistroConducir;
     /**
      * correo electronico personal de la Persona
      *
@@ -158,7 +158,7 @@ public class Persona extends EntityBase<Long>{
      *
      * @see #getGrupoSanguineo()
      */
-    private GrupoSanguineo grupoSanguineo;
+    private GrupoSanguineoEnum grupoSanguineo;
     /**
      *  fecha de fallecimiento de la Persona
      *
@@ -170,7 +170,7 @@ public class Persona extends EntityBase<Long>{
      *
      * @see #getMotivoFallecimiento()
      */
-    private MotivoFallecimiento motivoFallecimiento;
+    private MotivoFallecimientoEnum motivoFallecimiento;
     /**
      * Listado de familiares de la Persona
      *
@@ -212,7 +212,7 @@ public class Persona extends EntityBase<Long>{
      *
      * @see #getEstadoDatosPersona()
      */
-    private EstadoDatosPersona estadoDatosPersona;
+    private EstadoDatosPersonaEnum estadoDatosPersona;
     /**
      * Listado de Disposiciones ocupadas por la Persona
      *
@@ -267,7 +267,7 @@ public class Persona extends EntityBase<Long>{
      */
     @Enumerated(EnumType.STRING)
     @Column(name="TIPO_CONTRIBUYENTE", nullable = true)
-    public TipoContribuyente getTipoContribuyente() {
+    public TipoContribuyenteEnum getTipoContribuyente() {
         return tipoContribuyente;
     }
     /**
@@ -275,7 +275,7 @@ public class Persona extends EntityBase<Long>{
      *
      * @param tipoContribuyente
      */
-    public void setTipoContribuyente(TipoContribuyente tipoContribuyente) {
+    public void setTipoContribuyente(TipoContribuyenteEnum tipoContribuyente) {
         this.tipoContribuyente = tipoContribuyente;
     }
     /**
@@ -353,7 +353,7 @@ public class Persona extends EntityBase<Long>{
      */
     @Enumerated(EnumType.STRING)
     @Column(name="SEXO", nullable = false)
-    public Sexo getSexo() {
+    public SexoEnum getSexo() {
         return sexo;
     }
     /**
@@ -361,7 +361,7 @@ public class Persona extends EntityBase<Long>{
      *
      * @param sexo
      */
-    public void setSexo(Sexo sexo) {
+    public void setSexo(SexoEnum sexo) {
         this.sexo = sexo;
     }
     /**
@@ -371,7 +371,7 @@ public class Persona extends EntityBase<Long>{
      */
     @Enumerated(EnumType.STRING)
     @Column(name="ESTADO_CIVIL", nullable = false)
-    public EstadoCivil getEstadoCivil() {
+    public EstadoCivilEnum getEstadoCivil() {
         return estadoCivil;
     }
     /**
@@ -379,7 +379,7 @@ public class Persona extends EntityBase<Long>{
      *
      * @param estadoCivil
      */
-    public void setEstadoCivil(EstadoCivil estadoCivil) {
+    public void setEstadoCivil(EstadoCivilEnum estadoCivil) {
         this.estadoCivil = estadoCivil;
     }
     /**
@@ -578,7 +578,7 @@ public class Persona extends EntityBase<Long>{
      */
     @Enumerated(EnumType.STRING)
     @Column(name="TIPO_REGISTRO_CONDUCIR", nullable = true)
-    public TipoRegistroConducir getTipoRegistroConducir() {
+    public TipoRegistroConducirEnum getTipoRegistroConducir() {
         return tipoRegistroConducir;
     }
     /**
@@ -586,7 +586,7 @@ public class Persona extends EntityBase<Long>{
      *
      * @param tipoRegistroConducir
      */
-    public void setTipoRegistroConducir(TipoRegistroConducir tipoRegistroConducir) {
+    public void setTipoRegistroConducir(TipoRegistroConducirEnum tipoRegistroConducir) {
         this.tipoRegistroConducir = tipoRegistroConducir;
     }
     /**
@@ -613,7 +613,7 @@ public class Persona extends EntityBase<Long>{
      */
     @Enumerated(EnumType.STRING)
     @Column(name="GRUPO_SANGUINEO", nullable = false)
-    public GrupoSanguineo getGrupoSanguineo() {
+    public GrupoSanguineoEnum getGrupoSanguineo() {
         return grupoSanguineo;
     }
     /**
@@ -621,7 +621,7 @@ public class Persona extends EntityBase<Long>{
      *
      * @param grupoSanguineo
      */
-    public void setGrupoSanguineo(GrupoSanguineo grupoSanguineo) {
+    public void setGrupoSanguineo(GrupoSanguineoEnum grupoSanguineo) {
         this.grupoSanguineo = grupoSanguineo;
     }
     /**
@@ -649,7 +649,7 @@ public class Persona extends EntityBase<Long>{
      */
     @Enumerated(EnumType.STRING)
     @Column(name="MOTIVO_FALLECIMIENTO", nullable = true)
-    public MotivoFallecimiento getMotivoFallecimiento() {
+    public MotivoFallecimientoEnum getMotivoFallecimiento() {
         return motivoFallecimiento;
     }
     /**
@@ -657,7 +657,7 @@ public class Persona extends EntityBase<Long>{
      *
      * @param motivoFallecimiento
      */
-    public void setMotivoFallecimiento(MotivoFallecimiento motivoFallecimiento) {
+    public void setMotivoFallecimiento(MotivoFallecimientoEnum motivoFallecimiento) {
         this.motivoFallecimiento = motivoFallecimiento;
     }
     /**
@@ -769,7 +769,7 @@ public class Persona extends EntityBase<Long>{
      */
     @Enumerated(EnumType.STRING)
     @Column(name="ESTADO_DATOS", nullable = false)
-    public EstadoDatosPersona getEstadoDatosPersona() {
+    public EstadoDatosPersonaEnum getEstadoDatosPersona() {
         return estadoDatosPersona;
     }
     /**
@@ -777,7 +777,7 @@ public class Persona extends EntityBase<Long>{
      *
      * @param estadoDatosPersona
      */
-    public void setEstadoDatosPersona(EstadoDatosPersona estadoDatosPersona) {
+    public void setEstadoDatosPersona(EstadoDatosPersonaEnum estadoDatosPersona) {
         this.estadoDatosPersona = estadoDatosPersona;
     }
     /**

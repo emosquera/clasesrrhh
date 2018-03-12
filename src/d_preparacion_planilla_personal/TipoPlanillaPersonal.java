@@ -3,7 +3,7 @@ package d_preparacion_planilla_personal;
 
 import b_legajo_personal.Disposicion;
 import y_entity.base.EntityBase;
-import z_enums.catalogo.PeriodicidadPlanillaPersonal;
+import z_enums.catalogo.PeriodicidadPlanillaPersonalEnum;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
@@ -47,7 +47,7 @@ public class TipoPlanillaPersonal extends EntityBase<Long> {
      *
      * @see #getPeriodicidad()
      */
-    private PeriodicidadPlanillaPersonal periodicidad;
+    private PeriodicidadPlanillaPersonalEnum periodicidad;
     /**
      * Entidades Asociadas a la Planilla de Personal
      *
@@ -143,7 +143,7 @@ public class TipoPlanillaPersonal extends EntityBase<Long> {
      */
     @Enumerated(EnumType.STRING)
     @Column(name="PERIODICIDAD", nullable = false)
-    public PeriodicidadPlanillaPersonal getPeriodicidad() {
+    public PeriodicidadPlanillaPersonalEnum getPeriodicidad() {
         return periodicidad;
     }
     /**
@@ -151,7 +151,7 @@ public class TipoPlanillaPersonal extends EntityBase<Long> {
      *
      * @param periodicidad
      */
-    public void setPeriodicidad(PeriodicidadPlanillaPersonal periodicidad) {
+    public void setPeriodicidad(PeriodicidadPlanillaPersonalEnum periodicidad) {
         this.periodicidad = periodicidad;
     }
     /**

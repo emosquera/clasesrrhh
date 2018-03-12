@@ -1,13 +1,13 @@
 package z_enums.catalogo;
 
-public enum EstadoCategoria {
+public enum EstadoCategoriaEnum {
     PENDIENTE("PENDIENTE"),
     APROBADA("APROBADA"),
     RECHAZADA("RECHAZADA");
     
         private final String estadoCategoria;
         
-        private EstadoCategoria (String estadoCategoria) {
+        private EstadoCategoriaEnum (String estadoCategoria) {
 		this.estadoCategoria = estadoCategoria;
 	}
 

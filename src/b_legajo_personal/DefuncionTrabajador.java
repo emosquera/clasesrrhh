@@ -4,8 +4,8 @@ import java.io.File;
 import java.util.Date;
 import y_entity.base.EntityBase;
 import javax.persistence.*;
-import z_enums.catalogo.MotivoFallecimiento;
-import z_enums.catalogo.TipoInformante;
+import z_enums.catalogo.MotivoFallecimientoEnum;
+import z_enums.catalogo.TipoInformanteEnum;
 /**
  * Clase DefuncionTrabajador extiende de {@link EntityBase}
  *
@@ -28,7 +28,7 @@ public class DefuncionTrabajador extends EntityBase<Long> {
      *
      * @see #getTipoInformante()
      */
-    private TipoInformante tipoInformante;
+    private TipoInformanteEnum tipoInformante;
     /**
      * nombre del Informante del fallecimiento del Funcionario
      *
@@ -52,7 +52,7 @@ public class DefuncionTrabajador extends EntityBase<Long> {
      *
      * @see #getMotivoFallecimiento()
      */
-    private MotivoFallecimiento motivoFallecimiento;
+    private MotivoFallecimientoEnum motivoFallecimiento;
     /**
      * Observaciones referente al fallecimiento del Funcionario
      *
@@ -89,7 +89,7 @@ public class DefuncionTrabajador extends EntityBase<Long> {
      */
     @Enumerated(EnumType.STRING)
     @Column(name="TIPO_INFORMANTE", nullable = false)
-    public TipoInformante getTipoInformante() {
+    public TipoInformanteEnum getTipoInformante() {
         return tipoInformante;
     }
     /**
@@ -97,7 +97,7 @@ public class DefuncionTrabajador extends EntityBase<Long> {
      *
      * @param tipoInformante
      */
-    public void setTipoInformante(TipoInformante tipoInformante) {
+    public void setTipoInformante(TipoInformanteEnum tipoInformante) {
         this.tipoInformante = tipoInformante;
     }
     /**
@@ -160,7 +160,7 @@ public class DefuncionTrabajador extends EntityBase<Long> {
      */
     @Enumerated(EnumType.STRING)
     @Column(name="MOTIVO_FALLECIMIENTO", nullable = false)
-    public MotivoFallecimiento getMotivoFallecimiento() {
+    public MotivoFallecimientoEnum getMotivoFallecimiento() {
         return motivoFallecimiento;
     }
     /**
@@ -168,7 +168,7 @@ public class DefuncionTrabajador extends EntityBase<Long> {
      *
      * @param motivoFallecimiento
      */
-    public void setMotivoFallecimiento(MotivoFallecimiento motivoFallecimiento) {
+    public void setMotivoFallecimiento(MotivoFallecimientoEnum motivoFallecimiento) {
         this.motivoFallecimiento = motivoFallecimiento;
     }
     /**

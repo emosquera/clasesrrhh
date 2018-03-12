@@ -1,6 +1,6 @@
 package z_enums.catalogo;
 
-public enum EstadoDisposicion {
+public enum EstadoDisposicionEnum {
     PENDIENTE   ("PENDIENTE"),
     APROBADA    ("APROBADA"),
     RECHAZADA   ("RECHAZADA"),
@@ -8,7 +8,7 @@ public enum EstadoDisposicion {
 	
 	private final String estadoDisposicion;
 	
-	private EstadoDisposicion (String estadoDisposicion) {
+	private EstadoDisposicionEnum (String estadoDisposicion) {
 		this.estadoDisposicion = estadoDisposicion;
 	}
 

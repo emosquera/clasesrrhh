@@ -3,7 +3,7 @@ package g_gestion_tablas_catalogos;
 
 import y_entity.base.EntityBase;
 import b_legajo_personal.DiscapacidadPersona;
-import z_enums.catalogo.TipoDiscapacidad;
+import z_enums.catalogo.TipoDiscapacidadEnum;
 import java.util.List;
 import javax.persistence.*;
 /**
@@ -34,7 +34,7 @@ public class Discapacidad extends EntityBase<Long> {
      *
      * @see #getTipo()
      */
-    private TipoDiscapacidad tipo;
+    private TipoDiscapacidadEnum tipo;
     /**
      * Listado de discapacidades de Persona
      *
@@ -82,7 +82,7 @@ public class Discapacidad extends EntityBase<Long> {
      */
     @Enumerated(EnumType.STRING)
     @Column(name = "TIPO", nullable = false)
-    public TipoDiscapacidad getTipo() {
+    public TipoDiscapacidadEnum getTipo() {
         return tipo;
     }
     /**
@@ -90,7 +90,7 @@ public class Discapacidad extends EntityBase<Long> {
      *
      * @param tipo
      */
-    public void setTipo(TipoDiscapacidad tipo) {
+    public void setTipo(TipoDiscapacidadEnum tipo) {
         this.tipo = tipo;
     }
     /**

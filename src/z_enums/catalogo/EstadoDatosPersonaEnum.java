@@ -1,13 +1,13 @@
 package z_enums.catalogo;
 
-public enum EstadoDatosPersona {
+public enum EstadoDatosPersonaEnum {
     COMPLETOS      ("INACTIVO"),
     INCOMPLETOS    ("INCOMPLETOS"),
     INCONSISTENTES ("INCONSISTENTES");
 
 	private final String estadoDatosPersona;
 	
-	private EstadoDatosPersona (String estadoDatosPersona) {
+	private EstadoDatosPersonaEnum (String estadoDatosPersona) {
 		this.estadoDatosPersona = estadoDatosPersona;
 	}
 

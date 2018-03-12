@@ -1,12 +1,12 @@
 package z_enums.catalogo;
 
-public enum TipoDiscapacidad {
+public enum TipoDiscapacidadEnum {
     PERMANETE  ("1"),
     TEMPORAL   ("0");
 	
 	private final String tipoDiscapacidad;
 	
-	private TipoDiscapacidad (String tipoDiscapacidad) {
+	private TipoDiscapacidadEnum (String tipoDiscapacidad) {
 		this.tipoDiscapacidad = tipoDiscapacidad;
 	}
 

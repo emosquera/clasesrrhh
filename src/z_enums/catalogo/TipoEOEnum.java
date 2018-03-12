@@ -1,12 +1,12 @@
 package z_enums.catalogo;
 
-public enum TipoEO {
+public enum TipoEOEnum {
     UAF     ("1"),
     SUBUAF  ("2");
 	
 	private final String tipoEO;
 	
-	private TipoEO (String tipoEO) {
+	private TipoEOEnum (String tipoEO) {
 		this.tipoEO = tipoEO;
 	}
 

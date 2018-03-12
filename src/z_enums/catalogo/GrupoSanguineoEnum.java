@@ -1,6 +1,6 @@
 package z_enums.catalogo;
 
-public enum GrupoSanguineo {
+public enum GrupoSanguineoEnum {
     O_NEGATIVO  ("O-"),
     O_POSITIVO  ("O+"),
     A_NEGATIVO  ("A-"),
@@ -12,7 +12,7 @@ public enum GrupoSanguineo {
 	
 	private final String grupoSanguineo;
 	
-	private GrupoSanguineo (String grupoSanguineo) {
+	private GrupoSanguineoEnum (String grupoSanguineo) {
 		this.grupoSanguineo = grupoSanguineo;
 	}
 

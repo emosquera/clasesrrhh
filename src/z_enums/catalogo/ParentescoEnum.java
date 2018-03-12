@@ -1,6 +1,6 @@
 package z_enums.catalogo;
 
-public enum Parentesco {
+public enum ParentescoEnum {
     CONYUGE ("CONYUGE"),
     HIJO    ("HIJO"),
     HIJA    ("HIJA"),
@@ -13,7 +13,7 @@ public enum Parentesco {
 	
 	private final String parentesco;
 	
-	private Parentesco (String parentesco) {
+	private ParentescoEnum (String parentesco) {
 		this.parentesco = parentesco;
 	}
 

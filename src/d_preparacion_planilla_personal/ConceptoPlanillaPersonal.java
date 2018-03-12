@@ -4,7 +4,7 @@ package d_preparacion_planilla_personal;
 import y_entity.base.EntityBase;
 import entity.externos.ObjetoGasto;
 import java.util.List;
-import z_enums.catalogo.TipoConcepto;
+import z_enums.catalogo.TipoConceptoEnum;
 import javax.persistence.*;
 /**
  * Clase ConceptoPlanillaPersonal extiende de {@link EntityBase}
@@ -40,7 +40,7 @@ public class ConceptoPlanillaPersonal extends EntityBase<Long> {
      *
      * @see #getTipoConcepto()
      */
-    private TipoConcepto tipoConcepto;
+    private TipoConceptoEnum tipoConcepto;
     /**
      * objeto de gasto asociado al Concepto de la Planilla de Personal
      *
@@ -125,11 +125,11 @@ public class ConceptoPlanillaPersonal extends EntityBase<Long> {
     /**
      * Getter.
      *
-     * @return TipoConcepto: tipo de concepto de la Planilla de Personal.
+     * @return TipoConceptoEnum: tipo de concepto de la Planilla de Personal.
      */
     @Enumerated(EnumType.STRING)
     @Column(name="TIPO_CONCEPTO", nullable = false)
-    public TipoConcepto getTipoConcepto() {
+    public TipoConceptoEnum getTipoConcepto() {
         return tipoConcepto;
     }
     /**
@@ -137,7 +137,7 @@ public class ConceptoPlanillaPersonal extends EntityBase<Long> {
      *
      * @param tipoConcepto
      */
-    public void setTipoConcepto(TipoConcepto tipoConcepto) {
+    public void setTipoConcepto(TipoConceptoEnum tipoConcepto) {
         this.tipoConcepto = tipoConcepto;
     }
     /**

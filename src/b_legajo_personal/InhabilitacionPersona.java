@@ -2,7 +2,7 @@
 package b_legajo_personal;
 
 import y_entity.base.EntityBase;
-import z_enums.catalogo.MotivoInhabilitacion;
+import z_enums.catalogo.MotivoInhabilitacionEnum;
 import java.util.Date;
 import javax.persistence.*;
 /**
@@ -39,7 +39,7 @@ public class InhabilitacionPersona extends EntityBase<Long> {
      *
      * @see #getMotivo()
      */
-    private MotivoInhabilitacion motivoInhabilitacion;
+    private MotivoInhabilitacionEnum motivoInhabilitacion;
     /**
      * descripcion de la Inhabilitacion
      *
@@ -112,7 +112,7 @@ public class InhabilitacionPersona extends EntityBase<Long> {
      */
     @Enumerated(EnumType.STRING)
     @Column(name="MOTIVO_INHABILITACION", nullable = false)
-    public MotivoInhabilitacion getMotivoInhabilitacion() {
+    public MotivoInhabilitacionEnum getMotivoInhabilitacion() {
         return motivoInhabilitacion;
     }
     /**
@@ -120,7 +120,7 @@ public class InhabilitacionPersona extends EntityBase<Long> {
      *
      * @param motivoInhabilitacion
      */
-    public void setMotivoInhabilitacion(MotivoInhabilitacion motivoInhabilitacion) {
+    public void setMotivoInhabilitacion(MotivoInhabilitacionEnum motivoInhabilitacion) {
         this.motivoInhabilitacion = motivoInhabilitacion;
     }
     /**

@@ -1,6 +1,6 @@
 package z_enums.catalogo;
 
-public enum TipoRegistroConducir {
+public enum TipoRegistroConducirEnum {
     PARTICULAR     ("PARTICULAR"),
     PROFESIONAL_A  ("PROFESIONAL_A"),
     PROFESIONAL_B  ("PROFESIONAL_B"),
@@ -8,7 +8,7 @@ public enum TipoRegistroConducir {
 	
 	private final String tipoRegistroConducir;
 	
-	private TipoRegistroConducir (String tipoRegistroConducir) {
+	private TipoRegistroConducirEnum (String tipoRegistroConducir) {
 		this.tipoRegistroConducir = tipoRegistroConducir;
 	}
 

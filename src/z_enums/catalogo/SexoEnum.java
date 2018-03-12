@@ -1,12 +1,12 @@
 package z_enums.catalogo;
 
-public enum Sexo {
+public enum SexoEnum {
     MASCULINO  ("MASCULINO"),
     FEMENINO   ("FEMENINO");
 	
 	private final String sexo;
 	
-	private Sexo (String sexo) {
+	private SexoEnum (String sexo) {
 		this.sexo = sexo;
 	}
 

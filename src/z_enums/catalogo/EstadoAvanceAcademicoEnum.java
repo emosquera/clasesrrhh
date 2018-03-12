@@ -1,6 +1,6 @@
 package z_enums.catalogo;
 
-public enum EstadoAvanceAcademico {
+public enum EstadoAvanceAcademicoEnum {
     CURSANDO("CURSANDO"),
     TRUNCADO("TRUNCADO"),
     CULMINADO("CULMINADO"),
@@ -8,7 +8,7 @@ public enum EstadoAvanceAcademico {
     
         private final String estadoAvanceAcademico;
         
-        private EstadoAvanceAcademico (String estadoAvanceAcademico) {
+        private EstadoAvanceAcademicoEnum (String estadoAvanceAcademico) {
 		this.estadoAvanceAcademico = estadoAvanceAcademico;
 	}
 

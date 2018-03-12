@@ -4,7 +4,7 @@ package d_preparacion_planilla_personal;
 import java.util.Date;
 import y_entity.base.EntityBase;
 import javax.persistence.*;
-import z_enums.catalogo.EstadoSolicitudGrupoConceptos;
+import z_enums.catalogo.EstadoSolicitudGrupoConceptosEnum;
 /**
  * Clase SolicitudNuevoGrupoConceptos extiende de {@link EntityBase}
  *
@@ -39,7 +39,7 @@ public class SolicitudNuevoGrupoConceptos extends EntityBase<Long> {
      *
      * @see #getFechaRespuesta()
      */
-    private EstadoSolicitudGrupoConceptos estado;
+    private EstadoSolicitudGrupoConceptosEnum estado;
     /**
      * Getter.
      *
@@ -100,7 +100,7 @@ public class SolicitudNuevoGrupoConceptos extends EntityBase<Long> {
      */
     @Enumerated(EnumType.STRING)
     @Column(name="ESTADO", nullable = false)
-    public EstadoSolicitudGrupoConceptos getEstado() {
+    public EstadoSolicitudGrupoConceptosEnum getEstado() {
         return estado;
     }
     /**
@@ -108,7 +108,7 @@ public class SolicitudNuevoGrupoConceptos extends EntityBase<Long> {
      *
      * @param estado
      */
-    public void setEstado(EstadoSolicitudGrupoConceptos estado) {
+    public void setEstado(EstadoSolicitudGrupoConceptosEnum estado) {
         this.estado = estado;
     }
     

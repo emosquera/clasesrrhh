@@ -1,6 +1,6 @@
 package z_enums.catalogo;
 
-public enum EstadoCivil {
+public enum EstadoCivilEnum {
     SOLTERO     ("SOLTERO"),
     CASADO      ("CASADO"),
     VIUDO       ("VIUDO"),
@@ -8,7 +8,7 @@ public enum EstadoCivil {
 	
 	private final String estadoCivil;
 	
-	private EstadoCivil (String estadoCivil) {
+	private EstadoCivilEnum (String estadoCivil) {
 		this.estadoCivil = estadoCivil;
 	}
 

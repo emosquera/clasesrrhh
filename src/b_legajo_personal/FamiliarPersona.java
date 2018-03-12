@@ -2,8 +2,8 @@
 package b_legajo_personal;
 
 import y_entity.base.EntityBase;
-import z_enums.catalogo.Parentesco;
-import z_enums.catalogo.TipoDocumentoIdentificacion;
+import z_enums.catalogo.ParentescoEnum;
+import z_enums.catalogo.TipoDocumentoIdentificacionEnum;
 import javax.persistence.*;
 /**
  * Clase FamiliarPersona extiende de {@link EntityBase}
@@ -21,13 +21,13 @@ public class FamiliarPersona extends EntityBase<Long>  {
      *
      * @see #getParentesco()
      */
-    private Parentesco parentesco;
+    private ParentescoEnum parentesco;
     /**
      * tipo de documento de identificacion del familiar de la Persona
      *
      * @see #getTipoDocumentoIdentificacion()
      */
-    private TipoDocumentoIdentificacion tipoDocumentoIdentificacion;
+    private TipoDocumentoIdentificacionEnum tipoDocumentoIdentificacion;
     /**
      * numero de documento de identificacion del familiar con la Persona
      *
@@ -52,7 +52,7 @@ public class FamiliarPersona extends EntityBase<Long>  {
      * @return parentesco: parentesco del familiar con la persona.
      */
     @Column(name="PARENTESCO", nullable = false)
-    public Parentesco getParentesco() {
+    public ParentescoEnum getParentesco() {
         return parentesco;
     }
     /**
@@ -60,7 +60,7 @@ public class FamiliarPersona extends EntityBase<Long>  {
      *
      * @param parentesco
      */
-    public void setParentesco(Parentesco parentesco) {
+    public void setParentesco(ParentescoEnum parentesco) {
         this.parentesco = parentesco;
     }
     /**
@@ -70,7 +70,7 @@ public class FamiliarPersona extends EntityBase<Long>  {
      */
     @Enumerated(EnumType.STRING)
     @Column(name="TIPO_DOCUMENTO_IDENTIFICACION", nullable = false)
-    public TipoDocumentoIdentificacion getTipoDocumentoIdentificacion() {
+    public TipoDocumentoIdentificacionEnum getTipoDocumentoIdentificacion() {
         return tipoDocumentoIdentificacion;
     }
     /**
@@ -78,7 +78,7 @@ public class FamiliarPersona extends EntityBase<Long>  {
      *
      * @param tipoDocumentoIdentificacion
      */
-    public void setTipoDocumentoIdentificacion(TipoDocumentoIdentificacion tipoDocumentoIdentificacion) {
+    public void setTipoDocumentoIdentificacion(TipoDocumentoIdentificacionEnum tipoDocumentoIdentificacion) {
         this.tipoDocumentoIdentificacion = tipoDocumentoIdentificacion;
     }
     /**

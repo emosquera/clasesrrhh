@@ -1,6 +1,6 @@
 package z_enums.catalogo;
 
-public enum PeriodicidadPlanillaPersonal {
+public enum PeriodicidadPlanillaPersonalEnum {
     DIARIA      ("DIARIA"),
     SEMANAL     ("SEMANAL"),
     QUINCENAL   ("QUINCENAL"),
@@ -9,7 +9,7 @@ public enum PeriodicidadPlanillaPersonal {
 	
 	private final String periodicidadPlanillaPersonal;
 	
-	private PeriodicidadPlanillaPersonal (String periodicidadPlanillaPersonal) {
+	private PeriodicidadPlanillaPersonalEnum (String periodicidadPlanillaPersonal) {
 		this.periodicidadPlanillaPersonal = periodicidadPlanillaPersonal;
 	}
 

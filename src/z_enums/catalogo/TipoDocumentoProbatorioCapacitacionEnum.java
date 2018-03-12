@@ -1,6 +1,6 @@
 package z_enums.catalogo;
 
-public enum TipoDocumentoProbatorioCapacitacion {
+public enum TipoDocumentoProbatorioCapacitacionEnum {
     DIPLOMA("DIPLOMA"),
     CEDULA("CEDULA"),
     CERTIFICADO("CERTIFICADO"),
@@ -9,7 +9,7 @@ public enum TipoDocumentoProbatorioCapacitacion {
     
         private final String tipoDocumentoProbatorioCapacitacion;
         
-        private TipoDocumentoProbatorioCapacitacion (String tipoDocumentoProbatorioCapacitacion) {
+        private TipoDocumentoProbatorioCapacitacionEnum (String tipoDocumentoProbatorioCapacitacion) {
 		this.tipoDocumentoProbatorioCapacitacion = tipoDocumentoProbatorioCapacitacion;
 	}
 

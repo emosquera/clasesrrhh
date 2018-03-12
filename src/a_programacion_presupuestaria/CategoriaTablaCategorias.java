@@ -4,7 +4,7 @@ package a_programacion_presupuestaria;
 import java.util.List;
 import y_entity.base.EntityBase;
 import javax.persistence.*;
-import z_enums.catalogo.Mes;
+import z_enums.catalogo.MesEnum;
 /**
  * Clase CategoriaTablaCategorias extiende de {@link EntityBase}
  *
@@ -35,11 +35,11 @@ public class CategoriaTablaCategorias extends EntityBase<Long> {
      */
     private Double montoSalario;
     /**
-     * Mes al cual se le asocia el Salario
+     * MesEnum al cual se le asocia el Salario
      *
      * @see #getMes()
      */
-    private Mes mes;
+    private MesEnum mes;
     /**
      * Listado de Cargos Asociados a la Categoria asociada a la Tabla de Categorias
      *
@@ -102,11 +102,11 @@ public class CategoriaTablaCategorias extends EntityBase<Long> {
     /**
      * Getter.
      *
-     * @return mes: Mes al cual se le asocia el Salario.
+     * @return mes: MesEnum al cual se le asocia el Salario.
      */
     @Enumerated(EnumType.STRING)
     @Column(name="MES", nullable = false)
-    public Mes getMes() {
+    public MesEnum getMes() {
         return mes;
     }
     /**
@@ -114,7 +114,7 @@ public class CategoriaTablaCategorias extends EntityBase<Long> {
      *
      * @param mes
      */
-    public void setMes(Mes mes) {
+    public void setMes(MesEnum mes) {
         this.mes = mes;
     }
     /**

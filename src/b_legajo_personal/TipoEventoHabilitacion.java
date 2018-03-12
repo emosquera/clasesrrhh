@@ -3,7 +3,7 @@ package b_legajo_personal;
 
 import java.util.List;
 import y_entity.base.EntityBase;
-import z_enums.catalogo.NaturalezaEvento;
+import z_enums.catalogo.NaturalezaEventoEnum;
 import javax.persistence.*;
 /**
  * Clase TipoEventoHabilitacion extiende de {@link EntityBase}
@@ -39,7 +39,7 @@ public class TipoEventoHabilitacion extends EntityBase<Long> {
      *
      * @see #getNaturaleza()
      */
-    private NaturalezaEvento naturaleza;
+    private NaturalezaEventoEnum naturaleza;
     /**
      * Listado de eventos asociados al Tipo de Evento de Habilitacion
      *
@@ -104,7 +104,7 @@ public class TipoEventoHabilitacion extends EntityBase<Long> {
      */
     @Enumerated(EnumType.STRING)
     @Column(name="NATURALEZA", nullable = false)
-    public NaturalezaEvento getNaturaleza() {
+    public NaturalezaEventoEnum getNaturaleza() {
         return naturaleza;
     }
     /**
@@ -112,7 +112,7 @@ public class TipoEventoHabilitacion extends EntityBase<Long> {
      *
      * @param naturaleza
      */
-    public void setNaturaleza(NaturalezaEvento naturaleza) {
+    public void setNaturaleza(NaturalezaEventoEnum naturaleza) {
         this.naturaleza = naturaleza;
     }
     /**

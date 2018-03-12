@@ -5,7 +5,7 @@ import b_legajo_personal.Persona;
 import java.util.Date;
 import y_entity.base.EntityBase;
 import javax.persistence.*;
-import z_enums.catalogo.EstadoJubilacionRetiro;
+import z_enums.catalogo.EstadoJubilacionRetiroEnum;
 /**
  * Clase Jubilacion extiende de {@link EntityBase}
  *
@@ -46,7 +46,7 @@ public class Jubilacion extends EntityBase<Long> {
      *
      * @see #getEstado()
      */
-    private EstadoJubilacionRetiro estado;
+    private EstadoJubilacionRetiroEnum estado;
     /**
      * Getter.
      *
@@ -125,7 +125,7 @@ public class Jubilacion extends EntityBase<Long> {
      */
     @Enumerated(EnumType.STRING)
     @Column(name="ESTADO", nullable = false)
-    public EstadoJubilacionRetiro getEstado() {
+    public EstadoJubilacionRetiroEnum getEstado() {
         return estado;
     }
     /**
@@ -133,7 +133,7 @@ public class Jubilacion extends EntityBase<Long> {
      *
      * @param estado
      */
-    public void setEstado(EstadoJubilacionRetiro estado) {
+    public void setEstado(EstadoJubilacionRetiroEnum estado) {
         this.estado = estado;
     }
     

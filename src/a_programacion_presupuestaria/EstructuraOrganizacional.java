@@ -6,7 +6,7 @@ import b_legajo_personal.ProformaFuncionarios;
 import y_entity.base.EntityBase;
 import entity.externos.Entidad;
 import entity.externos.Nivel;
-import z_enums.catalogo.EstadoEstructuraOrganizacional;
+import z_enums.catalogo.EstadoEstructuraOrganizacionalEnum;
 import java.util.List;
 import javax.persistence.*;
 /**
@@ -55,7 +55,7 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
      *
      * @see #getEstado()
      */
-    private EstadoEstructuraOrganizacional estado;
+    private EstadoEstructuraOrganizacionalEnum estado;
     /**
      * codigo padre de la Estructura Organizacional
      *
@@ -198,7 +198,7 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
      */
     @Enumerated(EnumType.STRING)
     @Column(name="ESTADO", nullable = false)
-    public EstadoEstructuraOrganizacional getEstado() {
+    public EstadoEstructuraOrganizacionalEnum getEstado() {
         return estado;
     }
     /**
@@ -206,7 +206,7 @@ public class EstructuraOrganizacional extends EntityBase<Long> {
      *
      * @param estado
      */
-    public void setEstado(EstadoEstructuraOrganizacional estado) {
+    public void setEstado(EstadoEstructuraOrganizacionalEnum estado) {
         this.estado = estado;
     }
     /**

@@ -6,7 +6,7 @@ import entity.externos.Beneficiario;
 import java.util.Date;
 import y_entity.base.EntityBase;
 import javax.persistence.*;
-import z_enums.catalogo.TipoCalculoEmbargo;
+import z_enums.catalogo.TipoCalculoEmbargoEnum;
 /**
  * Clase Embargo extiende de {@link EntityBase}
  *
@@ -95,7 +95,7 @@ public class Embargo extends EntityBase<Long> {
      *
      * @see #getTipoCalculo()
      */
-    private TipoCalculoEmbargo tipoCalculo;
+    private TipoCalculoEmbargoEnum tipoCalculo;
     /**
      * valor segun el tipo de calculo del embargo
      *
@@ -298,7 +298,7 @@ public class Embargo extends EntityBase<Long> {
      */
     @Enumerated(EnumType.STRING)
     @Column(name="TIPO_CALCULO", nullable = false)
-    public TipoCalculoEmbargo getTipoCalculo() {
+    public TipoCalculoEmbargoEnum getTipoCalculo() {
         return tipoCalculo;
     }
     /**
@@ -306,7 +306,7 @@ public class Embargo extends EntityBase<Long> {
      *
      * @param tipoCalculo
      */
-    public void setTipoCalculo(TipoCalculoEmbargo tipoCalculo) {
+    public void setTipoCalculo(TipoCalculoEmbargoEnum tipoCalculo) {
         this.tipoCalculo = tipoCalculo;
     }
     /**

@@ -3,7 +3,7 @@ package b_legajo_personal;
 
 import g_gestion_tablas_catalogos.Discapacidad;
 import y_entity.base.EntityBase;
-import z_enums.catalogo.TipoDocumentoProbatorioDiscapacidad;
+import z_enums.catalogo.TipoDocumentoProbatorioDiscapacidadEnum;
 import java.util.Date;
 import javax.persistence.*;
 /**
@@ -40,7 +40,7 @@ public class DiscapacidadPersona extends EntityBase<Long> {
      *
      * @see #getTipoDocumentoProbatorioDiscapacidad()
      */
-    private TipoDocumentoProbatorioDiscapacidad tipoDocumentoProbatorio;
+    private TipoDocumentoProbatorioDiscapacidadEnum tipoDocumentoProbatorio;
     /**
      * numero de Documento probatorio de la discapacidad
      *
@@ -114,7 +114,7 @@ public class DiscapacidadPersona extends EntityBase<Long> {
      */
     @Enumerated(EnumType.STRING)
     @Column(name="TIPO_DOCUMENTO_PROBATORIO", nullable = false)
-    public TipoDocumentoProbatorioDiscapacidad getTipoDocumentoProbatorio() {
+    public TipoDocumentoProbatorioDiscapacidadEnum getTipoDocumentoProbatorio() {
         return tipoDocumentoProbatorio;
     }
     /**
@@ -122,7 +122,7 @@ public class DiscapacidadPersona extends EntityBase<Long> {
      *
      * @param tipoDocumentoProbatorio
      */
-    public void setTipoDocumentoProbatorio(TipoDocumentoProbatorioDiscapacidad tipoDocumentoProbatorio) {
+    public void setTipoDocumentoProbatorio(TipoDocumentoProbatorioDiscapacidadEnum tipoDocumentoProbatorio) {
         this.tipoDocumentoProbatorio = tipoDocumentoProbatorio;
     }
     /**

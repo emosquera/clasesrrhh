@@ -1,6 +1,6 @@
 package z_enums.catalogo;
 
-public enum MotivoInhabilitacion {
+public enum MotivoInhabilitacionEnum {
     FALTA_ADMINISTRATIVA    ("FALTA_ADMINISTRATIVA"),
     FALTA_JUDICIAL          ("FALTA_JUDICIAL"),
     FRAUDE                  ("FRAUDE"),
@@ -9,7 +9,7 @@ public enum MotivoInhabilitacion {
 	
 	private final String motivoInhabilitacion;
 	
-	private MotivoInhabilitacion (String motivoInhabilitacion) {
+	private MotivoInhabilitacionEnum (String motivoInhabilitacion) {
 		this.motivoInhabilitacion = motivoInhabilitacion;
 	}
 

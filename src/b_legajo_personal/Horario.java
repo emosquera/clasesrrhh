@@ -3,7 +3,7 @@ package b_legajo_personal;
 
 import a_programacion_presupuestaria.EstructuraOrganizacional;
 import y_entity.base.EntityBase;
-import z_enums.catalogo.DiaSemana;
+import z_enums.catalogo.DiaSemanaEnum;
 import javax.persistence.*;
 /**
  * Clase Horario extiende de {@link EntityBase}
@@ -21,7 +21,7 @@ public class Horario extends EntityBase<Long> {
      *
      * @see #getDiaSemana()
      */
-    private DiaSemana diaSemana;
+    private DiaSemanaEnum diaSemana;
     /**
      * hora de inicio  del horario
      *
@@ -59,7 +59,7 @@ public class Horario extends EntityBase<Long> {
      */
     @Enumerated(EnumType.STRING)
     @Column(name="DIA")
-    public DiaSemana getDiaSemana() {
+    public DiaSemanaEnum getDiaSemana() {
         return diaSemana;
     }
     /**
@@ -67,7 +67,7 @@ public class Horario extends EntityBase<Long> {
      *
      * @param diaSemana
      */
-    public void setDiaSemana(DiaSemana diaSemana) {
+    public void setDiaSemana(DiaSemanaEnum diaSemana) {
         this.diaSemana = diaSemana;
     }
     /**

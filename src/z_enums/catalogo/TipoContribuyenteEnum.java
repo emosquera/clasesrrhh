@@ -1,12 +1,12 @@
 package z_enums.catalogo;
 
-public enum TipoContribuyente {
+public enum TipoContribuyenteEnum {
     PERSONA_NATURAL  ("NATURAL"),
     PERSONA_JURIDICA   ("JURIDICA");
 	
 	private final String tipoContribuyente;
 	
-	private TipoContribuyente (String tipoContribuyente) {
+	private TipoContribuyenteEnum (String tipoContribuyente) {
 		this.tipoContribuyente = tipoContribuyente;
 	}
 

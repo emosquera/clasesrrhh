@@ -3,7 +3,7 @@ package d_preparacion_planilla_personal;
 
 import y_entity.base.EntityBase;
 import javax.persistence.*;
-import z_enums.catalogo.DiaSemana;
+import z_enums.catalogo.DiaSemanaEnum;
 /**
  * Clase HorarioEspecial extiende de {@link EntityBase}
  *
@@ -20,7 +20,7 @@ public class HorarioEspecial extends EntityBase<Long> {
      *
      * @see #getDiaSemana()
      */
-    private DiaSemana diaSemana;
+    private DiaSemanaEnum diaSemana;
     /**
      * hora de inicio  del horario especial
      *
@@ -58,7 +58,7 @@ public class HorarioEspecial extends EntityBase<Long> {
      */
     @Enumerated(EnumType.STRING)
     @Column(name="DIA")
-    public DiaSemana getDiaSemana() {
+    public DiaSemanaEnum getDiaSemana() {
         return diaSemana;
     }
     /**
@@ -66,7 +66,7 @@ public class HorarioEspecial extends EntityBase<Long> {
      *
      * @param diaSemana
      */
-    public void setDiaSemana(DiaSemana diaSemana) {
+    public void setDiaSemana(DiaSemanaEnum diaSemana) {
         this.diaSemana = diaSemana;
     }
     /**

@@ -1,13 +1,13 @@
 package z_enums.catalogo;
 
-public enum EstadoJubilacionRetiro {
+public enum EstadoJubilacionRetiroEnum {
     EN_PROCESO    ("EN PROCESO"),
     APROBADA      ("APROBADA"),
     RECHAZADA     ("RECHAZADA");
 	
 	private final String estadoJubilacionRetiro;
 	
-	private EstadoJubilacionRetiro (String estadoJubilacionRetiro) {
+	private EstadoJubilacionRetiroEnum (String estadoJubilacionRetiro) {
 		this.estadoJubilacionRetiro = estadoJubilacionRetiro;
 	}
 

@@ -3,7 +3,7 @@ package a_programacion_presupuestaria;
 
 import java.util.List;
 import y_entity.base.EntityBase;
-import z_enums.catalogo.EstadoCategoria;
+import z_enums.catalogo.EstadoCategoriaEnum;
 import javax.persistence.*;
 /**
  * Clase Categoria extiende de {@link EntityBase}
@@ -45,7 +45,7 @@ public class Categoria extends EntityBase<Long> {
      *
      * @see #getEstado()
      */
-    private EstadoCategoria estado;
+    private EstadoCategoriaEnum estado;
     /**
      * Listado de Tablas de Categorias a las cuales esta asociada la Categoria
      *
@@ -133,7 +133,7 @@ public class Categoria extends EntityBase<Long> {
      */
     @Enumerated(EnumType.STRING)
     @Column(name="ESTADO", nullable = false)
-    public EstadoCategoria getEstado() {
+    public EstadoCategoriaEnum getEstado() {
         return estado;
     }
     /**
@@ -141,7 +141,7 @@ public class Categoria extends EntityBase<Long> {
      *
      * @param estado
      */
-    public void setEstado(EstadoCategoria estado) {
+    public void setEstado(EstadoCategoriaEnum estado) {
         this.estado = estado;
     }
     /**
