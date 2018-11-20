@@ -1,6 +1,7 @@
 //QSGEN This file will be ignored in future code generations if it's changed
 package b_legajo_personal;
 
+import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._2_GestióndeClasificadores._7_GestionarPersonas._1_GestionarDatosdePersona.Persona;
 import y_entity.base.EntityBase;
 import z_enums.catalogo.MotivoInhabilitacionEnum;
 import java.util.Date;

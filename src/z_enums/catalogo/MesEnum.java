@@ -1,26 +1,26 @@
 package z_enums.catalogo;
 
 public enum MesEnum {
-    ENERO       ("ENERO"),
-    FEBRERO     ("FEBRERO"),
-    MARZO       ("MARZO"),
-    ABRIL       ("ABRIL"),
-    MAYO        ("MAYO"),
-    JUNIO       ("JUNIO"),
-    JULIO       ("JULIO"),
-    AGOSTO      ("AGOSTO"),
-    SEPTIEMBRE  ("SEPTIEMBRE"),
-    OCTUBRE     ("OCTUBRE"),
-    NOVIEMBRE   ("NOVIEMBRE"),
-    DICIEMBRE   ("DICIEMBRE");
+    ENERO       (1),
+    FEBRERO     (2),
+    MARZO       (3),
+    ABRIL       (4),
+    MAYO        (5),
+    JUNIO       (6),
+    JULIO       (7),
+    AGOSTO      (8),
+    SEPTIEMBRE  (9),
+    OCTUBRE     (10),
+    NOVIEMBRE   (11),
+    DICIEMBRE   (12);
 	
-    private final String mes;
+    private final Integer mes;
 
-    private MesEnum (String mes) {
+    private MesEnum (Integer mes) {
         this.mes = mes;
     }
 
-    public String getMes() {
+    public Integer getMes() {
         return mes;
     }
 }

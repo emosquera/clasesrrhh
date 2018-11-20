@@ -1,6 +1,7 @@
 //QSGEN This file will be ignored in future code generations if it's changed
 package d_preparacion_planilla_personal;
 
+import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._2_GestióndeClasificadores._4_GestionarConceptosdeBeneficios._1_GestionarConceptosdePlanilladePersonal.ConceptoPlanillaPersonal;
 import entity.externos.FuenteFinanciamiento;
 import java.util.Date;
 import y_entity.base.EntityBase;

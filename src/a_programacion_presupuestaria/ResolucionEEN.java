@@ -1,6 +1,7 @@
 //QSGEN This file will be ignored in future code generations if it's changed
 package a_programacion_presupuestaria;
 
+import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._2_GestióndeClasificadores._1_DefinirEstructuraOrganizacional._2_GestionarEstructuraOrganizacional.EstructuraOrganizacional;
 import java.util.Date;
 import java.util.List;
 import y_entity.base.EntityBase;

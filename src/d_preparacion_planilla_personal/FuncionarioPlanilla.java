@@ -1,7 +1,7 @@
 //QSGEN This file will be ignored in future code generations if it's changed
 package d_preparacion_planilla_personal;
 
-import b_legajo_personal.Disposicion;
+import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._3_IncorporacióndeRecursosHumanos._2_HabilitarFuncionario._2_RegistrarDisposición.Disposicion;
 import java.util.List;
 import y_entity.base.EntityBase;
 import javax.persistence.*;

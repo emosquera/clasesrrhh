@@ -5,7 +5,7 @@
  */
 package entity.externos;
 
-import a_programacion_presupuestaria.TablaCategorias;
+import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._2_GestióndeClasificadores._5_GestionarTabladeCategorías._1_GestionarTabladeCategorías.TablaCategoria;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
@@ -22,7 +22,7 @@ import javax.persistence.OneToMany;
 public class TipoMoneda implements Serializable {
 
     @OneToMany(mappedBy = "tipoMoneda")
-    private List<TablaCategorias> tablaCategoriass;
+    private List<TablaCategoria> tablaCategoriass;
 
     private static final long serialVersionUID = 1L;
     @Id

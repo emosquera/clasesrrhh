@@ -5,8 +5,8 @@
  */
 package entity.externos;
 
-import a_programacion_presupuestaria.DetalleAnexoPersonal;
-import a_programacion_presupuestaria.Puesto;
+import _1_FormulaciónPresupuestariadeServiciosdePersonal._3_FormularServiciosdePersonal._1_GestionarAnexodePersonal.DetalleAnexoPersonal;
+import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._2_GestióndeClasificadores._6_GestionarPuestos._1_GestionarPuesto.Puesto;
 import d_preparacion_planilla_personal.ConceptosFuncionarioPlanilla;
 import java.io.Serializable;
 import java.util.List;
