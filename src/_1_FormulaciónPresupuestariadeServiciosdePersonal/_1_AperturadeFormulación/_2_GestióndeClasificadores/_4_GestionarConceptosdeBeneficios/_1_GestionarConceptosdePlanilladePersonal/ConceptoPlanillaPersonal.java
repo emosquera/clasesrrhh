@@ -3,8 +3,9 @@ package _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulac
 
 import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._2_GestióndeClasificadores._5_GestionarTabladeCategorías._1_GestionarTabladeCategorías.ConceptoCategoriaTablaCategoria;
 import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._3_IncorporacióndeRecursosHumanos._2_HabilitarFuncionario._2_RegistrarDisposición.ConceptoDisposicion;
-import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._5_GestiónRetributiva._1_ConfigurarPlanilla._1_GestionarGrupodeConceptosdePlanilladePersonal.ConceptoGrupoConceptoPlanillaPersonal;
+import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._5_GestiónRetributiva._1_ConfigurarPlanilla._1_GestionarGrupodeConceptosdePlanilladePersonal.GrupoConceptoPlanillaPersonal;
 import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._5_GestiónRetributiva._1_ConfigurarPlanilla._3_GestionarFormulacióndeConceptos.FormulacionConceptoPlanillaPersonal;
+import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._5_GestiónRetributiva._1_ConfigurarPlanilla._3_GestionarFormulacióndeConceptos.FuncionFormulacion;
 import java.util.List;
 import y_entity.base.EntityBase;
 import z_enums.catalogo.TipoConceptoEnum;
@@ -59,11 +60,14 @@ public class ConceptoPlanillaPersonal extends EntityBase<Long> {
     @OneToMany(mappedBy = "concepto")
     private List<ConceptoDisposicion> conceptoDisposiciones;
     
-    
-    @OneToMany(mappedBy = "concepto")
-    private List<ConceptoGrupoConceptoPlanillaPersonal> conceptosGrupoConceptoPlanillaPersonal;
     @OneToMany(mappedBy = "concepto")
     private List<FormulacionConceptoPlanillaPersonal> formulacionesConceptoPlanillaPersonal;
+    
+    @ManyToMany(mappedBy = "conceptos")
+    private List<GrupoConceptoPlanillaPersonal> gruposConceptos;
+    
+    @ManyToMany(mappedBy = "conceptos")
+    private List<FuncionFormulacion> funciones;
     
     
     @Override
@@ -85,7 +89,7 @@ public class ConceptoPlanillaPersonal extends EntityBase<Long> {
 
     @Override
     public String toString() {
-        return "d_preparacion_planilla_personal.ConceptoPlanillaPersonal[ id=" + id + " ]";
+        return "ConceptoPlanillaPersonal[ id=" + id + " ]";
     }
 
     @Override

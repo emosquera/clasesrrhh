@@ -5,6 +5,7 @@ import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulaci
 import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._1_GestionarTablasyCatálogos.TipoBajaFuncionario;
 import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._2_GestióndeClasificadores._1_DefinirEstructuraOrganizacional._2_GestionarEstructuraOrganizacional.EstructuraOrganizacional;
 import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._2_GestióndeClasificadores._7_GestionarPersonas._1_GestionarDatosdePersona.Persona;
+import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._3_IncorporacióndeRecursosHumanos._2_HabilitarFuncionario._2_RegistrarDisposición.Disposicion;
 import java.util.Date;
 import java.util.List;
 import y_entity.base.EntityBase;
@@ -43,8 +44,6 @@ public class BajaFuncionario extends EntityBase<Long> {
      *
      * @see #getTipoBaja()
      */
-
-    
     @ManyToOne
     @JoinColumn(name="TIPOBAJA_ID")
     private TipoBajaFuncionario tipoBaja;
@@ -90,6 +89,13 @@ public class BajaFuncionario extends EntityBase<Long> {
     
     @OneToMany(mappedBy = "bajaFuncionario")
     private List<ResponsabilidadFuncionario> responsabilidadesFuncionario;
+    
+    @ManyToMany
+    @JoinTable(name = "DBF_MA_DISPBAJA",
+        joinColumns = @JoinColumn(name = "BAJAFUN_ID"),
+        inverseJoinColumns = @JoinColumn(name = "DISPOSICION_ID")
+    )
+    private List<Disposicion> disposiciones;
     
     @Override
     public int hashCode() {

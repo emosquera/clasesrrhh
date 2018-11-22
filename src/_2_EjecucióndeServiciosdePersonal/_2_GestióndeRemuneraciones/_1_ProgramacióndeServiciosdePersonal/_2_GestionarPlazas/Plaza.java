@@ -1,7 +1,9 @@
 //QSGEN This file will be ignored in future code generations if it's changed
 package _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._1_ProgramacióndeServiciosdePersonal._2_GestionarPlazas;
 
+import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._2_GestióndeClasificadores._6_GestionarPuestos._1_GestionarPuesto.Puesto;
 import java.util.Date;
+import java.util.List;
 import y_entity.base.EntityBase;
 import javax.persistence.*;
 /**
@@ -29,6 +31,13 @@ public class Plaza extends EntityBase<Long> {
     
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date fechaResolucion; 
+    
+    @ManyToMany
+    @JoinTable(name = "PPL_MV_PUESTOPLAZA",
+        joinColumns = @JoinColumn(name = "PLAZA_ID"),
+        inverseJoinColumns = @JoinColumn(name = "PUESTO_ID")
+    )
+    private List<Puesto> puestos;
     
     @Override
     public int hashCode() {

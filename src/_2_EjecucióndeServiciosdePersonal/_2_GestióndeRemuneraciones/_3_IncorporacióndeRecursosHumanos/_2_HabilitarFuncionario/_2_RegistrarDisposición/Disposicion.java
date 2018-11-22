@@ -5,6 +5,7 @@ import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulaci
 import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._2_GestióndeClasificadores._7_GestionarPersonas._1_GestionarDatosdePersona.Persona;
 import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._2_GestióndeClasificadores._6_GestionarPuestos._1_GestionarPuesto.Puesto;
 import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._2_GestióndeClasificadores._8_GestionarPlanilladePersonal.PlanillaPersonal;
+import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._4_MovilidaddeFuncionarios._1_GestionarBajadePersona._1_GestionarSolicituddeBajadePersona.BajaFuncionario;
 import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._5_GestiónRetributiva._2_PrepararCiclodePlanilla._1_AutorizarHorasTope.DetalleHoraTope;
 import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._5_GestiónRetributiva._3_AplicarMovimientosdePlanilla._1_GestionarPermisos.Permiso;
 import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._5_GestiónRetributiva._3_AplicarMovimientosdePlanilla._2_GestionarHorariosEspeciales.HorarioEspecial;
@@ -72,6 +73,9 @@ public class Disposicion extends EntityBase<Long> {
     
     @OneToMany(mappedBy = "disposicion")
     private List<HorarioEspecial> horariosEspeciales;
+    
+    @ManyToMany(mappedBy = "disposiciones")
+    private List<BajaFuncionario> bajasFuncionario;
     
     
     @Override

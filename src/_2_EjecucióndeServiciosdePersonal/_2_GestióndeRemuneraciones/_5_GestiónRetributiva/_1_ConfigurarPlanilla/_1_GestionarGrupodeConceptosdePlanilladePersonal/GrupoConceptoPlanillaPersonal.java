@@ -1,6 +1,7 @@
 //QSGEN This file will be ignored in future code generations if it's changed
 package _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._5_GestiónRetributiva._1_ConfigurarPlanilla._1_GestionarGrupodeConceptosdePlanilladePersonal;
 
+import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._2_GestióndeClasificadores._4_GestionarConceptosdeBeneficios._1_GestionarConceptosdePlanilladePersonal.ConceptoPlanillaPersonal;
 import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._2_GestióndeClasificadores._8_GestionarPlanilladePersonal.PlanillaPersonal;
 import java.util.List;
 import y_entity.base.EntityBase;
@@ -31,10 +32,12 @@ public class GrupoConceptoPlanillaPersonal extends EntityBase<Long> {
     @JoinColumn(name="PLANILLA_ID")
     private PlanillaPersonal planilla;
     
-    @OneToMany(mappedBy = "grupo")
-    private List<ConceptoGrupoConceptoPlanillaPersonal> conceptosGrupoConceptoPlanillaPersonals;
-    
-    
+    @ManyToMany
+    @JoinTable(name = "CGC_MA_CONGRUCON",
+        joinColumns = @JoinColumn(name = "GRUPOCON_ID"),
+        inverseJoinColumns = @JoinColumn(name = "CONCEPTO_ID")
+    )
+    private List<ConceptoPlanillaPersonal> conceptos;
     
     
     

@@ -5,11 +5,14 @@
  */
 package _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._5_GestiónRetributiva._1_ConfigurarPlanilla._3_GestionarFormulacióndeConceptos;
 
+import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._2_GestióndeClasificadores._4_GestionarConceptosdeBeneficios._1_GestionarConceptosdePlanilladePersonal.ConceptoPlanillaPersonal;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -36,6 +39,13 @@ public class FuncionFormulacion extends EntityBase<Long> {
     @Enumerated(EnumType.STRING)
     private ParametroFuncioneEnum parametroFuncion;
 
+    
+    @ManyToMany
+    @JoinTable(name = "CFU_MA_CONFUNCION",
+        joinColumns = @JoinColumn(name = "FUNCIONFOR_ID"),
+        inverseJoinColumns = @JoinColumn(name = "CONCEPTO_ID")
+    )
+    private List<ConceptoPlanillaPersonal> conceptos;
     
     
     @Override

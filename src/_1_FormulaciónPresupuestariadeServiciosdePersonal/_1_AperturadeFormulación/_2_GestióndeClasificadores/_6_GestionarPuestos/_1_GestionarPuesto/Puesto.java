@@ -3,6 +3,7 @@ package _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulac
 
 import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._2_GestióndeClasificadores._1_DefinirEstructuraOrganizacional._2_GestionarEstructuraOrganizacional.EstructuraOrganizacional;
 import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._2_GestióndeClasificadores._5_GestionarTabladeCategorías._1_GestionarTabladeCategorías.CategoriaTablaCategoria;
+import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._1_ProgramacióndeServiciosdePersonal._2_GestionarPlazas.Plaza;
 import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._3_IncorporacióndeRecursosHumanos._1_GestionarSolicituddeReclutamiento.SolicitudReclutamiento;
 import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._3_IncorporacióndeRecursosHumanos._2_HabilitarFuncionario._2_RegistrarDisposición.Disposicion;
 import java.util.Date;
@@ -96,6 +97,9 @@ public class Puesto extends EntityBase<Long> {
     
     @OneToMany(mappedBy = "puesto")
     private List<Disposicion> disposiciones;
+    
+    @ManyToMany(mappedBy = "puestos")
+    private List<Plaza> plazas;
     
     @Override
     public int hashCode() {
