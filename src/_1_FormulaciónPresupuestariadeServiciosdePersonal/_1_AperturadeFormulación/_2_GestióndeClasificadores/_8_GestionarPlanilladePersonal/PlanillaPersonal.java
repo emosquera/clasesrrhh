@@ -9,6 +9,9 @@ import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulaci
 import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._3_IncorporacióndeRecursosHumanos._2_HabilitarFuncionario._2_RegistrarDisposición.Disposicion;
 import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._5_GestiónRetributiva._1_ConfigurarPlanilla._1_GestionarGrupodeConceptosdePlanilladePersonal.GrupoConceptoPlanillaPersonal;
 import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._5_GestiónRetributiva._1_ConfigurarPlanilla._3_GestionarFormulacióndeConceptos.FormulacionConceptoPlanillaPersonal;
+import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._5_GestiónRetributiva._2_PrepararCiclodePlanilla._1_AutorizarHorasTope.HoraTope;
+import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._5_GestiónRetributiva._4_LiquidarPlanilla._1_ProcesarPlanillaporPeriodo.CalculoPlanilla;
+import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._5_GestiónRetributiva._4_LiquidarPlanilla._3_CerrarPlanillaporPeriodo.CierrePlanilla;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
@@ -26,6 +29,15 @@ import z_enums.catalogo.PeriodicidadPlanillaPersonalEnum;
 @Entity
 @Table(name="PLP_CL_PLANILLA")
 public class PlanillaPersonal extends EntityBase<Long> {
+
+    @OneToMany(mappedBy = "planillaPersonal")
+    private List<CierrePlanilla> cierresPlanilla;
+
+    @OneToMany(mappedBy = "planilla")
+    private List<CalculoPlanilla> calculosPlanilla;
+
+    @OneToMany(mappedBy = "planillaPersonal")
+    private List<HoraTope> horasTope;
 
     @OneToMany(mappedBy = "planilla")
     private List<FormulacionConceptoPlanillaPersonal> formulacionesConceptoPlanillaPersonal;

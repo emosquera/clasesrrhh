@@ -5,7 +5,10 @@
  */
 package _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._1_GestionarTablasyCatálogos;
 
+import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._4_MovilidaddeFuncionarios._1_GestionarBajadePersona._1_GestionarSolicituddeBajadePersona.BajaFuncionario;
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import y_entity.base.EntityBase;
 
@@ -20,6 +23,9 @@ import y_entity.base.EntityBase;
 @Entity
 @Table(name="TAS_CL_TIPOASUET")
 public class TipoBajaFuncionario extends EntityBase<Long> {
+
+    @OneToMany(mappedBy = "tipoBaja")
+    private List<BajaFuncionario> bajasFuncionario;
     
     /**
      * Breve descripción del Tipo de Baja.

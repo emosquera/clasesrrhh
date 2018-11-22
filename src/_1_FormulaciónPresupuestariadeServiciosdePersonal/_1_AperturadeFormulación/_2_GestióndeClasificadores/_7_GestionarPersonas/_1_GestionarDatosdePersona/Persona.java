@@ -10,6 +10,8 @@ import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulaci
 import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._2_GestióndeClasificadores._7_GestionarPersonas._5_GestionarCapacitacióndePersona.CapacitacionPersona;
 import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._2_GestióndeClasificadores._7_GestionarPersonas._6_GestionarFamiliaresdePersona.FamiliarPersona;
 import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._3_IncorporacióndeRecursosHumanos._2_HabilitarFuncionario._2_RegistrarDisposición.Disposicion;
+import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._4_MovilidaddeFuncionarios._1_GestionarBajadePersona._1_GestionarSolicituddeBajadePersona.BajaFuncionario;
+import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._5_GestiónRetributiva._2_PrepararCiclodePlanilla._2_GestionarEmbargos.Embargo;
 import y_entity.base.EntityBase;
 import z_enums.catalogo.EstadoCivilEnum;
 import z_enums.catalogo.EstadoDatosPersonaEnum;
@@ -249,6 +251,12 @@ public class Persona extends EntityBase<Long>{
     
     @OneToMany(mappedBy = "persona")
     private List<Disposicion> disposiciones;
+    
+    
+    @OneToMany(mappedBy = "persona")
+    private List<BajaFuncionario> bajasFuncionario;
+    @OneToMany(mappedBy = "funcionario")
+    private List<Embargo> embargos;
     
     
     @Override

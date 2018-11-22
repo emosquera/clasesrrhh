@@ -3,39 +3,35 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._5_GestiónRetributiva._1_ConfigurarPlanilla._3_GestionarFormulacióndeConceptos;
+package _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._5_GestiónRetributiva._2_PrepararCiclodePlanilla._1_AutorizarHorasTope;
 
-import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._5_GestiónRetributiva._1_ConfigurarPlanilla._2_GestionarFormuladePlanilladePersonal.FormulaPlanillaPersonal;
+import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._2_GestióndeClasificadores._8_GestionarPlanilladePersonal.PlanillaPersonal;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 import y_entity.base.EntityBase;
 
-
 @Entity
-@Table(name="CFO_MV_CONDICIONFOR")
-public class CondicionFormulacion extends EntityBase<Long> {
+@Table(name="HTO_MA_HORATOPE")
+public class HoraTope extends EntityBase<Long> {
 
-    @OneToMany(mappedBy = "condicionFormulacion")
-    private List<ReglaCondicionFormulacion> reglaCondicionesFormulacion;
+    @OneToMany(mappedBy = "horaTope")
+    private List<DetalleHoraTope> montosHoraTope;
 
-    @OneToMany(mappedBy = "condicionFormula")
-    private List<ValorComponenteFormula> valorerComponenteFormula;
-
-    private String descripcion;
-    
     @ManyToOne
-    @JoinColumn(name="FORMULACON_ID")
-    private FormulacionConceptoPlanillaPersonal formulacionConcepto;
+    @JoinColumn(name="PLANILLA_ID")
+    private PlanillaPersonal planillaPersonal;
     
-    @ManyToOne
-    @JoinColumn(name="FORMULAPLA_ID")
-    private FormulaPlanillaPersonal formulaPlanilla;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date fechaDesde;
     
-    private Integer orden;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date fechaHasta;        
 
     @Override
     public int hashCode() {
@@ -47,16 +43,16 @@ public class CondicionFormulacion extends EntityBase<Long> {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof CondicionFormulacion)) {
+        if (!(object instanceof HoraTope)) {
             return false;
         }
-        CondicionFormulacion other = (CondicionFormulacion) object;
+        HoraTope other = (HoraTope) object;
         return !((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)));
     }
 
     @Override
     public String toString() {
-        return "CondicionFormulacion[ id=" + id + " ]";
+        return "_2_Ejecuci\u00f3ndeServiciosdePersonal._2_Gesti\u00f3ndeRemuneraciones._5_Gesti\u00f3nRetributiva._2_PrepararCiclodePlanilla._1_AutorizarHorasTope.HoraTope[ id=" + id + " ]";
     }
 
     @Override

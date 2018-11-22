@@ -5,14 +5,11 @@
  */
 package entity.externos;
 
-import d_preparacion_planilla_personal.Embargo;
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 /**
  *
@@ -20,9 +17,6 @@ import javax.persistence.OneToMany;
  */
 @Entity
 public class Beneficiario implements Serializable {
-
-    @OneToMany(mappedBy = "beneficiario")
-    private List<Embargo> embargos;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -51,10 +45,7 @@ public class Beneficiario implements Serializable {
             return false;
         }
         Beneficiario other = (Beneficiario) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
+        return !((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)));
     }
 
     @Override

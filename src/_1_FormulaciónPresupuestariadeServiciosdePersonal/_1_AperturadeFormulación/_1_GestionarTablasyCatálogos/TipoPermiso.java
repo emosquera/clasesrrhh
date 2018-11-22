@@ -5,7 +5,10 @@
  */
 package _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._1_GestionarTablasyCatálogos;
 
+import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._5_GestiónRetributiva._3_AplicarMovimientosdePlanilla._1_GestionarPermisos.Permiso;
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import y_entity.base.EntityBase;
 
@@ -20,6 +23,9 @@ import y_entity.base.EntityBase;
 @Entity
 @Table(name="TPE_CL_TIPPERMISO")
 public class TipoPermiso extends EntityBase<Long> {
+
+    @OneToMany(mappedBy = "tipoPermiso")
+    private List<Permiso> permisos;
 
     /**
      * Breve descripción del Tipo de Permiso, nombre identificador.

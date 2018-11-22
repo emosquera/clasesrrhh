@@ -3,35 +3,35 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._1_GestionarTablasyCatálogos;
+package _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._5_GestiónRetributiva._2_PrepararCiclodePlanilla._1_AutorizarHorasTope;
 
-import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._5_GestiónRetributiva._2_PrepararCiclodePlanilla._2_GestionarEmbargos.Embargo;
-import java.util.List;
+import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._3_IncorporacióndeRecursosHumanos._2_HabilitarFuncionario._2_RegistrarDisposición.Disposicion;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import y_entity.base.EntityBase;
 
-/**
- * Clase TipoEmbargo extiende de {@link EntityBase}
- *
- * Contiene la definición de los Tipos de Embargos
- * 
- * @author Quarksoft-CIDESA
- * @version 1.0
- */
 @Entity
-@Table(name = "TEM_CL_TIPOEMBAR")
-public class TipoEmbargo extends EntityBase<Long> {
-
-    @OneToMany(mappedBy = "tipoEmbargo")
-    private List<Embargo> embargos;
-
-    /**
-     * Descripcion del Tipo de Modalidad de Contrato
-     */
-    private String descripcion;            
+@Table(name="DHT_MV_DETHORATOPE")
+public class DetalleHoraTope extends EntityBase<Long> {
+   
+    @ManyToOne
+    @JoinColumn(name="HORATOPE_ID")
+    private HoraTope horaTope;
     
+   
+    @ManyToOne
+    @JoinColumn(name="DISPOSICION_ID")
+    private Disposicion disposicion;
+    
+    private Double horaMaxima;
+    
+    private Double horaExtra;
+    
+    private Double horaAdicional;
+    
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -42,16 +42,16 @@ public class TipoEmbargo extends EntityBase<Long> {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof TipoEmbargo)) {
+        if (!(object instanceof DetalleHoraTope)) {
             return false;
         }
-        TipoEmbargo other = (TipoEmbargo) object;
+        DetalleHoraTope other = (DetalleHoraTope) object;
         return !((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)));
     }
 
     @Override
     public String toString() {
-        return "TipoEmbargo[ id=" + id + " ]";
+        return "DetalleHoraTope[ id=" + id + " ]";
     }
 
     @Override

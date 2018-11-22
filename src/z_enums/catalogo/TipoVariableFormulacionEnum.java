@@ -5,14 +5,11 @@
  */
 package z_enums.catalogo;
 
-/**
- *
- * @author syslife02
- */
 public enum TipoVariableFormulacionEnum {
     FUNCION("FUNCION"),
     MONTO_CONCEPTO("MONTO DE CONCEPTO"),
     CANTIDAD_CONCEPTO("CANTIDAD DE CONCEPTO"),
+    VALOR_FIJO("VALOR FIJO"),
     RESULTADO_CONCEPTO("RESULTADO DE CONCEPTO ANTERIOR");
     
     private final String tipoVariableFormulacion;

@@ -3,7 +3,9 @@ package _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._3_Incorp
 
 import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._1_GestionarTablasyCatálogos.DepartamentoTerritorial;
 import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._2_GestióndeClasificadores._4_GestionarConceptosdeBeneficios._1_GestionarConceptosdePlanilladePersonal.ConceptoPlanillaPersonal;
+import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._5_GestiónRetributiva._4_LiquidarPlanilla._1_ProcesarPlanillaporPeriodo.DetalleCalculoPlanilla;
 import java.util.Date;
+import java.util.List;
 import y_entity.base.EntityBase;
 import javax.persistence.*;
 
@@ -36,6 +38,8 @@ public class ConceptoDisposicion extends EntityBase<Long> {
     
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date fechaHasta;
+    @OneToMany(mappedBy = "conceptoDisposicion")
+    private List<DetalleCalculoPlanilla> detallesCalculoPlanilla;
     
     @Override
     public int hashCode() {

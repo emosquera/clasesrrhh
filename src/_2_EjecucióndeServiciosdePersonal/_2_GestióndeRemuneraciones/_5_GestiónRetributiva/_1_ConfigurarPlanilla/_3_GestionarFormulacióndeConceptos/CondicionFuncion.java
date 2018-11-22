@@ -5,38 +5,40 @@
  */
 package _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._5_GestiónRetributiva._1_ConfigurarPlanilla._3_GestionarFormulacióndeConceptos;
 
-import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._5_GestiónRetributiva._1_ConfigurarPlanilla._2_GestionarFormuladePlanilladePersonal.FormulaPlanillaPersonal;
-import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import y_entity.base.EntityBase;
-
+import z_enums.catalogo.ParametroFuncioneEnum;
+import z_enums.catalogo.TipoConectorLogicoEnum;
+import z_enums.catalogo.TipoOperadorLogicoEnum;
 
 @Entity
-@Table(name="CFO_MV_CONDICIONFOR")
-public class CondicionFormulacion extends EntityBase<Long> {
+@Table(name="CFC_MV_CONDIFUNC")
+public class CondicionFuncion extends EntityBase<Long> {
 
-    @OneToMany(mappedBy = "condicionFormulacion")
-    private List<ReglaCondicionFormulacion> reglaCondicionesFormulacion;
-
-    @OneToMany(mappedBy = "condicionFormula")
-    private List<ValorComponenteFormula> valorerComponenteFormula;
-
-    private String descripcion;
-    
     @ManyToOne
-    @JoinColumn(name="FORMULACON_ID")
-    private FormulacionConceptoPlanillaPersonal formulacionConcepto;
+    @JoinColumn(name="FUNCIONFOR_ID")
+    private FuncionFormulacion funcionFormulacion;
     
-    @ManyToOne
-    @JoinColumn(name="FORMULAPLA_ID")
-    private FormulaPlanillaPersonal formulaPlanilla;
+    private int orden;
     
-    private Integer orden;
+    @Enumerated(EnumType.STRING)
+    private TipoOperadorLogicoEnum tipoOperadorLogico;
+    
+    @Enumerated(EnumType.STRING)
+    private TipoConectorLogicoEnum tipoConectorLogico;
+    
 
+    @Enumerated(EnumType.STRING)
+    private ParametroFuncioneEnum valorInicial;
+    
+    private Double valorFinal;
+    
     @Override
     public int hashCode() {
         int hash = 0;
@@ -47,16 +49,16 @@ public class CondicionFormulacion extends EntityBase<Long> {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof CondicionFormulacion)) {
+        if (!(object instanceof CondicionFuncion)) {
             return false;
         }
-        CondicionFormulacion other = (CondicionFormulacion) object;
+        CondicionFuncion other = (CondicionFuncion) object;
         return !((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)));
     }
 
     @Override
     public String toString() {
-        return "CondicionFormulacion[ id=" + id + " ]";
+        return "ReglaCondicionFormulacion[ id=" + id + " ]";
     }
 
     @Override

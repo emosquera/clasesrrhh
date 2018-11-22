@@ -5,16 +5,11 @@
  */
 package entity.externos;
 
-import _1_FormulaciónPresupuestariadeServiciosdePersonal._3_FormularServiciosdePersonal._1_GestionarAnexodePersonal.DetalleAnexoPersonal;
-import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._2_GestióndeClasificadores._6_GestionarPuestos._1_GestionarPuesto.Puesto;
-import d_preparacion_planilla_personal.ConceptosFuncionarioPlanilla;
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 /**
  *
@@ -22,15 +17,6 @@ import javax.persistence.OneToMany;
  */
 @Entity
 public class FuenteFinanciamiento implements Serializable {
-
-    @OneToMany(mappedBy = "fuenteFinanciamiento")
-    private List<Puesto> puestos;
-
-    @OneToMany(mappedBy = "fuenteFinanciamiento")
-    private List<ConceptosFuncionarioPlanilla> conceptosFuncionarioPlanillas;
-
-    @OneToMany(mappedBy = "distribucionGastoFuenteFinanciamiento")
-    private List<DetalleAnexoPersonal> detalleAnexoPersonals;
 
     private static final long serialVersionUID = 1L;
     @Id

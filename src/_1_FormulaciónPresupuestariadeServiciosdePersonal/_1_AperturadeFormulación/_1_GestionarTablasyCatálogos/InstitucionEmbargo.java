@@ -5,9 +5,12 @@
  */
 package _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._1_GestionarTablasyCatálogos;
 
+import _2_EjecucióndeServiciosdePersonal._2_GestióndeRemuneraciones._5_GestiónRetributiva._2_PrepararCiclodePlanilla._2_GestionarEmbargos.Embargo;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import y_entity.base.EntityBase;
 
 /**
@@ -78,6 +81,10 @@ public class InstitucionEmbargo extends EntityBase<Long> {
      *
      */
     private String ruc;
+    
+    
+    @OneToMany(mappedBy = "institucionEmbargo")
+    private List<Embargo> embargos;
     
     
     @Override
