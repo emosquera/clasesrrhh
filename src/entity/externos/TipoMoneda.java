@@ -5,7 +5,7 @@
  */
 package entity.externos;
 
-import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._2_GestióndeClasificadores._5_GestionarTabladeCategorías._1_GestionarTabladeCategorías.TablaCategoria;
+import Clasificadores.TablaCategoria.TablaCategoria;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;

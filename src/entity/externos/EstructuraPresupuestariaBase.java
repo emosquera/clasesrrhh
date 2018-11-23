@@ -5,8 +5,8 @@
  */
 package entity.externos;
 
-import _1_FormulaciónPresupuestariadeServiciosdePersonal._3_FormularServiciosdePersonal._1_GestionarAnexodePersonal.DetalleAnexoPersonal;
-import _1_FormulaciónPresupuestariadeServiciosdePersonal._1_AperturadeFormulación._2_GestióndeClasificadores._6_GestionarPuestos._1_GestionarPuesto.Puesto;
+import FormularServiciosPersonal.AnexoPersonal.DetalleAnexoPersonal;
+import Clasificadores.Puesto.Puesto;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
